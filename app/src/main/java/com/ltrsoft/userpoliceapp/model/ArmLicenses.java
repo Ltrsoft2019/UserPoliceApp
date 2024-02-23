@@ -1,6 +1,6 @@
 package com.ltrsoft.userpoliceapp.model;
 
-public class Arm_licenses {
+public class ArmLicenses {
 
   private   String arm_license_id, parent_or_spouse_name,village,
             present_address,
@@ -30,6 +30,40 @@ public class Arm_licenses {
             dob_in_words,
             status_id,
             permission_id;
+
+
+    public ArmLicenses(String arm_license_id, String parent_or_spouse_name, String village, String present_address, String residing_since, String office_no, String residence_no, String station_id, String office_or_business_address, String additional_particulars, String area_or_land_of_cultivation, String location_of_cultivation, String whether_applicant_convicted, String whether_applicant_ordered_to_convicted, String whether_applicant_prohibited, String whether_applicant_applied_before, String whether_applicant_family_member_suspended_for_using_weapon, String whether_applicant_suspended, String has_safe_place_to_keep_arm, String has_training, String need_for_license, String arms_type, String ammunition_desc, String area_of_arm_carry, String special_consideration, String detail_for_form_IV, String place_of_birth, String dob_in_words, String status_id, String permission_id) {
+        this.arm_license_id = arm_license_id;
+        this.parent_or_spouse_name = parent_or_spouse_name;
+        this.village = village;
+        this.present_address = present_address;
+        this.residing_since = residing_since;
+        this.office_no = office_no;
+        this.residence_no = residence_no;
+        this.station_id = station_id;
+        this.office_or_business_address = office_or_business_address;
+        this.additional_particulars = additional_particulars;
+        this.area_or_land_of_cultivation = area_or_land_of_cultivation;
+        this.location_of_cultivation = location_of_cultivation;
+        this.whether_applicant_convicted = whether_applicant_convicted;
+        this.whether_applicant_ordered_to_convicted = whether_applicant_ordered_to_convicted;
+        this.whether_applicant_prohibited = whether_applicant_prohibited;
+        this.whether_applicant_applied_before = whether_applicant_applied_before;
+        this.whether_applicant_family_member_suspended_for_using_weapon = whether_applicant_family_member_suspended_for_using_weapon;
+        this.whether_applicant_suspended = whether_applicant_suspended;
+        this.has_safe_place_to_keep_arm = has_safe_place_to_keep_arm;
+        this.has_training = has_training;
+        this.need_for_license = need_for_license;
+        this.arms_type = arms_type;
+        this.ammunition_desc = ammunition_desc;
+        this.area_of_arm_carry = area_of_arm_carry;
+        this.special_consideration = special_consideration;
+        this.detail_for_form_IV = detail_for_form_IV;
+        this.place_of_birth = place_of_birth;
+        this.dob_in_words = dob_in_words;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
 
     public String getArm_license_id() {
         return arm_license_id;

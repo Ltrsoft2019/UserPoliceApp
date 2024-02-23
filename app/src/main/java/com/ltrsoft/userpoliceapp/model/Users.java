@@ -6,6 +6,34 @@ public class Users {
             user_adhar,user_pan,occupation,nationality,driving_licence,notification_token,latitude,
             longitude,station_id;
 
+    public Users(String user_id, String user_fname, String user_mname, String user_lname, String user_address, String user_photo, String country_id, String state_id, String district_id, String city_id, String user_email, String password, String gender, String user_dob, String user_mobile1, String user_mobile2, String user_adhar, String user_pan, String occupation, String nationality, String driving_licence, String notification_token, String latitude, String longitude, String station_id) {
+        this.user_id = user_id;
+        this.user_fname = user_fname;
+        this.user_mname = user_mname;
+        this.user_lname = user_lname;
+        this.user_address = user_address;
+        this.user_photo = user_photo;
+        this.country_id = country_id;
+        this.state_id = state_id;
+        this.district_id = district_id;
+        this.city_id = city_id;
+        this.user_email = user_email;
+        this.password = password;
+        this.gender = gender;
+        this.user_dob = user_dob;
+        this.user_mobile1 = user_mobile1;
+        this.user_mobile2 = user_mobile2;
+        this.user_adhar = user_adhar;
+        this.user_pan = user_pan;
+        this.occupation = occupation;
+        this.nationality = nationality;
+        this.driving_licence = driving_licence;
+        this.notification_token = notification_token;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.station_id = station_id;
+    }
+
     public String getUser_id() {
         return user_id;
     }

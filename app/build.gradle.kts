@@ -41,4 +41,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Volley
+    implementation("com.android.volley:volley:1.2.1")
+
+    //Gson
+    implementation("com.google.code.gson:gson:2.8.8")
 }

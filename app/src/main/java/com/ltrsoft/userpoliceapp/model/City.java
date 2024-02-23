@@ -1,7 +1,7 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class City {
-
+    public static final String URLL="";
     private String id,name,state_id;
 
     public String getId() {

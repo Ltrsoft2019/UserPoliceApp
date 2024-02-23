@@ -1,7 +1,34 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class CharacterCertificate {
+
     private String character_certificate_id, user_id, station_id, pbuilding, pstreet, plandmark, plocality, pstate_id, pdistrict_id, pincode, cbuilding, cstreet, clandmark, clocality, cstate_id, cdistrict_id, cpincode, visible_mark, have_arrested, active_politics, is_criminal, status_id, permission_id;
+    public CharacterCertificate(String character_certificate_id, String user_id, String station_id, String pbuilding, String pstreet, String plandmark, String plocality, String pstate_id, String pdistrict_id, String pincode, String cbuilding, String cstreet, String clandmark, String clocality, String cstate_id, String cdistrict_id, String cpincode, String visible_mark, String have_arrested, String active_politics, String is_criminal, String status_id, String permission_id) {
+        this.character_certificate_id = character_certificate_id;
+        this.user_id = user_id;
+        this.station_id = station_id;
+        this.pbuilding = pbuilding;
+        this.pstreet = pstreet;
+        this.plandmark = plandmark;
+        this.plocality = plocality;
+        this.pstate_id = pstate_id;
+        this.pdistrict_id = pdistrict_id;
+        this.pincode = pincode;
+        this.cbuilding = cbuilding;
+        this.cstreet = cstreet;
+        this.clandmark = clandmark;
+        this.clocality = clocality;
+        this.cstate_id = cstate_id;
+        this.cdistrict_id = cdistrict_id;
+        this.cpincode = cpincode;
+        this.visible_mark = visible_mark;
+        this.have_arrested = have_arrested;
+        this.active_politics = active_politics;
+        this.is_criminal = is_criminal;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
+
 
     public String getCharacter_certificate_id() {
         return character_certificate_id;

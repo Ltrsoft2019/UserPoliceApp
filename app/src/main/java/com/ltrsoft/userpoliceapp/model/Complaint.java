@@ -3,7 +3,21 @@ package com.ltrsoft.userpoliceapp.model;
 public class Complaint {
 
     private String complaint_id,complaint_subject, complaint_description,against,inscidant_date,
-    status_id, latitude,longitude, user_id,complaint_fir_id,subtype_id,latitute, longitute;
+    status_id, latitude,longitude, user_id,complaint_fir_id,subtype_id;
+
+    public Complaint(String complaint_id, String complaint_subject, String complaint_description, String against, String inscidant_date, String status_id, String latitude, String longitude, String user_id, String complaint_fir_id, String subtype_id, String latitute, String longitute) {
+        this.complaint_id = complaint_id;
+        this.complaint_subject = complaint_subject;
+        this.complaint_description = complaint_description;
+        this.against = against;
+        this.inscidant_date = inscidant_date;
+        this.status_id = status_id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.user_id = user_id;
+        this.complaint_fir_id = complaint_fir_id;
+        this.subtype_id = subtype_id;
+    }
 
     public String getComplaint_id() {
         return complaint_id;
@@ -93,19 +107,4 @@ public class Complaint {
         this.subtype_id = subtype_id;
     }
 
-    public String getLatitute() {
-        return latitute;
-    }
-
-    public void setLatitute(String latitute) {
-        this.latitute = latitute;
-    }
-
-    public String getLongitute() {
-        return longitute;
-    }
-
-    public void setLongitute(String longitute) {
-        this.longitute = longitute;
-    }
 }
