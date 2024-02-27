@@ -44,7 +44,7 @@
             android:id="@+id/spinnerGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="Gender"
+
             android:layout_margin="20dp" />
 
         <!-- Address -->
@@ -126,7 +126,7 @@
             android:id="@+id/spinnerBuild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="Build"
+
             android:layout_margin="20dp" />
 
         <!-- Hair Color -->

@@ -83,12 +83,13 @@
                 android:layout_margin="20dp"
                 android:autofillHints="Gender" />
 
-            <!-- Date of Birth -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:Text="Date of Birth" />
+                android:text="Date of Birth" />
+
 
             <DatePicker
                 android:id="@+id/datePickerDob"

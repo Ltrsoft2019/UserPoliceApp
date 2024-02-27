@@ -1,8 +1,11 @@
-package com.ltrsoft.userpoliceapp;
+package com.ltrsoft.userpoliceapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.fragment.BlankFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addselftcomplaintfragment);
 
-
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container,new BlankFragment()).commit();
 
     }
 }
