@@ -1,0 +1,97 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Petroleum Information"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Which Petroleum -->
+        <EditText
+            android:id="@+id/editTextWhichPetroleum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Which Petroleum"/>
+
+        <!-- Police Station -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Office Number -->
+        <EditText
+            android:id="@+id/editTextOfficeNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Office Number"/>
+
+        <!-- Residence Number -->
+        <EditText
+            android:id="@+id/editTextResidenceNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Residence Number"/>
+
+        <!-- Occupation -->
+        <EditText
+            android:id="@+id/editTextOccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Occupation"/>
+
+        <!-- Quantity -->
+        <EditText
+            android:id="@+id/editTextQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Quantity"/>
+
+        <!-- Blasting Detail -->
+        <EditText
+            android:id="@+id/editTextBlastingDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Blasting Detail"/>
+
+
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

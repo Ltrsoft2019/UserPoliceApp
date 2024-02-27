@@ -1,0 +1,102 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unidentify Bodies"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Date and Time of Discovery -->
+        <EditText
+            android:id="@+id/editTextDiscoveryDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Date and Time of Discovery"/>
+
+        <!-- Location Where the Object Was Found -->
+        <EditText
+            android:id="@+id/editTextLocationFound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Location Where the Object Was Found"/>
+
+        <!-- Condition of the Object -->
+        <EditText
+            android:id="@+id/editTextObjectCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Condition of the Object"/>
+
+        <!-- Any Identifying Marks or Features -->
+        <EditText
+            android:id="@+id/editTextObjectFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Any Identifying Marks or Features"/>
+
+        <!-- Description of the Object -->
+        <EditText
+            android:id="@+id/editTextObjectDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Description of the Object"/>
+
+        <!-- Photo -->
+        <ImageView
+            android:id="@+id/imageViewObjectPhoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src=""
+            android:layout_margin="20dp"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Location -->
+        <EditText
+            android:id="@+id/editTextLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Location"/>
+
+
+
+        <!-- Station ID -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,97 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Safety and Security Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Purpose/Objective of the Rally -->
+        <EditText
+            android:id="@+id/editTextRallyPurpose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Purpose/Objective of the Rally"/>
+
+        <!-- Safety and Security Measures -->
+        <EditText
+            android:id="@+id/editTextSafetyMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Safety and Security Measures"/>
+
+        <!-- Station ID -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Plan for Crowd Management -->
+        <EditText
+            android:id="@+id/editTextCrowdManagement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Plan for Crowd Management"/>
+
+        <!-- Provision of First Aid Facilities -->
+        <EditText
+            android:id="@+id/editTextFirstAid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Provision of First Aid Facilities"/>
+
+        <!-- Coordination with Emergency Services -->
+        <EditText
+            android:id="@+id/editTextEmergencyServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Coordination with Emergency Services"/>
+
+        <!-- Additional Safety Measures Implemented -->
+        <EditText
+            android:id="@+id/editTextAdditionalSafetyMeasures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Additional Safety Measures Implemented"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

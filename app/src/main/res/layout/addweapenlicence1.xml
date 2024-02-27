@@ -1,0 +1,96 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personal Information"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Parent or Spouse Name -->
+        <EditText
+            android:id="@+id/editTextParentOrSpouseName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Parent or Spouse Name"/>
+
+        <!-- Village -->
+        <EditText
+            android:id="@+id/editTextVillage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Village"/>
+
+        <!-- Present Address -->
+        <EditText
+            android:id="@+id/editTextPresentAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Present Address"/>
+
+        <!-- Residing Since -->
+        <EditText
+            android:id="@+id/editTextResidingSince"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Residing Since"/>
+
+        <!-- Office Number -->
+        <EditText
+            android:id="@+id/editTextOfficeNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Office Number"/>
+
+        <!-- Residence Number -->
+        <EditText
+            android:id="@+id/editTextResidenceNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Residence Number"/>
+
+        <!-- Station -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Save and next"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,94 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Village -->
+        <EditText
+            android:id="@+id/editTextVillage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Village"/>
+
+        <!-- City -->
+        <Spinner
+            android:id="@+id/editTextCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="City"/>
+
+        <!-- District -->
+        <Spinner
+            android:id="@+id/editTextDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="District"/>
+
+        <!-- State -->
+        <Spinner
+            android:id="@+id/editTextState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="State"/>
+
+
+
+        <!-- Country -->
+        <Spinner
+            android:id="@+id/editTextCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Country"/>
+
+
+
+        <!-- Station ID -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Time of Initiation -->
+        <EditText
+            android:id="@+id/editTextTimeOfInitiation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Time of Initiation"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

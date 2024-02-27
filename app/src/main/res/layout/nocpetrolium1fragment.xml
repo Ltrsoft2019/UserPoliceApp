@@ -1,0 +1,113 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOC Petroleum Information"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- NOC Petroleum -->
+        <EditText
+            android:id="@+id/editTextNocPetroleumId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="NOC Petroleum"/>
+
+        <!-- Character/License -->
+        <EditText
+            android:id="@+id/editTextCharacterLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Character/License"/>
+
+        <!-- Father's Name -->
+        <EditText
+            android:id="@+id/editTextFathersName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Father's Name"/>
+
+        <!-- Place of Birth -->
+        <EditText
+            android:id="@+id/editTextPlaceOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Place of Birth"/>
+
+        <!-- Residing Since -->
+        <EditText
+            android:id="@+id/editTextResidingSince"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Residing Since"/>
+
+        <!-- Fax -->
+        <EditText
+            android:id="@+id/editTextFax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Fax"/>
+
+        <!-- Types of Control Blasting -->
+        <EditText
+            android:id="@+id/editTextTypesOfControlBlasting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Types of Control Blasting"/>
+
+        <!-- License or NOC Radio Button -->
+        <RadioGroup
+            android:id="@+id/radioGroupLicenseNoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="License"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonNoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="NOC"/>
+        </RadioGroup>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

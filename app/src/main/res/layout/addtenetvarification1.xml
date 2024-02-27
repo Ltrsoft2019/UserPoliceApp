@@ -1,0 +1,81 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rental Property Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Type of Property -->
+        <EditText
+            android:id="@+id/editTextTypeOfProperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Type of Property"/>
+
+        <!-- Units -->
+        <EditText
+            android:id="@+id/editTextUnits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Units"/>
+
+        <!-- Bedrooms Number -->
+        <EditText
+            android:id="@+id/editTextBedroomsNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Bedrooms Number"/>
+
+        <!-- Full Name Tenant -->
+        <EditText
+            android:id="@+id/editTextFullNameTenant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Full Name Tenant"/>
+
+        <!-- Tenant Contact Number -->
+        <EditText
+            android:id="@+id/editTextTenantContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Tenant Contact Number"/>
+
+        <!-- Tenant Email -->
+        <EditText
+            android:id="@+id/editTextTenantEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Tenant Email"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Save and Next"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Feedback Question 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 1"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 1"/>
+
+        <!-- Feedback Question 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 2"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 2"/>
+
+        <!-- Feedback Question 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 3"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 3"/>
+
+        <!-- Feedback Question 4 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 4"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 4"/>
+
+        <!-- Feedback Question 5 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 5"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 5"/>
+
+        <!-- Feedback Question 6 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Question 6"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackQuestion6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Question 6"/>
+
+        <!-- Feedback Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Feedback Description"/>
+
+        <EditText
+            android:id="@+id/editTextFeedbackDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Enter Feedback Description"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="save and submit"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+
+
+    </LinearLayout>
+</ScrollView>

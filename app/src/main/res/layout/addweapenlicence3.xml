@@ -1,0 +1,148 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional Information"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Whether Applicant Applied Before -->
+        <CheckBox
+            android:id="@+id/checkBoxApplicantAppliedBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Whether Applicant Applied Before"/>
+
+        <!-- Whether Applicant's Family Member Suspended for Using Weapon -->
+        <CheckBox
+            android:id="@+id/checkBoxFamilyMemberSuspendedForWeapon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Whether Applicant's Family Member Suspended for Using Weapon"/>
+
+        <!-- Whether Applicant Suspended -->
+        <CheckBox
+            android:id="@+id/checkBoxApplicantSuspended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Whether Applicant Suspended"/>
+
+        <!-- Has Safe Place to Keep Arm -->
+        <CheckBox
+            android:id="@+id/checkBoxHasSafePlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Has Safe Place to Keep Arm"/>
+
+        <!-- Has Training -->
+        <CheckBox
+            android:id="@+id/checkBoxHasTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Has Training"/>
+
+        <!-- Need for License -->
+        <CheckBox
+            android:id="@+id/checkBoxNeedForLicense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginl="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="Need for License"/>
+
+        <!-- Arms Type -->
+        <EditText
+            android:id="@+id/editTextArmsType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Arms Type"/>
+        <!-- Ammunation Description -->
+        <EditText
+            android:id="@+id/editTextAmmunationDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Ammunation Description"/>
+
+        <!-- Area of Arm Carry -->
+        <EditText
+            android:id="@+id/editTextAreaOfArmCarry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Area of Arm Carry"/>
+
+        <!-- Special Consideration -->
+        <EditText
+            android:id="@+id/editTextSpecialConsideration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Special Consideration"/>
+
+        <!-- Detail for Form IV -->
+        <EditText
+            android:id="@+id/editTextDetailForFormIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Detail for Form IV"/>
+
+        <!-- Place of Birth -->
+        <EditText
+            android:id="@+id/editTextPlaceOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Place of Birth"/>
+
+        <!-- DOB in Words -->
+        <EditText
+            android:id="@+id/editTextDobInWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="DOB in Words"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Save and Next"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,98 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rally  Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Organization/Group Name -->
+        <EditText
+            android:id="@+id/editTextOrganizationName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Organization/Group Name"/>
+
+        <!-- Address -->
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Address"/>
+
+        <!-- Event Details -->
+        <EditText
+            android:id="@+id/editTextEventDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Event Details"/>
+
+        <!-- Name of the Rally -->
+        <EditText
+            android:id="@+id/editTextRallyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Name of the Rally"/>
+
+        <!-- Date of the Rally -->
+        <EditText
+            android:id="@+id/editTextRallyDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Date of the Rally"/>
+
+        <!-- Time of the Rally -->
+        <EditText
+            android:id="@+id/editTextRallyTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Time of the Rally"/>
+
+        <!-- Proposed Route/Location -->
+        <EditText
+            android:id="@+id/editTextRouteLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Proposed Route/Location"/>
+
+        <!-- Expected Number of Participants -->
+        <EditText
+            android:id="@+id/editTextParticipantsNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Expected Number of Participants"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Save and Next"/>
+
+    </LinearLayout>
+
+</ScrollView>

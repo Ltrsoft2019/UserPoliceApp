@@ -1,0 +1,289 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Witness Information -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Witness Information"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Witness ID -->
+        <EditText
+            android:id="@+id/editTextWitnessId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Witness ID"/>
+
+        <!-- Full Name -->
+        <EditText
+            android:id="@+id/editTextFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Full Name"/>
+
+        <!-- Date of Birth -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:text="Date of Birth"/>
+        <DatePicker
+            android:id="@+id/datePickerDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:layout_margin="20dp"
+
+            android:hint="Date of Birth"/>
+
+        <!-- Gender -->
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:prompt="Gender" />
+
+        <!-- Address -->
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Address"/>
+
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Phone Number"
+            android:inputType="phone"/>
+
+        <!-- Email Address -->
+        <EditText
+            android:id="@+id/editTextEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:layout_margin="20dp"
+            android:inputType="textEmailAddress"/>
+
+        <!-- Passport Number -->
+        <EditText
+            android:id="@+id/editTextPassportNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Passport Number"/>
+
+        <!-- Driver's License -->
+        <EditText
+            android:id="@+id/editTextDriversLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Driver's License"/>
+
+        <!-- Social Security Number -->
+        <EditText
+            android:id="@+id/editTextSocialSecurityNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Social Security Number"/>
+
+        <!-- Height -->
+        <EditText
+            android:id="@+id/editTextHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Height"/>
+
+        <!-- Weight -->
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Weight"/>
+
+        <!-- Build -->
+        <Spinner
+            android:id="@+id/spinnerBuild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="Build"
+            android:layout_margin="20dp" />
+
+        <!-- Hair Color -->
+        <EditText
+            android:id="@+id/editTextHairColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Hair Color"/>
+
+        <!-- Eye Color -->
+        <EditText
+            android:id="@+id/editTextEyeColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Eye Color"/>
+
+        <!-- Distinguishing Features -->
+        <EditText
+            android:id="@+id/editTextDistinguishingFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Distinguishing Features"/>
+
+        <!-- Occupation -->
+        <EditText
+            android:id="@+id/editTextOccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Occupation"/>
+
+        <!-- Education Level -->
+        <EditText
+            android:id="@+id/editTextEducationLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Education Level"/>
+
+        <!-- Marital Status -->
+        <EditText
+            android:id="@+id/editTextMaritalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Marital Status"/>
+
+        <!-- Family Members or Next of Kin -->
+        <EditText
+            android:id="@+id/editTextFamilyMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Family Members or Next of Kin"/>
+
+        <!-- Photo -->
+        <Button
+            android:id="@+id/buttonPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:text="Add Photo"/>
+
+        <!-- Complaint ID -->
+        <Spinner
+            android:id="@+id/editTextComplaintId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Complaint ID"/>
+
+        <!-- Description -->
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Description"/>
+
+        <!-- Is Witness -->
+        <CheckBox
+            android:id="@+id/checkBoxIsWitness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Is Witness"/>
+
+        <!-- Country ID -->
+        <EditText
+            android:id="@+id/spTextCountryId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Country ID"/>
+
+        <!-- State ID -->
+        <Spinner
+            android:id="@+id/spTextStateId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="State ID"/>
+
+        <!-- District ID -->
+        <Spinner
+            android:id="@+id/editTextDistrictId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="District ID"/>
+
+        <!-- City ID -->
+        <Spinner
+            android:id="@+id/spTextCityId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="City ID"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/Submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:text="Submit" />
+    </LinearLayout>
+</ScrollView>
+

@@ -1,0 +1,97 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Additional Body Description"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Race/Ethnicity -->
+        <EditText
+            android:id="@+id/editTextRaceEthnicity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Race/Ethnicity"/>
+
+        <!-- Hair Color and Style -->
+        <EditText
+            android:id="@+id/editTextHairColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Hair Color and Style"/>
+
+        <!-- Eye Color -->
+        <EditText
+            android:id="@+id/editTextEyeColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Eye Color"/>
+
+        <!-- Distinguishing Features -->
+        <EditText
+            android:id="@+id/editTextDistinguishingFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Distinguishing Features"/>
+
+        <!-- Description of Clothing -->
+        <EditText
+            android:id="@+id/editTextClothingDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Description of Clothing"/>
+
+        <!-- Body Condition -->
+        <Spinner
+            android:id="@+id/editTextBodyCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+
+            android:hint="Body Condition"/>
+
+        <!-- Station ID -->
+        <Button
+            android:id="@+id/editTextStationId"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Choose Station" />
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</ScrollView>

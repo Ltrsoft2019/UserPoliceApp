@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/selflayput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="User Information"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- First Name -->
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="First Name" />
+
+            <!-- Middle Name -->
+            <EditText
+                android:id="@+id/editTextMiddleName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Middle Name" />
+
+            <!-- Last Name -->
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Last Name" />
+
+            <!-- Address -->
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Address" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Email" />
+
+            <!-- Password -->
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <!-- Gender -->
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:autofillHints="Gender" />
+
+            <!-- Date of Birth -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:Text="Date of Birth" />
+
+            <DatePicker
+                android:id="@+id/datePickerDob"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_margin="20dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
+
+            <!-- Mobile Number 1 -->
+            <EditText
+                android:id="@+id/editTextMobile1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Mobile Number 1"
+                android:inputType="phone" />
+
+            <!-- Mobile Number 2 -->
+            <EditText
+                android:id="@+id/editTextMobile2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Mobile Number 2"
+                android:inputType="phone" />
+
+            <!-- Aadhar Number -->
+            <EditText
+                android:id="@+id/editTextAadhar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Aadhar Number"
+                android:inputType="number" />
+
+            <!-- PAN Number -->
+            <EditText
+                android:id="@+id/editTextPAN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="PAN Number" />
+
+            <!-- Occupation -->
+            <EditText
+                android:id="@+id/editTextOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Occupation" />
+
+            <!-- Nationality -->
+            <EditText
+                android:id="@+id/editTextNationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Nationality" />
+
+            <!-- Driving License -->
+            <EditText
+                android:id="@+id/editTextDrivingLicense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Driving License" />
+
+            <!-- Notification Token -->
+            <EditText
+                android:id="@+id/editTextNotificationToken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Notification Token" />
+
+            <!-- Station -->
+            <Button
+                android:id="@+id/editTextStationId"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Choose Station" />
+
+            <!-- Country -->
+            <EditText
+                android:id="@+id/editTextCountryId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="Country" />
+
+            <!-- State -->
+            <EditText
+                android:id="@+id/editTextStateId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="State" />
+
+            <!-- District -->
+            <EditText
+                android:id="@+id/editTextDistrictId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="District" />
+
+            <!-- City -->
+            <EditText
+                android:id="@+id/editTextCityId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:hint="City" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/UserSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Next" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/onbehalflayput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Complaint Information"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Complaint Subject -->
+            <EditText
+                android:id="@+id/editTextComplaintSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Complaint Subject" />
+
+            <!-- Complaint Description -->
+            <EditText
+                android:id="@+id/editTextComplaintDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Complaint Description" />
+
+            <!-- Against -->
+            <EditText
+                android:id="@+id/editTextAgainst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Against" />
+
+            <!-- Incident Date -->
+            <DatePicker
+                android:id="@+id/datePickerIncidentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+
+                android:hint="Incident Date" />
+
+            <!-- Subtype -->
+            <EditText
+                android:id="@+id/editTextSubtypeId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Subtype" />
+
+            <!-- Latitude -->
+            <EditText
+                android:id="@+id/editTextLatitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Latitude" />
+
+            <!-- Longitude -->
+            <EditText
+                android:id="@+id/editTextLongitude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:hint="Longitude" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/ComplaintSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+
+                android:text="Submit" />
+        </LinearLayout>
+        <!-- Your content goes here -->
+
+    </LinearLayout>
+</ScrollView>
+
+
