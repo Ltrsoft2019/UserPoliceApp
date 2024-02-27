@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
 
-            android:prompt="Gender" />
+            />
 
         <!-- Address -->
         <EditText
@@ -138,8 +138,7 @@
             android:id="@+id/spinnerBuild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="Build"
-            android:layout_margin="20dp" />
+             android:layout_margin="20dp" />
 
         <!-- Hair Color -->
         <EditText

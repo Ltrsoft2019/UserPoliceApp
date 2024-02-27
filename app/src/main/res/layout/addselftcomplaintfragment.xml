@@ -85,10 +85,10 @@
 
             <!-- Date of Birth -->
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="364dp"
+                android:layout_height="47dp"
                 android:layout_margin="20dp"
-                android:Text="Date of Birth" />
+                />
 
             <DatePicker
                 android:id="@+id/datePickerDob"

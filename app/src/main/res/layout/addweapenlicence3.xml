@@ -24,17 +24,14 @@
             android:id="@+id/checkBoxApplicantAppliedBefore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
-            android:text="Whether Applicant Applied Before"/>
+             android:layout_margin="20dp" />
 
         <!-- Whether Applicant's Family Member Suspended for Using Weapon -->
         <CheckBox
             android:id="@+id/checkBoxFamilyMemberSuspendedForWeapon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
+             android:layout_marginLeft="20dp"
             android:text="Whether Applicant's Family Member Suspended for Using Weapon"/>
 
         <!-- Whether Applicant Suspended -->
@@ -42,8 +39,7 @@
             android:id="@+id/checkBoxApplicantSuspended"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
+             android:layout_marginLeft="20dp"
             android:text="Whether Applicant Suspended"/>
 
         <!-- Has Safe Place to Keep Arm -->
@@ -51,8 +47,7 @@
             android:id="@+id/checkBoxHasSafePlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
+             android:layout_marginLeft="20dp"
             android:text="Has Safe Place to Keep Arm"/>
 
         <!-- Has Training -->
@@ -60,8 +55,7 @@
             android:id="@+id/checkBoxHasTraining"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
+             android:layout_marginLeft="20dp"
             android:text="Has Training"/>
 
         <!-- Need for License -->
@@ -69,8 +63,7 @@
             android:id="@+id/checkBoxNeedForLicense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginl="5dp"
-            android:layout_marginLeft="20dp"
+             android:layout_marginLeft="20dp"
             android:text="Need for License"/>
 
         <!-- Arms Type -->
