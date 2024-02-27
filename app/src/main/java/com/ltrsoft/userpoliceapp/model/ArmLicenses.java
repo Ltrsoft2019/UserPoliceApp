@@ -1,6 +1,8 @@
 package com.ltrsoft.userpoliceapp.model;
 
-public class ArmLicenses {
+import android.database.Observable;
+
+public class ArmLicenses extends Observable {
 
   private   String arm_license_id, parent_or_spouse_name,village,
             present_address,
