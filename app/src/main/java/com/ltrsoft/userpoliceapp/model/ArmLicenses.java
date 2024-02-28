@@ -67,6 +67,10 @@ public class ArmLicenses extends Observable {
         this.permission_id = permission_id;
     }
 
+    public ArmLicenses() {
+
+    }
+
     public String getArm_license_id() {
         return arm_license_id;
     }
