@@ -78,6 +78,7 @@
             android:inputType="number"
             android:hint="Enter Place Pincode"/>
         <Button
+            android:id="@+id/buttonSaveAndSubmit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="save and submit"

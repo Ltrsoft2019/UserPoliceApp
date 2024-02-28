@@ -7,7 +7,8 @@
     android:layout_margin="20dp"
     android:backgroundTint="#F8F9FA"
     app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
+    app:cardElevation="10dp"
+    android:id="@+id/cardView">
 
     <LinearLayout
         android:layout_width="300dp"
@@ -24,6 +25,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/complaintIdTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -49,6 +51,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/natureOfComplaintTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
@@ -74,6 +77,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/statusTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="112dp"
@@ -99,6 +103,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/complaintDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="52dp"
