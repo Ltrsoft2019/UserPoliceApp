@@ -32,6 +32,21 @@ public class AddWeaponLiscense2 extends Fragment {
         view = inflater.inflate(R.layout.addweapenlicence2, container, false);
 
         setid();
+
+        // Define variables to hold the data
+        String officeOrBusinessAddress, additionalParticulars, areaOrLandOfCultivation, locationOfCultivation;
+        boolean isApplicantConvicted, isApplicantOrderedToBeConvicted, isApplicantProhibited;
+
+        // Retrieve the text from EditText fields
+        officeOrBusinessAddress = editTextOfficeOrBusinessAddress.getText().toString();
+        additionalParticulars = editTextAdditionalParticulars.getText().toString();
+        areaOrLandOfCultivation = editTextAreaOrLandOfCultivation.getText().toString();
+        locationOfCultivation = editTextLocationOfCultivation.getText().toString();
+
+        // Retrieve the state from CheckBoxes
+        isApplicantConvicted = checkBoxApplicantConvicted.isChecked();
+        isApplicantOrderedToBeConvicted = checkBoxApplicantOrderedToBeConvicted.isChecked();
+        isApplicantProhibited = checkBoxApplicantProhibited.isChecked();
         return view;
     }
 

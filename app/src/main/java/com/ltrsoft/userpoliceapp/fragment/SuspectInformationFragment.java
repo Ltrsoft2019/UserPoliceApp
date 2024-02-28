@@ -19,6 +19,8 @@ import androidx.fragment.app.Fragment;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
+import java.util.Locale;
+
 public class SuspectInformationFragment extends Fragment {
     public SuspectInformationFragment() {}
     private View view;
@@ -39,7 +41,50 @@ public class SuspectInformationFragment extends Fragment {
         view = inflater.inflate(R.layout.addcomplaintsuspect, container, false);
 
         setId();
+        String fullName, address, phoneNumber, emailAddress, passportNumber, driversLicense,
+                socialSecurityNumber, height, weight, hairColor, eyeColor, distinguishingFeatures,
+                occupation, educationLevel, maritalStatus, familyMembers, complaintId, description;
+        String gender, build, countryId, stateId, districtId, cityId;
+        String dob; // Date of Birth
+        boolean isSuspect;
 
+        // Retrieve the text from EditText fields
+        fullName = editTextFullName.getText().toString();
+        address = editTextAddress.getText().toString();
+        phoneNumber = editTextPhoneNumber.getText().toString();
+        emailAddress = editTextEmailAddress.getText().toString();
+        passportNumber = editTextPassportNumber.getText().toString();
+        driversLicense = editTextDriversLicense.getText().toString();
+        socialSecurityNumber = editTextSocialSecurityNumber.getText().toString();
+        height = editTextHeight.getText().toString();
+        weight = editTextWeight.getText().toString();
+        hairColor = editTextHairColor.getText().toString();
+        eyeColor = editTextEyeColor.getText().toString();
+        distinguishingFeatures = editTextDistinguishingFeatures.getText().toString();
+        occupation = editTextOccupation.getText().toString();
+        educationLevel = editTextEducationLevel.getText().toString();
+        maritalStatus = editTextMaritalStatus.getText().toString();
+        familyMembers = editTextFamilyMembers.getText().toString();
+        complaintId = editTextComplaintId.getText().toString();
+        description = editTextDescription.getText().toString();
+
+        // Retrieve the selected item from Spinners
+        gender = spinnerGender.getSelectedItem().toString();
+        build = spinnerBuild.getSelectedItem().toString();
+        countryId = spinnerCountryId.getSelectedItem().toString();
+        stateId = spinnerStateId.getSelectedItem().toString();
+        districtId = spinnerDistrictId.getSelectedItem().toString();
+        cityId = spinnerCityId.getSelectedItem().toString();
+
+        // Retrieve the date from DatePicker
+        // You need to extract the date from DatePicker and format it accordingly
+        // For simplicity, let's assume you have a method to format the date as needed
+        dob = formatDate(datePickerDob.getYear(), datePickerDob.getMonth(), datePickerDob.getDayOfMonth());
+
+        // Retrieve the state from CheckBox
+        isSuspect = checkBoxIsSuspect.isChecked();
+
+        // Now you have all the data, you can decide what t
         buttonComplaintSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,5 +165,9 @@ public class SuspectInformationFragment extends Fragment {
 
         checkBoxIsSuspect = view.findViewById(R.id.checkBoxIsSuspect);
 
+    }
+    private String formatDate(int year, int month, int dayOfMonth) {
+        // Format the date as needed, for example: MM/dd/yyyy
+        return String.format(Locale.getDefault(), "%02d/%02d/%d", month + 1, dayOfMonth, year);
     }
 }

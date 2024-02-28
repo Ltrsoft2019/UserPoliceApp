@@ -28,9 +28,15 @@ public class AddtenanrVerification2 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addtenentvarification2, container, false);
-
-
         setid();
+
+        String tenantPAddress = editTextTenantPAddress.getText().toString();
+        String tenantOccupation = editTextTenantOccupation.getText().toString();
+        String startDate = editTextStartDate.getText().toString();
+        String endDate = editTextEndDate.getText().toString();
+        String purposeOfTenancy = editTextPurposeOfTenancy.getText().toString();
+
+
         return view;
     }
 

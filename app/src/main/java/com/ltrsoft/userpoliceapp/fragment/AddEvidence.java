@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
+import java.util.Calendar;
+
 public class AddEvidence extends Fragment {
     public AddEvidence() {}
     private View view;
@@ -30,6 +32,25 @@ public class AddEvidence extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addcomplaintevidance, container, false);
+
+        String evidenceNumber = editTextEvidenceNumber.getText().toString();
+        String itemDescription = editTextItemDescription.getText().toString();
+        String serialNumbers = editTextSerialNumbers.getText().toString();
+        String packagingDetails = editTextPackagingDetails.getText().toString();
+
+        // Get selected item from Spinner
+        String complaintId = spinnerComplaintId.getSelectedItem().toString();
+        String evidenceTypeId = spinnerTextEvidenceTypeId.getSelectedItem().toString();
+
+        // Get selected date from DatePicker
+        int year = datePickerEvidenceSeizure.getYear();
+        int month = datePickerEvidenceSeizure.getMonth();
+        int dayOfMonth = datePickerEvidenceSeizure.getDayOfMonth();
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, dayOfMonth);
+
+
+
         setId();
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

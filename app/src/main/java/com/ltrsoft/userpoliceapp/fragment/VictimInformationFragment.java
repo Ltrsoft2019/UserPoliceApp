@@ -33,7 +33,39 @@ public class VictimInformationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.addcomplaintvictim, container, false);
        setId();
-       buttonSubmit.setOnClickListener(new View.OnClickListener() {
+        String fullName = editTextFullName.getText().toString();
+        String address = editTextAddress.getText().toString();
+        String phoneNumber = editTextPhoneNumber.getText().toString();
+        String emailAddress = editTextEmailAddress.getText().toString();
+        String passportNumber = editTextPassportNumber.getText().toString();
+        String driversLicense = editTextDriversLicense.getText().toString();
+        String socialSecurityNumber = editTextSocialSecurityNumber.getText().toString();
+        String height = editTextHeight.getText().toString();
+        String weight = editTextWeight.getText().toString();
+        String hairColor = editTextHairColor.getText().toString();
+        String eyeColor = editTextEyeColor.getText().toString();
+        String distinguishingFeatures = editTextDistinguishingFeatures.getText().toString();
+        String occupation = editTextOccupation.getText().toString();
+        String educationLevel = editTextEducationLevel.getText().toString();
+        String maritalStatus = editTextMaritalStatus.getText().toString();
+        String familyMembers = editTextFamilyMembers.getText().toString();
+        String complaintId = editTextComplaintId.getText().toString();
+        String description = editTextDescription.getText().toString();
+
+        String selectedGender = spinnerGender.getSelectedItem().toString();
+        String selectedBuild = spinnerBuild.getSelectedItem().toString();
+        String selectedCountryId = spinnerCountryId.getSelectedItem().toString();
+        String selectedStateId = spinnerStateId.getSelectedItem().toString();
+        String selectedDistrictId = spinnerDistrictId.getSelectedItem().toString();
+        String selectedCityId = spinnerCityId.getSelectedItem().toString();
+
+        int day = datePickerDob.getDayOfMonth();
+        int month = datePickerDob.getMonth() + 1; // Month is 0-indexed
+        int year = datePickerDob.getYear();
+        String dob = year + "-" + month + "-" + day;
+        boolean isVictim = checkBoxIsVictim.isChecked();
+
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                if (validData()){
@@ -46,7 +78,6 @@ public class VictimInformationFragment extends Fragment {
        });
         return view;
     }
-
     private boolean validData() {
         boolean valid =true;
 
@@ -67,10 +98,8 @@ public class VictimInformationFragment extends Fragment {
         valid &= Validations.validateEditText(editTextMaritalStatus,"full name");
         valid &= Validations.validateEditText(editTextFamilyMembers,"full name");
         valid &= Validations.validateEditText(editTextDistinguishingFeatures,"full name");
-
         return valid;
     }
-
     private void setId() {
         editTextFullName = view.findViewById(R.id.editTextFullName);
         editTextAddress = view.findViewById(R.id.editTextAddress);
@@ -100,7 +129,5 @@ public class VictimInformationFragment extends Fragment {
         checkBoxIsVictim = view.findViewById(R.id.checkBoxIsVictim);
         buttonPhoto = view.findViewById(R.id.buttonPhoto);
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
-
     }
-
 }

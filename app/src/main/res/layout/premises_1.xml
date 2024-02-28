@@ -194,6 +194,7 @@
             android:inputType="textMultiLine"
             android:hint="Enter Nature of Amusement"/>
         <Button
+            android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="save and submit"

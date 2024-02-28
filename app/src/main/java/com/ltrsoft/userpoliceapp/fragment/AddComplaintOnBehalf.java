@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.LocationDao;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
-
 public class AddComplaintOnBehalf extends Fragment {
     private boolean valid;
     private EditText editTextFirstName, editTextMiddleName, editTextLastName, editTextAddress,
@@ -24,10 +23,8 @@ public class AddComplaintOnBehalf extends Fragment {
             editTextNotificationToken,  editTextStateId, editTextDistrictId,
             editTextCityId, editTextComplaintSubject, editTextComplaintDescription, editTextAgainst,
              editTextLatitude, editTextLongitude;
-
-    private Spinner spinnerGender,editTextSubtypeId,editTextCountryId;
+    private Spinner spinnerGender,editTextSubtypeId,editTextCountryId,spinnersationId;
     private DatePicker datePickerDob, datePickerIncidentDate;
-
     private Button buttonUserSubmit, buttonComplaintSubmit;
     private ArrayAdapter<String>adapter;
     private View view;
@@ -74,6 +71,7 @@ public class AddComplaintOnBehalf extends Fragment {
     }
 
     private void setId() {
+        spinnersationId = view.findViewById(R.id.spinnerstation);
         editTextFirstName = view.findViewById(R.id.editTextFirstName);
         editTextMiddleName = view.findViewById(R.id.editTextMiddleName);
         editTextLastName = view.findViewById(R.id.editTextLastName);

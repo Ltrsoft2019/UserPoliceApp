@@ -1,7 +1,28 @@
 package com.ltrsoft.userpoliceapp.model;
 
-public class TenantVerification {
+public class TenantVerification2 {
     private String tenant_verification_id, user_id, rental_property_id, type_of_property, units, bedrooms_number, full_name_tenant, tenant_contact_number, tenant_email, tenant_paddress, tenant_occupation, start_date, end_date, purpose_of_tenancy, signature_photo, station_id, status_id, permission_id;
+
+    public TenantVerification2(String tenant_verification_id, String user_id, String rental_property_id, String type_of_property, String units, String bedrooms_number, String full_name_tenant, String tenant_contact_number, String tenant_email, String tenant_paddress, String tenant_occupation, String start_date, String end_date, String purpose_of_tenancy, String signature_photo, String station_id, String status_id, String permission_id) {
+        this.tenant_verification_id = tenant_verification_id;
+        this.user_id = user_id;
+        this.rental_property_id = rental_property_id;
+        this.type_of_property = type_of_property;
+        this.units = units;
+        this.bedrooms_number = bedrooms_number;
+        this.full_name_tenant = full_name_tenant;
+        this.tenant_contact_number = tenant_contact_number;
+        this.tenant_email = tenant_email;
+        this.tenant_paddress = tenant_paddress;
+        this.tenant_occupation = tenant_occupation;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.purpose_of_tenancy = purpose_of_tenancy;
+        this.signature_photo = signature_photo;
+        this.station_id = station_id;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
 
     public String getTenant_verification_id() {
         return tenant_verification_id;

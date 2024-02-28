@@ -60,15 +60,16 @@
             android:hint="Description of the Object"/>
 
         <!-- Photo -->
+
+        <!-- Location -->
         <ImageView
             android:id="@+id/imageViewObjectPhoto"
             android:layout_width="200dp"
             android:layout_height="200dp"
-             android:layout_margin="20dp"
-            android:scaleType="fitCenter"
-            android:layout_marginBottom="16dp"/>
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="fitCenter" />
 
-        <!-- Location -->
         <EditText
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"

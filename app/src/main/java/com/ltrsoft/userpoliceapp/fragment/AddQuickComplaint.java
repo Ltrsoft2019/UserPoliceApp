@@ -18,21 +18,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
-
+import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.utils.TakingImage;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 public class AddQuickComplaint extends Fragment {
     public AddQuickComplaint() {
@@ -40,14 +34,12 @@ public class AddQuickComplaint extends Fragment {
     private View view;
     private ImageView imageView;
     private Button photoPathButton;
-    private Button stationIdButton;
+    private Spinner stationIdButton;
     private EditText descriptionEditText;
     private EditText addressEditText;
     private Button submitButton;
     private static final int CAMERA_REQ_CODE = 104;
     private static final int GALLERY_REQ_CODE = 105;
-
-
     private Bitmap bitmap;
     private String encodeImage;
 
@@ -61,17 +53,11 @@ public class AddQuickComplaint extends Fragment {
         photoPathButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                    TakingImage.showImagesource(getActivity(), new TakingImage.Imagereturn() {
-                        @Override
-                        public void onimageready(Bitmap bitmap) {
-                            imageView.setImageBitmap(bitmap);
-                        }
-                    });
-
              }
         });
-
+        String description = descriptionEditText.getText().toString();
+        String address = addressEditText.getText().toString();
+//        String stationId = stationIdButton.getSelectedItem().toString();
         return view;
     }
 
@@ -84,15 +70,32 @@ public class AddQuickComplaint extends Fragment {
         submitButton = view.findViewById(R.id.buttonSubmit);
     }
 
-    public  void onActivityresult(int requestcode,int resultcode,@Nullable Intent data){
-        super.onActivityResult(requestcode,requestcode,data);
-        TakingImage.onActivityResult(getActivity(), requestcode, resultcode, data, new TakingImage.Imagereturn() {
-            @Override
-            public void onimageready(Bitmap bitmap) {
-                imageView.setImageBitmap(bitmap);
-            }
-        });
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+//        ImageSelectionUtil.handleActivityResult(requestCode,resultCode,data,imageView,getContext());
+
     }
 
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == ImageSelectionUtil.PERMISSION_REQUEST_CODE) {
+//            // Check if all permissions are granted
+//            boolean allPermissionsGranted = true;
+//            for (int grantResult : grantResults) {
+//                if (grantResult != PackageManager.PERMISSION_GRANTED) {
+//                    allPermissionsGranted = false;
+//                    break;
+//                }
+//            }
+//            if (allPermissionsGranted) {
+//                // Permissions granted, proceed with image selection
+//                ImageSelectionUtil.selectImage(getActivity(), imageView);
+//            } else {
+//                Toast.makeText(getActivity(), "Permissions required for image selection", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+    }
 }

@@ -168,9 +168,9 @@
                 android:hint="Notification Token" />
 
             <!-- Station -->
-            <Button
+            <Spinner
                 android:visibility="gone"
-                android:id="@+id/editTextStationId"
+                android:id="@+id/spinnerstation"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"

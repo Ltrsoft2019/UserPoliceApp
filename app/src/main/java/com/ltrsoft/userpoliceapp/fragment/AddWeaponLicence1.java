@@ -28,6 +28,16 @@ public class AddWeaponLicence1 extends Fragment  {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addweapenlicence1, container, false);
         setid();
+
+        String parentOrSpouseName, village, presentAddress, residingSince, officeNumber, residenceNumber;
+
+        // Retrieve the text from EditText fields
+        parentOrSpouseName = editTextParentOrSpouseName.getText().toString();
+        village = editTextVillage.getText().toString();
+        presentAddress = editTextPresentAddress.getText().toString();
+        residingSince = editTextResidingSince.getText().toString();
+        officeNumber = editTextOfficeNumber.getText().toString();
+        residenceNumber = editTextResidenceNumber.getText().toString();
         return view;
     }
 
