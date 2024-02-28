@@ -1,7 +1,7 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class Country {
-
+ public static final String GETCOUNTRY = "https://rj.ltr-soft.com/public/police_api/country/select_country.php";
     private String id,name;
 
     public String getId() {

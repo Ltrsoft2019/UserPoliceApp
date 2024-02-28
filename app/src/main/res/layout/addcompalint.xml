@@ -11,8 +11,9 @@
         android:layout_height="60dp"
         app:menu="@menu/complaintmenu"/>
 
-
     <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/complaint_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="60dp">

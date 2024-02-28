@@ -1,6 +1,7 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class District {
+    public static final String GETSISTRICT ="";
 
     private String id,
     name,

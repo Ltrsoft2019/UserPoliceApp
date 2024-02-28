@@ -77,6 +77,7 @@ public class DAO<T> {
                 return map;
             }
         };
+        queue.add(request);
     }
     public void insertOrUpdate(Object o, NewCallBack callBack,String url){
         hashMap = ObjToMap.convertObjectToHashMap(o, new ErrorListener() {
