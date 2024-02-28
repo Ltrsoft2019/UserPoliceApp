@@ -56,12 +56,7 @@ public class AddQuickComplaint extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addquickcomplaint, container, false);
-        imageView = view.findViewById(R.id.imageView);
-        photoPathButton = view.findViewById(R.id.editTextPhotoPath);
-        stationIdButton = view.findViewById(R.id.editTextStationId);
-        descriptionEditText = view.findViewById(R.id.editTextDescription);
-        addressEditText = view.findViewById(R.id.editTextAddress);
-        submitButton = view.findViewById(R.id.buttonSubmit);
+      setid();
         TakingImage takingImage=new TakingImage();
         photoPathButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +74,16 @@ public class AddQuickComplaint extends Fragment {
 
         return view;
     }
+
+    private void setid() {
+        imageView = view.findViewById(R.id.imageView);
+        photoPathButton = view.findViewById(R.id.editTextPhotoPath);
+        stationIdButton = view.findViewById(R.id.editTextStationId);
+        descriptionEditText = view.findViewById(R.id.editTextDescription);
+        addressEditText = view.findViewById(R.id.editTextAddress);
+        submitButton = view.findViewById(R.id.buttonSubmit);
+    }
+
     public  void onActivityresult(int requestcode,int resultcode,@Nullable Intent data){
         super.onActivityResult(requestcode,requestcode,data);
         TakingImage.onActivityResult(getActivity(), requestcode, resultcode, data, new TakingImage.Imagereturn() {
