@@ -15,15 +15,17 @@ import android.widget.Toast;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.LocationDao;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.utils.Validations;
+
 public class AddComplaintOnBehalf extends Fragment {
     private boolean valid;
     private EditText editTextFirstName, editTextMiddleName, editTextLastName, editTextAddress,
             editTextEmail, editTextPassword, editTextMobile1, editTextMobile2, editTextAadhar,
             editTextPAN, editTextOccupation, editTextNationality, editTextDrivingLicense,
-            editTextNotificationToken,  editTextStateId, editTextDistrictId,
-            editTextCityId, editTextComplaintSubject, editTextComplaintDescription, editTextAgainst,
+            editTextNotificationToken, editTextComplaintSubject, editTextComplaintDescription, editTextAgainst,
              editTextLatitude, editTextLongitude;
-    private Spinner spinnerGender,editTextSubtypeId,editTextCountryId,spinnersationId;
+    private Spinner spinnerGender,editTextSubtypeId,editTextCountryId,spinnersationId, editTextStateId, editTextDistrictId,
+    editTextCityId;
     private DatePicker datePickerDob, datePickerIncidentDate;
     private Button buttonUserSubmit, buttonComplaintSubmit;
     private ArrayAdapter<String>adapter;
@@ -107,48 +109,27 @@ public class AddComplaintOnBehalf extends Fragment {
     private boolean validateForm() {
         boolean isValid = true;
 
-        isValid &= validateEditText(editTextFirstName, "First Name");
-        isValid &= validateEditText(editTextMiddleName, "Middle Name");
-        isValid &= validateEditText(editTextLastName, "Last Name");
-        isValid &= validateEditText(editTextAddress, "Address");
-        isValid &= validateEditText(editTextEmail, "Email");
-        isValid &= validateEditText(editTextPassword, "Password");
-        isValid &= validateEditText(editTextMobile1, "Mobile Number 1");
-        isValid &= validateEditText(editTextMobile2, "Mobile Number 2");
-        isValid &= validateEditText(editTextAadhar, "Aadhar Number");
-        isValid &= validateEditText(editTextPAN, "PAN Number");
-        isValid &= validateEditText(editTextOccupation, "Occupation");
-        isValid &= validateEditText(editTextNationality, "Nationality");
-        isValid &= validateEditText(editTextDrivingLicense, "Driving License");
+        isValid &= Validations.validateEditText(editTextFirstName, "First Name");
+        isValid &= Validations.validateEditText(editTextMiddleName, "Middle Name");
+        isValid &= Validations.validateEditText(editTextLastName, "Last Name");
+        isValid &= Validations.validateEditText(editTextAddress, "Address");
+        isValid &= Validations.validateEditText(editTextEmail, "Email");
+        isValid &= Validations.validateEditText(editTextPassword, "Password");
+        isValid &= Validations.validateEditText(editTextMobile1, "Mobile Number 1");
+        isValid &= Validations.validateEditText(editTextMobile2, "Mobile Number 2");
+        isValid &= Validations.validateEditText(editTextAadhar, "Aadhar Number");
+        isValid &= Validations.validateEditText(editTextPAN, "PAN Number");
+        isValid &= Validations.validateEditText(editTextOccupation, "Occupation");
+        isValid &= Validations.validateEditText(editTextNationality, "Nationality");
+        isValid &= Validations.validateEditText(editTextDrivingLicense, "Driving License");
 //        isValid &= validateEditText(editTextCountryId, "Country");
-        isValid &= validateEditText(editTextStateId, "State");
-        isValid &= validateEditText(editTextDistrictId, "District");
-        isValid &= validateEditText(editTextCityId, "City");
-        isValid &= validateEditText(editTextComplaintSubject, "Complaint Subject");
-        isValid &= validateEditText(editTextComplaintDescription, "Complaint Description");
-        isValid &= validateEditText(editTextAgainst, "Against");
+        isValid &= Validations.validateSpinner(editTextStateId, "State");
+        isValid &= Validations.validateSpinner(editTextDistrictId, "District");
+        isValid &= Validations.validateSpinner(editTextCityId, "City");
+        isValid &= Validations.validateEditText(editTextComplaintSubject, "Complaint Subject");
+        isValid &= Validations.validateEditText(editTextComplaintDescription, "Complaint Description");
+        isValid &= Validations.validateEditText(editTextAgainst, "Against");
 
         return isValid;
     }
-    private boolean validateEditText(EditText editText, String fieldName) {
-        String text = editText.getText().toString().trim();
-        if (text.isEmpty()) {
-            editText.setError(fieldName + " is required");
-            editText.requestFocus();
-            return false;
-        }
-        return true;
-    }
-
-    private boolean validateSpinner(Spinner spinner, String fieldName) {
-//        String selectedItem = spinner.getSelectedItem().toString();
-//        if (selectedItem.isEmpty() || selectedItem.equals("Select")) { // Change "Select" according to your default selection
-//            // Show error message or handle validation failure as needed
-//            // For spinners, you can't set an error directly, you might use a TextView to display the error message
-//            return false;
-//        }
-//        return true;
-        return true;
-    }
-
 }

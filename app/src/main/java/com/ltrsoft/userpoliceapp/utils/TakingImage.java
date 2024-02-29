@@ -86,7 +86,6 @@ public class TakingImage extends AppCompatActivity  {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    //bitmap = BitmapFactory.decodeStream(inputStream);
                 }
             }
         }

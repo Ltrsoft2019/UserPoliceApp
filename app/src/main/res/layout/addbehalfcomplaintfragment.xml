@@ -185,7 +185,7 @@
                 android:hint="Country" />
 
             <!-- State -->
-            <EditText
+            <Spinner
                 android:id="@+id/editTextStateId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                 android:hint="State" />
 
             <!-- District -->
-            <EditText
+            <Spinner
                 android:id="@+id/editTextDistrictId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
                 android:hint="District" />
 
             <!-- City -->
-            <EditText
+            <Spinner
                 android:id="@+id/editTextCityId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
