@@ -1,5 +1,8 @@
 package com.ltrsoft.userpoliceapp.fragment;
 
+import com.google.android.gms.location.LocationServices;
+import android.Manifest;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,19 +11,26 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.helper.LocationHelper;
 import com.ltrsoft.userpoliceapp.model.Complaint;
+import com.ltrsoft.userpoliceapp.model.Permission;
+import com.ltrsoft.userpoliceapp.utils.PermissionUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class AddselfComplaint extends Fragment {
+public class AddselfComplaint extends Fragment implements LocationHelper.LocationResultListener {
+    private static final int REQUESTCODE = 1000;
+    private FusedLocationProviderClient fusedLocationProviderClient;
     public AddselfComplaint() {
     }
    private  View view;
@@ -41,10 +51,29 @@ public class AddselfComplaint extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addselftcomplaintfragment, container, false);
-
      setid();
+        UserSubmit.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+//             PermissionUtils.requestPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION);
+             if (!PermissionUtils.isPermissionGranted(getContext(),Manifest.permission.ACCESS_FINE_LOCATION)) {
+                 PermissionUtils.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, REQUESTCODE);
+             }
+             else {
+                 Toast.makeText(getContext(), "permission already granted", Toast.LENGTH_SHORT).show();
+                getLocation();
+             }
+
+         }
+     });
      Complaint complaint = createComplaintObject();
         return view;
+    }
+
+    private void getLocation() {
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        LocationHelper helper = new LocationHelper(getContext());
+        helper.getLastKnownLocation(this);
     }
 
     private void setid() {
@@ -102,4 +131,22 @@ public class AddselfComplaint extends Fragment {
         return new Complaint("", complaintSubject, complaintDescription, against,
                 incidentDate, statusId, latitude, longitude, userId, complaintFirId, subtypeId, "", "");
     }
+
+    @Override
+    public void onLocationAvailable(Location location) {
+        if (location != null) {
+            Toast.makeText(getContext(), "Latitude: " + location.getLatitude() + ", Longitude: " + location.getLongitude(), Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getContext(), "Location is null", Toast.LENGTH_SHORT).show();
+        }    }
+
+    @Override
+    public void onLocationUnavailable() {
+        Toast.makeText(getContext(), "location is unavailable", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+        public void onPermissionDenied() {
+        Toast.makeText(getContext(), "permisssions denied", Toast.LENGTH_SHORT).show();
+        }
 }
