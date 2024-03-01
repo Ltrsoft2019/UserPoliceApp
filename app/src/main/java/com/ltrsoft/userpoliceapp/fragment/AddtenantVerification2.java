@@ -7,23 +7,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
-public class AddtenanrVerification2 extends Fragment {
-    public AddtenanrVerification2() {
+public class AddtenantVerification2 extends Fragment {
+    public AddtenantVerification2() {
     }
     private View view;
     private EditText editTextTenantPAddress, editTextTenantOccupation,
             editTextStartDate, editTextEndDate, editTextPurposeOfTenancy;
 
     private ImageView imageViewSignaturePhoto;
+    private Spinner editTextStationId;
 
-    private Button editTextStationId, buttonSubmit;
+    private Button   buttonSubmit;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,5 +56,20 @@ public class AddtenanrVerification2 extends Fragment {
         // Find the Button
         editTextStationId = view.findViewById(R.id.editTextStationId);
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextTenantPAddress,"Enter Tenant Permanat Address ");
+        valid &= Validations.validateEditText( editTextTenantOccupation,"Enter the Tenant Occupation ");
+        valid &= Validations.validateEditText(editTextStartDate,"Enter The StartDate ");
+        valid &= Validations.validateEditText(editTextEndDate,"Enter The EndDate ");
+        valid &= Validations.validateEditText(editTextPurposeOfTenancy," Enter Purpose Of Tenancy");
+        valid &= Validations.validateSpinner(editTextStationId,"Select Station Id ");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

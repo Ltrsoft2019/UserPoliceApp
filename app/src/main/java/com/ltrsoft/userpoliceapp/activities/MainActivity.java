@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ltrsoft.userpoliceapp.R;
-import com.ltrsoft.userpoliceapp.fragment.AddComplaintOnBehalf;
-import com.ltrsoft.userpoliceapp.fragment.AddQuickComplaint;
-import com.ltrsoft.userpoliceapp.fragment.AddselfComplaint;
-import com.ltrsoft.userpoliceapp.fragment.SuspectInformationFragment;
-import com.ltrsoft.userpoliceapp.fragment.VictimInformationFragment;
+import com.ltrsoft.userpoliceapp.fragment.AddtenantVerification2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.main_container,new AddselfComplaint()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.main_container,new AddtenantVerification2() ).commit();
 
     }
 }

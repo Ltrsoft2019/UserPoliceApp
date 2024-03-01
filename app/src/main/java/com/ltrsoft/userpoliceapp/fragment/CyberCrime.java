@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 
 public class CyberCrime extends Fragment {
@@ -52,7 +53,7 @@ public class CyberCrime extends Fragment {
     private void saveAndSubmitData() {
         // Get data from EditText fields
         String lostMoney = editTextLostMoney.getText().toString();
-        String dateTime = editTextDateTime.getText().toString();
+        String dateTime = editTextLostMoney.getText().toString();
         String whereOccurred = editTextWhereOccurred.getText().toString();
         String description = editTextDescription.getText().toString();
 
@@ -60,6 +61,19 @@ public class CyberCrime extends Fragment {
         String isDelay = radioButtonYesDelay.isChecked() ? "Yes" : "No";
 
 
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextLostMoney,"Enter The Lost Money ");
+        valid &= Validations.validateEditText( editTextLostMoney,"Enter the Lost Money ");
+        valid &= Validations.validateEditText(editTextWhereOccurred,"Enter The  Occured ");
+        valid &= Validations.validateEditText(editTextDescription,"Enter The Description");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }
 

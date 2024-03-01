@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class AddWeaponLicence1 extends Fragment  {
     public AddWeaponLicence1() {
@@ -20,8 +22,8 @@ public class AddWeaponLicence1 extends Fragment  {
     private EditText editTextParentOrSpouseName, editTextVillage, editTextPresentAddress,
             editTextResidingSince, editTextOfficeNumber, editTextResidenceNumber;
 
-    private Button editTextStationId, buttonSubmit;
-
+    private Button   buttonSubmit;
+    private Spinner editTextStationId;
 
     @Nullable
     @Override
@@ -53,5 +55,20 @@ public class AddWeaponLicence1 extends Fragment  {
         // Find the Button
         editTextStationId = view.findViewById(R.id.editTextStationId);
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextParentOrSpouseName,"Enter ParentOrSpouseName ");
+        valid &= Validations.validateEditText( editTextVillage,"Enter the Village ");
+        valid &= Validations.validateEditText(editTextPresentAddress,"Enter The PresentAddress ");
+        valid &= Validations.validateEditText(editTextResidingSince,"Enter The ResidingSince ");
+        valid &= Validations.validateEditText(editTextOfficeNumber," Enter TextOfficeNumber");
+        valid &= Validations.validateEditText(editTextResidenceNumber," Enter The Residence Number");
+
+        valid &= Validations.validateSpinner(editTextStationId,"Select Station Id ");
+
+
+        return valid;
     }
 }

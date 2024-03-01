@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class GrievanceFragment extends Fragment {
 
@@ -51,5 +52,20 @@ public class GrievanceFragment extends Fragment {
         String description = editTextDescription.getText().toString();
         String actionRequired = editTextActionRequired.getText().toString();
         String outcome = editTextOutcome.getText().toString();
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextNatureOfGrievance,"Enter The Nature Of Grievance ");
+        valid &= Validations.validateEditText( editTextDate,"Enter the Date ");
+        valid &= Validations.validateEditText(editTextLocation,"Enter The Location");
+        valid &= Validations.validateEditText(editTextDescription,"Enter The Description ");
+        valid &= Validations.isValidEmail(editTextActionRequired," Enter The ActionRequired");
+        valid &= Validations.validateEditText(editTextOutcome," Enter The Outcome");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

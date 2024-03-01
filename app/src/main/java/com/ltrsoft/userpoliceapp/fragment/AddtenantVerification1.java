@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class AddtenantVerification1 extends Fragment {
     public AddtenantVerification1() {
@@ -46,5 +47,20 @@ public class AddtenantVerification1 extends Fragment {
 
         // Find the Button
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextTypeOfProperty,"Type Of Property ");
+        valid &= Validations.validateEditText( editTextUnits,"Enter the unit ");
+        valid &= Validations.validateEditText(editTextBedroomsNumber,"Enter The BedroomsNumber ");
+        valid &= Validations.validateEditText(editTextFullNameTenant,"Enter FullName ");
+        valid &= Validations.validateEditText(editTextTenantContactNumber," Enter TenantContactNumber");
+        valid &= Validations.isValidEmail(editTextFullNameTenant,"Enter FullName ");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

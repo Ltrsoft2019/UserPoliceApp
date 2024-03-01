@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.model.ArmLicenses;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class AddWeaponliscense3 extends Fragment {
     public AddWeaponliscense3() {
@@ -96,5 +97,21 @@ public class AddWeaponliscense3 extends Fragment {
 
         // Find the Button
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextArmsType,"Enter The ArmsType ");
+        valid &= Validations.validateEditText( editTextAmmunationDescription,"Enter the AmmunationDescription ");
+        valid &= Validations.validateEditText(editTextAreaOfArmCarry,"Enter The AreaOfArmCarry ");
+        valid &= Validations.validateEditText(editTextSpecialConsideration,"Enter The SpecialConsideration ");
+        valid &= Validations.validateEditText(editTextDetailForFormIV," Enter DetailForFormIV");
+        valid &= Validations.validateEditText(editTextPlaceOfBirth," Enter The PlaceOfBirth");
+        valid &= Validations.validateEditText(editTextDobInWords," Enter The DobInWords");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

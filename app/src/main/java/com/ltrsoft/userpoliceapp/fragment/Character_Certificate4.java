@@ -6,20 +6,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class Character_Certificate4 extends Fragment {
     public Character_Certificate4() {
     }
     private View view;
     private EditText editTextPBuilding, editTextPStreet, editTextPLandmark, editTextPLocality,
-            editTextPStateID, editTextPDistrictID, editTextPincode;
+                editTextPincode;
     private Button buttonSaveAndProceed;
+    private Spinner editTextPStateID,editTextPDistrictID;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -52,11 +55,27 @@ public class Character_Certificate4 extends Fragment {
         String street = editTextPStreet.getText().toString();
         String landmark = editTextPLandmark.getText().toString();
         String locality = editTextPLocality.getText().toString();
-        String stateID = editTextPStateID.getText().toString();
-        String districtID = editTextPDistrictID.getText().toString();
+        //String stateID = editTextPStateID.getText().toString();
+        //String districtID = editTextPDistrictID.getText().toString();
         String pincode = editTextPincode.getText().toString();
 
         // Now you can proceed with the entered data
         // For example, you can validate the data and proceed to the next step
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextPBuilding,"Enter The Permanant Building ");
+        valid &= Validations.validateEditText( editTextPStreet,"Enter the Permanant Street ");
+        valid &= Validations.validateEditText(editTextPLandmark,"Enter The Permanant Landmark ");
+        valid &= Validations.validateEditText(editTextPLocality,"Enter The Permanant Locality ");
+        valid &= Validations.validateSpinner(editTextPDistrictID," Enter District");
+        valid &= Validations.validateSpinner(editTextPStateID," Enter State ");
+        valid &= Validations.validateEditText(editTextPincode," Enter The Pincode");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

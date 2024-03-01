@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class Character_Certificate6 extends Fragment {
     public Character_Certificate6() {
@@ -52,5 +53,18 @@ public class Character_Certificate6 extends Fragment {
         editTextPlacePincode = view.findViewById(R.id.editTextPlacePincode);
         buttonSaveAndSubmit = view.findViewById(R.id.buttonSaveAndSubmit);
 
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextAddress,"Enter The Address ");
+        valid &= Validations.validateEditText( editTextFrom,"Enter the  From ");
+        valid &= Validations.validateEditText(editTextTo,"Enter The To ");
+        valid &= Validations.validateEditText(editTextPlacePincode,"Enter The Pincode ");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

@@ -58,7 +58,7 @@ public class Validations {
     }
 
 
-    public boolean isValidEmail(EditText editText, String errorMessage) {
+    public static boolean isValidEmail(EditText editText, String errorMessage) {
         String email = editText.getText().toString().trim();
 
         // Regular expression pattern for email validation

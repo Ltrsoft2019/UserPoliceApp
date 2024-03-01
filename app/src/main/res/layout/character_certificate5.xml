@@ -85,7 +85,7 @@
             android:layout_marginLeft="20dp"
             android:text="राज्य"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextCStateID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
             android:layout_marginLeft="20dp"
             android:text="जिल्हा"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextCDistrictID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

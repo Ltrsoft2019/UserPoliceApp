@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class NocPetroleaum1 extends Fragment {
 
@@ -72,6 +73,22 @@ public class NocPetroleaum1 extends Fragment {
 
         // Perform any further processing or validation on the retrieved data.
         // You can save the data to a database, send it to a server, or perform any other necessary action.
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextTypesOfControlBlasting,"Enter The  Types Of ControlBlasting ");
+        valid &= Validations.validateEditText( editTextFax,"Enter the  Fax ");
+        valid &= Validations.validateEditText(editTextResidingSince,"Enter The  Residing Since");
+        valid &= Validations.validateEditText(editTextPlaceOfBirth,"Enter The  Place Of Birth ");
+        valid &= Validations.isValidEmail(editTextFathersName," Enter The Fathers Name");
+        valid &= Validations.validateEditText(editTextCharacterLicense," Enter The Character License");
+        valid &= Validations.validateEditText(editTextNocPetroleumId," Enter The  NocPetroleumId");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }
 

@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class EmployeeVerification extends Fragment {
 
@@ -77,5 +78,28 @@ public class EmployeeVerification extends Fragment {
         String addressProofIssuingAuthority = editTextAddressProofIssuingAuthority.getText().toString();
         String addressProofDateOfIssue = editTextAddressProofDateOfIssue.getText().toString();
 
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextCompanyName,"Enter The Company Name ");
+        valid &= Validations.validateEditText( editTextCompanyAddress,"Enter the  Company Address ");
+        valid &= Validations.validateEditText(editTextJobDescriptionResponsibilities,"Enter The  Job Description Responsibilities");
+       // valid &= Validations.validateEditText(editTextContactNumber,"Enter The Contact Number ");
+        //valid &= Validations.isValidEmail(editTextEmailAddress," Enter Email");
+        //valid &= Validations.validateEditText(editTextPreviousEmployer," Enter The Privious Employer");
+        valid &= Validations.validateEditText(editTextReasonForLeaving," Enter The Reason For Leaving");
+        //valid &= Validations.validateEditText(editTextIdentificationDocuments," Enter The Identification Documents");
+        valid &= Validations.validateEditText(editTextIdentityProofDocNumber," Enter The Identity Proof DocNumber");
+        valid &= Validations.validateEditText(editTextIdentityProofIssuingAuthority," Enter The Identity ProofIssuing Authority");
+        valid &= Validations.validateEditText(editTextIdentityProofDateOfIssue," Enter The Identity Proof Date Of Issue");
+        valid &= Validations.validateEditText(editTextIdentityProofDateOfExpiry," Enter The Identity Proof Date Of Expiry");
+        valid &= Validations.validateEditText(editTextAddressProofDocNumber," Enter The Address Proof DocNumber");
+        valid &= Validations.validateEditText(editTextAddressProofIssuingAuthority," Enter The Address Proof Issuing Authority");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }

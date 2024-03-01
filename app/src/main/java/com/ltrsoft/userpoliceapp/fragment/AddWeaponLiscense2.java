@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class AddWeaponLiscense2 extends Fragment {
     public AddWeaponLiscense2() {
@@ -64,5 +65,17 @@ public class AddWeaponLiscense2 extends Fragment {
         // Find the Button
         buttonSubmit = view.findViewById(R.id.buttonSubmit);
 
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextOfficeOrBusinessAddress,"Enter The Office Or BusinessAddress ");
+        valid &= Validations.validateEditText( editTextAdditionalParticulars,"Enter the AdditionalParticulars ");
+        valid &= Validations.validateEditText(editTextAreaOrLandOfCultivation,"Enter The Area Or LandOfCultivation ");
+        valid &= Validations.validateEditText(editTextLocationOfCultivation,"Enter The LocationOfCultivation ");
+
+
+
+        return valid;
     }
 }

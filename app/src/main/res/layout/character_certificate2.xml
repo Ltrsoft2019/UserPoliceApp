@@ -85,7 +85,7 @@
             android:layout_marginLeft="20dp"
             android:text="State"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextStateID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
             android:layout_marginLeft="20dp"
             android:text="District"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextDistrictID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -106,7 +106,7 @@ public class AddComplaintOnBehalf extends Fragment {
 
     }
 
-    private boolean validateForm() {
+    private boolean   validateForm() {
         boolean isValid = true;
 
         isValid &= Validations.validateEditText(editTextFirstName, "First Name");

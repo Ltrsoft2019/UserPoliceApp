@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class NocPetroleaum extends Fragment {
 
@@ -68,5 +69,20 @@ public class NocPetroleaum extends Fragment {
 
         // You can perform further actions with the retrieved data, such as validation or sending it to a server
     }
-}
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextWhichPetroleum,"Enter The  Which Petroleum ");
+        valid &= Validations.validateEditText( editTextOfficeNumber,"Enter the  Office Number ");
+        valid &= Validations.validateEditText(editTextResidenceNumber,"Enter The Residence Number");
+        valid &= Validations.validateEditText(editTextOccupation,"Enter The Occupation ");
+        valid &= Validations.isValidEmail(editTextQuantity," Enter The Quantity");
+        valid &= Validations.validateEditText(editTextBlastingDetail," Enter The BlastingDetail");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
+    }
+ }
 
