@@ -16,7 +16,6 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 import com.ltrsoft.userpoliceapp.R;
-import com.ltrsoft.userpoliceapp.fragment.MainDashBoard;
 
 public class MainNavigation extends Fragment  implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -32,35 +31,37 @@ public class MainNavigation extends Fragment  implements NavigationView.OnNaviga
         view = inflater.inflate(R.layout.main_navigation, container, false);
 
       initilizeDrwer();
-//      loadDefaultFragmnet();
+      loadDefaultFragmnet();
         return view;
     }
     private void loadDefaultFragmnet() {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.content_frame,new MainDashBoard())
+                .add(R.id.content_frame,new MainbottomNavigation())
                 .commit();
     }
 
     private void initilizeDrwer() {
+
+
         drawerLayout = view.findViewById(R.id.drawerlayout);
         navigationView= view.findViewById(R.id.navigation);
         toolbar = view.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        toolbar.setTitle("this is user app");
+        toolbar.setTitleTextAppearance(getContext(),R.style.ToolbarTitleText);
         actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout,toolbar,  R.string.nav_open, R.string.nav_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getContext().getColor(R.color.black));
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         return false;
     }
 }

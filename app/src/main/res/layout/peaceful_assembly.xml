@@ -224,7 +224,7 @@
             android:layout_marginLeft="20dp"
             android:text="Country" />
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextCountry"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -243,7 +243,7 @@
             android:layout_marginLeft="20dp"
             android:text="State" />
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextState"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -262,7 +262,7 @@
             android:layout_marginLeft="20dp"
             android:text="District" />
 
-        <EditText
+        <Spinner
             android:id="@+id/editTextDistrict"
             android:layout_width="match_parent"
             android:layout_height="50dp"

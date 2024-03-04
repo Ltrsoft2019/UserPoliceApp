@@ -1,7 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Dashboard" android:icon="@drawable/dashboard"/>
-    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="My Complaint" android:icon="@drawable/clipboard"/>
-    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Add" android:icon="@drawable/plusbutton"/>
-    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="E-services" android:icon="@drawable/commerce"/>
-    <item android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Emergency Calling" android:icon="@drawable/call"/>
+    <item
+        android:id="@+id/dashboard"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Dashboard" android:icon="@drawable/dashboard"/>
+    <item android:id="@+id/my_complaint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="My Complaint" android:icon="@drawable/clipboard"/>
+    <item android:id="@+id/add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Add" android:icon="@drawable/plusbutton"/>
+    <item android:id="@+id/eservices" android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="E-services" android:icon="@drawable/commerce"/>
+    <item android:id="@+id/emergency_calling" android:layout_width="wrap_content" android:layout_height="wrap_content" android:title="Emergency Calling" android:icon="@drawable/call"/>
 </menu>

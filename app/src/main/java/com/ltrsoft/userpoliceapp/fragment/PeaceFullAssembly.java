@@ -16,14 +16,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class PeaceFullAssembly extends Fragment {
 
     private EditText editTextNameOfOrganization, editTextDesignation, editTextProcessionReason,
             editTextDate, editTextNumberOfParticipants, editTextFrom, editTextTo,
-            editTextLocation, editTextCountry, editTextState, editTextDistrict, editTextVillageCity,
+            editTextLocation,       editTextVillageCity,
             editTextTimeFrom, editTextTimeTo;
-    private Spinner spinnerTypeOfProcession;
+    private Spinner spinnerTypeOfProcession,editTextCountry,editTextState,editTextDistrict;
     private RadioGroup radioGroupIsRegistered, radioGroupPoliceStation;
     private RadioButton radioButtonYes, radioButtonNo, radioButtonSingle, radioButtonMultiple;
     private Button buttonSaveAndSubmit;
@@ -82,9 +83,9 @@ public class PeaceFullAssembly extends Fragment {
         String from = editTextFrom.getText().toString();
         String to = editTextTo.getText().toString();
         String location = editTextLocation.getText().toString();
-        String country = editTextCountry.getText().toString();
-        String state = editTextState.getText().toString();
-        String district = editTextDistrict.getText().toString();
+        //String country = editTextCountry.getText().toString();
+        //String state = editTextState.getText().toString();
+        //String district = editTextDistrict.getText().toString();
         String villageCity = editTextVillageCity.getText().toString();
         String timeFrom = editTextTimeFrom.getText().toString();
         String timeTo = editTextTimeTo.getText().toString();
@@ -100,6 +101,22 @@ public class PeaceFullAssembly extends Fragment {
         // For demonstration, let's display a toast message
         String message = "Data saved and submitted successfully!";
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+    private boolean validData() {
+        boolean valid =true;
+
+        valid &= Validations.validateEditText(editTextTimeTo,"Enter The  Time To ");
+        valid &= Validations.validateEditText( editTextTimeFrom ,"Enter the Time From ");
+        valid &= Validations.validateEditText(editTextVillageCity,"Enter The   Village City");
+        valid &= Validations.validateEditText(editTextNumberOfParticipants,"Enter The Number Of Participants");
+        valid &= Validations.isValidEmail(editTextDate," Enter The Fathers Name");
+//        valid &= Validations.validateEditText(editTextState," Enter The Character License");
+//        valid &= Validations.validateEditText(editTextNocPetroleumId," Enter The  NocPetroleumId");
+
+//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
+//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
+
+        return valid;
     }
 }
 
