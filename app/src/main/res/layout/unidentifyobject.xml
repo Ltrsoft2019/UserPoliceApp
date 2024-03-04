@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Unidentify Bodies"
             android:textSize="20sp"
             android:layout_margin="20dp"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextDiscoveryDateTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Date and Time of Discovery"/>
 
@@ -31,7 +34,8 @@
         <EditText
             android:id="@+id/editTextLocationFound"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Location Where the Object Was Found"/>
 
@@ -39,7 +43,8 @@
         <EditText
             android:id="@+id/editTextObjectCondition"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Condition of the Object"/>
 
@@ -47,7 +52,8 @@
         <EditText
             android:id="@+id/editTextObjectFeatures"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Any Identifying Marks or Features"/>
 
@@ -55,7 +61,8 @@
         <EditText
             android:id="@+id/editTextObjectDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Description of the Object"/>
 
@@ -73,7 +80,8 @@
         <EditText
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Location"/>
 
@@ -83,7 +91,8 @@
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -91,10 +100,11 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
             android:text="Submit"/>
 
     </LinearLayout>

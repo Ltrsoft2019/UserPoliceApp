@@ -12,7 +12,8 @@
         <!-- Witness Information -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Witness Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -22,7 +23,8 @@
         <EditText
             android:id="@+id/editTextWitnessId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Witness ID"/>
 
@@ -30,21 +32,25 @@
         <EditText
             android:id="@+id/editTextFullName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Full Name"/>
 
         <!-- Date of Birth -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+ android:layout_height="30dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:text="Date of Birth"/>
+        
         <DatePicker
             android:id="@+id/datePickerDob"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="wrap_content"
+            android:background="@drawable/textback"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"
             android:layout_margin="20dp"
@@ -55,8 +61,8 @@
         <Spinner
             android:id="@+id/spinnerGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"            android:layout_margin="20dp"
 
             />
 
@@ -64,8 +70,8 @@
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"            android:layout_margin="20dp"
 
             android:hint="Address"/>
 
@@ -73,8 +79,8 @@
         <EditText
             android:id="@+id/editTextPhoneNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"            android:layout_margin="20dp"
 
             android:hint="Phone Number"
             android:inputType="phone"/>
@@ -83,8 +89,8 @@
         <EditText
             android:id="@+id/editTextEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email Address"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"            android:hint="Email Address"
             android:layout_margin="20dp"
             android:inputType="textEmailAddress"/>
 
@@ -92,7 +98,8 @@
         <EditText
             android:id="@+id/editTextPassportNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Passport Number"/>
@@ -101,7 +108,8 @@
         <EditText
             android:id="@+id/editTextDriversLicense"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Driver's License"/>
@@ -110,7 +118,8 @@
         <EditText
             android:id="@+id/editTextSocialSecurityNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Social Security Number"/>
@@ -119,7 +128,8 @@
         <EditText
             android:id="@+id/editTextHeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Height"/>
@@ -128,7 +138,8 @@
         <EditText
             android:id="@+id/editTextWeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Weight"/>
@@ -137,14 +148,16 @@
         <Spinner
             android:id="@+id/spinnerBuild"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
              android:layout_margin="20dp" />
 
         <!-- Hair Color -->
         <EditText
             android:id="@+id/editTextHairColor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Hair Color"/>
@@ -153,7 +166,8 @@
         <EditText
             android:id="@+id/editTextEyeColor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Eye Color"/>
@@ -162,7 +176,8 @@
         <EditText
             android:id="@+id/editTextDistinguishingFeatures"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Distinguishing Features"/>
@@ -171,7 +186,8 @@
         <EditText
             android:id="@+id/editTextOccupation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Occupation"/>
@@ -180,7 +196,8 @@
         <EditText
             android:id="@+id/editTextEducationLevel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Education Level"/>
@@ -189,7 +206,8 @@
         <EditText
             android:id="@+id/editTextMaritalStatus"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Marital Status"/>
@@ -198,7 +216,8 @@
         <EditText
             android:id="@+id/editTextFamilyMembers"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Family Members or Next of Kin"/>
@@ -207,7 +226,8 @@
         <Button
             android:id="@+id/buttonPhoto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
 
             android:text="Add Photo"/>
@@ -216,7 +236,8 @@
         <Spinner
             android:id="@+id/editTextComplaintId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Complaint ID"/>
@@ -225,7 +246,8 @@
         <EditText
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Description"/>
@@ -234,7 +256,8 @@
         <CheckBox
             android:id="@+id/checkBoxIsWitness"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:text="Is Witness"/>
 
@@ -242,7 +265,8 @@
         <EditText
             android:id="@+id/spTextCountryId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Country ID"/>
@@ -251,7 +275,8 @@
         <Spinner
             android:id="@+id/spTextStateId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="State ID"/>
@@ -260,7 +285,8 @@
         <Spinner
             android:id="@+id/editTextDistrictId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="District ID"/>
@@ -269,7 +295,8 @@
         <Spinner
             android:id="@+id/spTextCityId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="City ID"/>
@@ -278,7 +305,8 @@
         <Button
             android:id="@+id/Submit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:text="Submit" />

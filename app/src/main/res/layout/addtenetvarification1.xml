@@ -12,7 +12,8 @@
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Rental Property Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -22,7 +23,8 @@
         <EditText
             android:id="@+id/editTextTypeOfProperty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Type of Property"/>
 
@@ -30,7 +32,8 @@
         <EditText
             android:id="@+id/editTextUnits"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Units"/>
 
@@ -38,7 +41,8 @@
         <EditText
             android:id="@+id/editTextBedroomsNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Bedrooms Number"/>
 
@@ -46,7 +50,8 @@
         <EditText
             android:id="@+id/editTextFullNameTenant"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Full Name Tenant"/>
 
@@ -54,7 +59,8 @@
         <EditText
             android:id="@+id/editTextTenantContactNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Tenant Contact Number"/>
 
@@ -62,7 +68,8 @@
         <EditText
             android:id="@+id/editTextTenantEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Tenant Email"/>
 
@@ -70,7 +77,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

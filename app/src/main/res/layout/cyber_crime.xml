@@ -9,10 +9,21 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
+            android:text="Additional Information"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <!-- Lost Money -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Lost Money"/>
@@ -20,7 +31,8 @@
         <EditText
             android:id="@+id/editTextLostMoney"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="numberDecimal"
@@ -29,7 +41,8 @@
         <!-- Date and Time -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Date and Time"/>
@@ -37,7 +50,8 @@
         <EditText
             android:id="@+id/editTextDateTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="datetime"
@@ -46,7 +60,8 @@
         <!-- Is Delay -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Is Delay"/>
@@ -54,7 +69,8 @@
         <RadioGroup
             android:id="@+id/radioGroupIsDelay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:orientation="horizontal">
@@ -62,8 +78,8 @@
             <RadioButton
                 android:id="@+id/radioButtonYesDelay"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+     android:layout_height="50dp"
+            android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
 
                 android:text="Yes"/>
@@ -71,8 +87,8 @@
             <RadioButton
                 android:id="@+id/radioButtonNoDelay"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+     android:layout_height="50dp"
+            android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
                 android:text="No"/>
         </RadioGroup>
@@ -80,7 +96,8 @@
         <!-- Where Occurred -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Where Occurred"/>
@@ -88,7 +105,8 @@
         <EditText
             android:id="@+id/editTextWhereOccurred"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -97,7 +115,8 @@
         <!-- Evidence Photo -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Evidence Photo"/>
@@ -107,7 +126,8 @@
         <!-- Description -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Description"/>
@@ -115,9 +135,9 @@
         <EditText
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
+            android:layout_margin="20dp"
             android:inputType="textMultiLine"
             android:hint="Enter Description"/>
         <Button
@@ -125,8 +145,10 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"/>
 
     </LinearLayout>
 </ScrollView>

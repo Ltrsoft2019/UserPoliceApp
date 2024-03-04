@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Contractor Information"
             android:textSize="20sp"
             android:layout_margin="20dp"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextClosingTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Closing Time"/>
 
@@ -31,7 +34,8 @@
         <EditText
             android:id="@+id/editTextSpeakerContractorName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Speaker/Contractor Name"/>
 
@@ -39,7 +43,8 @@
         <EditText
             android:id="@+id/editTextContractorAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Contractor Address"/>
@@ -48,7 +53,8 @@
         <EditText
             android:id="@+id/editTextLicenseNo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="License Number"/>
@@ -57,7 +63,8 @@
         <EditText
             android:id="@+id/editTextFees"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Fees"/>
@@ -66,7 +73,8 @@
         <EditText
             android:id="@+id/editTextTermsConditions"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Terms and Conditions"/>
 
@@ -74,7 +82,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

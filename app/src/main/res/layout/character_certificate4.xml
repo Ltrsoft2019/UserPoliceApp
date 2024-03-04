@@ -13,129 +13,145 @@
         <!-- परिसरात बांधकाम केले -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="परिसरात बांधकाम केले"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="परिसरात बांधकाम केले" />
 
         <EditText
             android:id="@+id/editTextPBuilding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="परिसरात बांधकाम केले"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="परिसरात बांधकाम केले"
+            android:inputType="text" />
 
         <!-- मार्ग -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="मार्ग"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="मार्ग" />
 
         <EditText
             android:id="@+id/editTextPStreet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="मार्ग"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="मार्ग"
+            android:inputType="text" />
 
         <!-- संकेतस्थळ -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="संकेतस्थळ"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="संकेतस्थळ" />
 
         <EditText
             android:id="@+id/editTextPLandmark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="संकेतस्थळ"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="संकेतस्थळ"
+            android:inputType="text" />
 
         <!-- प्रांत -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="प्रांत"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="प्रांत" />
 
         <EditText
             android:id="@+id/editTextPLocality"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="प्रांत"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="प्रांत"
+            android:inputType="text" />
 
         <!-- राज्य क्रमांक -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="राज्य"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="राज्य" />
 
         <Spinner
             android:id="@+id/editTextPStateID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="राज्य"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="राज्य"
+            android:inputType="text" />
 
         <!-- जिल्हा क्रमांक -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="जिल्हा"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="जिल्हा" />
 
         <Spinner
             android:id="@+id/editTextPDistrictID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="जिल्हा"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="जिल्हा"
+            android:inputType="text" />
 
         <!-- पिनकोड -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="पिनकोड"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="पिनकोड" />
 
         <EditText
             android:id="@+id/editTextPincode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="number"
-            android:hint="पिनकोड"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="पिनकोड"
+            android:inputType="number" />
 
         <Button
             android:id="@+id/buttonSaveAndProceed"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="जतन करा आणि पुढे जा"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="जतन करा आणि पुढे जा" />
 
     </LinearLayout>
 </ScrollView>

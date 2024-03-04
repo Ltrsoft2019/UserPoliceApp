@@ -9,81 +9,102 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
+            android:text="Additional Information"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <!-- Address -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Address"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Address" />
 
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Address"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Address"
+            android:inputType="text" />
 
         <!-- From -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="From"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="From" />
 
         <EditText
             android:id="@+id/editTextFrom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter From"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter From"
+            android:inputType="text" />
 
         <!-- To -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
 
-            android:text="To"/>
+            android:text="To" />
 
         <EditText
             android:id="@+id/editTextTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter To"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter To"
+            android:inputType="text" />
 
         <!-- Place Pincode -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Place Pincode"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Place Pincode" />
 
         <EditText
             android:id="@+id/editTextPlacePincode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:inputType="number"
-            android:hint="Enter Place Pincode"/>
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Place Pincode"
+            android:inputType="number" />
+
         <Button
             android:id="@+id/buttonSaveAndSubmit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@drawable/buttonback"
+            android:text="save and submit" />
+
 
     </LinearLayout>
 </ScrollView>

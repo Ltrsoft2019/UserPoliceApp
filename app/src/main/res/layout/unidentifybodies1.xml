@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Body Discovery Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextDiscoveryDateTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Date and Time of Discovery"/>
 
@@ -31,7 +34,8 @@
         <EditText
             android:id="@+id/editTextLocationFound"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Location Where the Body Was Found"/>
 
@@ -39,7 +43,8 @@
         <EditText
             android:id="@+id/editTextGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Gender"/>
 
@@ -47,7 +52,8 @@
         <EditText
             android:id="@+id/editTextAgeEstimate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Age Estimate"/>
 
@@ -55,7 +61,8 @@
         <EditText
             android:id="@+id/editTextHeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Height"/>
 
@@ -63,7 +70,8 @@
         <EditText
             android:id="@+id/editTextWeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Weight"/>
 
@@ -71,7 +79,8 @@
         <EditText
             android:id="@+id/editTextBuild"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Build"/>
 
@@ -79,10 +88,11 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
             android:text="Save and Next"/>
 
     </LinearLayout>

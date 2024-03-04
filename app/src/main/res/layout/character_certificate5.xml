@@ -9,130 +9,155 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
+            android:text="Additional Information"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <!-- इमारत -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="इमारत"/>
+            android:text="इमारत" />
 
         <EditText
             android:id="@+id/editTextCBuilding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="इमारत"/>
+            android:hint="इमारत" />
 
         <!-- रस्ता -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="रस्ता"/>
+            android:text="रस्ता" />
 
         <EditText
             android:id="@+id/editTextCStreet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="रस्ता"/>
+            android:hint="रस्ता" />
 
         <!-- संकेतस्थळ -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="संकेतस्थळ"/>
+            android:text="संकेतस्थळ" />
 
         <EditText
             android:id="@+id/editTextCLandmark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="संकेतस्थळ"/>
+            android:hint="संकेतस्थळ" />
 
         <!-- प्रांत -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="प्रांत"/>
+            android:text="प्रांत" />
 
         <EditText
             android:id="@+id/editTextCLocality"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="प्रांत"/>
+            android:hint="प्रांत" />
 
         <!-- राज्य क्रमांक -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="राज्य"/>
+            android:text="राज्य" />
 
         <Spinner
             android:id="@+id/editTextCStateID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="राज्य"/>
+            android:hint="राज्य" />
 
         <!-- जिल्हा क्रमांक -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="जिल्हा"/>
+            android:text="जिल्हा" />
 
         <Spinner
             android:id="@+id/editTextCDistrictID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="जिल्हा"/>
+            android:hint="जिल्हा" />
 
         <!-- पिनकोड -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="पिनकोड"/>
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
+            android:layout_margin="20dp"
+            android:text="पिनकोड" />
 
         <EditText
             android:id="@+id/editTextCPincode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
+            android:layout_margin="20dp"
             android:inputType="number"
-            android:hint="पिनकोड"/>
+            android:hint="पिनकोड" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="जतन करा आणि पुढे जा"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp" />
 
 
     </LinearLayout>
