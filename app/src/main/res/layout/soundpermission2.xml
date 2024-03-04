@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Location Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextVillage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Village"/>
 
@@ -31,7 +34,8 @@
         <Spinner
             android:id="@+id/editTextCity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="City"/>
 
@@ -39,7 +43,8 @@
         <Spinner
             android:id="@+id/editTextDistrict"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="District"/>
 
@@ -47,7 +52,8 @@
         <Spinner
             android:id="@+id/editTextState"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="State"/>
 
@@ -57,7 +63,8 @@
         <Spinner
             android:id="@+id/editTextCountry"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Country"/>
 
@@ -67,7 +74,8 @@
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -75,7 +83,8 @@
         <EditText
             android:id="@+id/editTextTimeOfInitiation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Time of Initiation"/>
 
@@ -83,7 +92,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

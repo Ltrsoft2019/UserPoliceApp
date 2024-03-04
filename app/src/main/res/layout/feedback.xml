@@ -9,10 +9,21 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
+            android:text="Additional Information"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <!-- Feedback Question 1 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 1"/>
@@ -20,7 +31,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -29,7 +41,8 @@
         <!-- Feedback Question 2 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 2"/>
@@ -37,7 +50,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -46,7 +60,8 @@
         <!-- Feedback Question 3 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 3"/>
@@ -54,7 +69,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -63,7 +79,8 @@
         <!-- Feedback Question 4 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 4"/>
@@ -71,7 +88,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -80,7 +98,8 @@
         <!-- Feedback Question 5 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 5"/>
@@ -88,7 +107,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -97,7 +117,8 @@
         <!-- Feedback Question 6 -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Question 6"/>
@@ -105,7 +126,8 @@
         <EditText
             android:id="@+id/editTextFeedbackQuestion6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
@@ -114,7 +136,8 @@
         <!-- Feedback Description -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Feedback Description"/>
@@ -122,17 +145,19 @@
         <EditText
             android:id="@+id/editTextFeedbackDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
+            android:layout_margin="20dp"
             android:inputType="textMultiLine"
             android:hint="Enter Feedback Description"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"/>
 
 
     </LinearLayout>

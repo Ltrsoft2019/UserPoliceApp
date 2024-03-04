@@ -12,7 +12,8 @@
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Additional Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -23,7 +24,8 @@
         <EditText
             android:id="@+id/editTextOfficeOrBusinessAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Office or Business Address"/>
 
@@ -31,7 +33,8 @@
         <EditText
             android:id="@+id/editTextAdditionalParticulars"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Additional Particulars"/>
 
@@ -39,7 +42,8 @@
         <EditText
             android:id="@+id/editTextAreaOrLandOfCultivation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Area or Land of Cultivation"/>
 
@@ -47,7 +51,8 @@
         <EditText
             android:id="@+id/editTextLocationOfCultivation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Location of Cultivation"/>
 
@@ -55,7 +60,8 @@
         <CheckBox
             android:id="@+id/checkBoxApplicantConvicted"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:text="Whether Applicant Convicted"/>
 
@@ -63,7 +69,8 @@
         <CheckBox
             android:id="@+id/checkBoxApplicantOrderedToBeConvicted"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:text="Whether Applicant Ordered to be Convicted"/>
 
@@ -71,7 +78,8 @@
         <CheckBox
             android:id="@+id/checkBoxApplicantProhibited"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:text="Whether Applicant Prohibited"/>
 
@@ -79,7 +87,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

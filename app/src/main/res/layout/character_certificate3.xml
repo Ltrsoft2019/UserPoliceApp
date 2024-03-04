@@ -6,42 +6,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
+            android:text="Additional Information"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <!-- Visible Mark -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Visible Mark"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Visible Mark" />
 
         <EditText
             android:id="@+id/editTextVisibleMark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Visible Mark"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Visible Mark"
+            android:inputType="text" />
 
         <!-- Have Arrested -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Have Arrested"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Have Arrested" />
 
         <RadioGroup
             android:id="@+id/radioGroupHaveArrested"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
 
             android:orientation="horizontal">
 
@@ -49,92 +63,97 @@
                 android:id="@+id/radioButtonYesArrested"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:text="Yes"/>
+                android:background="@drawable/textback"
+                android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radioButtonNoArrested"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:text="No"/>
+                android:background="@drawable/textback"
+                android:text="No" />
         </RadioGroup>
 
         <!-- Active Politics -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Active Politics"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Active Politics" />
 
         <RadioGroup
             android:id="@+id/radioGroupActivePolitics"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioButtonYesActivePolitics"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:text="Yes"/>
+                android:background="@drawable/textback"
+                android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radioButtonNoActivePolitics"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:text="No"/>
+                android:background="@drawable/textback"
+                android:text="No" />
         </RadioGroup>
 
         <!-- Is Criminal -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Is Criminal"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Is Criminal" />
 
         <RadioGroup
             android:id="@+id/radioGroupIsCriminal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/textback"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioButtonYesCriminal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:text="Yes"/>
+                android:background="@drawable/textback"
+                android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radioButtonNoCriminal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
-                android:text="No"/>
+                android:background="@drawable/textback"
+                android:text="No" />
         </RadioGroup>
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@drawable/buttonback"
+            android:text="save and submit" />
 
     </LinearLayout>
 </ScrollView>

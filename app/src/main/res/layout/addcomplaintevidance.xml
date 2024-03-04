@@ -1,5 +1,4 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -13,77 +12,86 @@
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
             android:text="Evidence Information"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:textStyle="bold" />
 
         <!-- Evidence Number/Identifier -->
         <EditText
             android:id="@+id/editTextEvidenceNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Evidence Number/Identifier"/>
+            android:background="@drawable/textback"
+            android:hint="Evidence Number/Identifier" />
 
         <!-- Complaint -->
         <Spinner
             android:id="@+id/editTextComplaintId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Complaint"/>
+            android:background="@drawable/textback"
+            android:hint="Complaint" />
 
         <!-- Date and Time of Evidence Seizure -->
         <DatePicker
             android:id="@+id/datePickerEvidenceSeizure"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/textback"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"
-            android:layout_margin="20dp"
-            android:hint="Date and Time of Evidence Seizure"/>
+            android:hint="Date and Time of Evidence Seizure" />
 
         <!-- Evidence Type -->
         <Spinner
             android:id="@+id/spTextEvidenceTypeId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Evidence Type"/>
+            android:background="@drawable/textback"
+            android:hint="Evidence Type" />
 
         <!-- Description of the item -->
         <EditText
             android:id="@+id/editTextItemDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Description of the item"/>
+            android:background="@drawable/textback"
+            android:hint="Description of the item" />
 
         <!-- Serial Numbers or Uniqueentifiers -->
         <EditText
             android:id="@+id/editTextSerialNumbers"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Serial Numbers or Uniqueentifiers"/>
+            android:background="@drawable/textback"
+            android:hint="Serial Numbers or Uniqueentifiers" />
 
         <!-- Packaging Details -->
         <EditText
             android:id="@+id/editTextPackagingDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:hint="Packaging Details"/>
+            android:background="@drawable/textback"
+            android:hint="Packaging Details" />
 
         <!-- Submit Button -->
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:text="Submit"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:text="Submit" />
 
     </LinearLayout>
 

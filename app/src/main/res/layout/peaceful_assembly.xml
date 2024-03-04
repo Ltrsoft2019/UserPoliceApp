@@ -6,57 +6,63 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:background="@drawable/textback"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         android:padding="16dp">
 
         <!-- Name of Organization -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Name of Organization"/>
+            android:text="Name of Organization" />
 
         <EditText
             android:id="@+id/editTextNameOfOrganization"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter Name of Organization"/>
+            android:hint="Enter Name of Organization" />
 
         <!-- Designation -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Designation"/>
+            android:text="Designation" />
 
         <EditText
             android:id="@+id/editTextDesignation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter Designation"/>
+            android:hint="Enter Designation" />
 
         <!-- Is Organization Registered -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Is Organization Registered"/>
+            android:text="Is Organization Registered" />
 
         <RadioGroup
             android:id="@+id/radioGroupIsRegistered"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:orientation="horizontal">
@@ -65,276 +71,305 @@
                 android:id="@+id/radioButtonYes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
-                android:text="Yes"/>
+                android:text="Yes" />
 
             <RadioButton
                 android:id="@+id/radioButtonNo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
-                android:text="No"/>
+                android:text="No" />
         </RadioGroup>
 
         <!-- Procession Reason -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Procession Reason"/>
+            android:text="Procession Reason" />
 
         <EditText
             android:id="@+id/editTextProcessionReason"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
-            android:hint="Enter Procession Reason"/>
+            android:hint="Enter Procession Reason" />
 
         <!-- Date -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Date"/>
+            android:text="Date" />
 
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="date"
-            android:hint="Select Date"/>
+            android:hint="Select Date" />
 
         <!-- Type of Procession -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Type of Procession"/>
+            android:text="Type of Procession" />
 
         <Spinner
             android:id="@+id/spinnerTypeOfProcession"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-           />
+            android:layout_marginLeft="20dp" />
 
         <!-- Number of Participants -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Number of Participants"/>
+            android:text="Number of Participants" />
 
         <EditText
             android:id="@+id/editTextNumberOfParticipants"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="number"
-            android:hint="Enter Number of Participants"/>
+            android:hint="Enter Number of Participants" />
 
         <!-- From -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="From"/>
+            android:text="From" />
 
         <EditText
             android:id="@+id/editTextFrom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter From"/>
+            android:hint="Enter From" />
 
         <!-- To -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="To"/>
+            android:text="To" />
 
         <EditText
             android:id="@+id/editTextTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter To"/>
+            android:hint="Enter To" />
 
         <!-- Location -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Location"/>
+            android:text="Location" />
 
         <EditText
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter Location"/>
+            android:hint="Enter Location" />
 
         <!-- Country -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Country"/>
+            android:text="Country" />
 
         <Spinner
             android:id="@+id/editTextCountry"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter Country"/>
+            android:hint="Enter Country" />
 
         <!-- State -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="State"/>
+            android:text="State" />
 
         <Spinner
             android:id="@+id/editTextState"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter State"/>
+            android:hint="Enter State" />
 
         <!-- District -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="District"/>
+            android:text="District" />
 
         <Spinner
             android:id="@+id/editTextDistrict"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter District"/>
+            android:hint="Enter District" />
 
         <!-- Village/City -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Village/City"/>
+            android:text="Village/City" />
 
         <EditText
             android:id="@+id/editTextVillageCity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="text"
-            android:hint="Enter Village/City"/>
+            android:hint="Enter Village/City" />
         <!-- Time From -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Time From"/>
+            android:text="Time From" />
 
         <EditText
             android:id="@+id/editTextTimeFrom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="time"
-            android:hint="Select Time From"/>
+            android:hint="Select Time From" />
 
         <!-- Time To -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Time To"/>
+            android:text="Time To" />
 
         <EditText
             android:id="@+id/editTextTimeTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:inputType="time"
-            android:hint="Select Time To"/>
+            android:hint="Select Time To" />
 
         <!-- Single or Multiple Police Station -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
-            android:text="Single or Multiple Police Station"/>
+            android:text="Single or Multiple Police Station" />
 
         <RadioGroup
             android:id="@+id/radioGroupPoliceStation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/textback"
+            android:layout_margin="20dp"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioButtonSingle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
-                android:text="Single"/>
+                android:text="Single" />
 
             <RadioButton
                 android:id="@+id/radioButtonMultiple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:background="@drawable/textback"
                 android:layout_marginLeft="20dp"
-                android:text="Multiple"/>
+                android:text="Multiple" />
         </RadioGroup>
+
         <Button
             android:id="@+id/buttonSaveAndSubmit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp" />
     </LinearLayout>
 </ScrollView>

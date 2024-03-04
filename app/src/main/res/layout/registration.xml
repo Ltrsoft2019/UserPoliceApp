@@ -79,7 +79,7 @@
         android:layout_width="248dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:background="@drawable/btn_border2"
+        android:backgroundTint="@drawable/buttonback"
         android:layout_marginTop="20dp"
         android:text="Register"
         android:textSize="20dp" />

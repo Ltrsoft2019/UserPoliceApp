@@ -1,5 +1,4 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -7,89 +6,97 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tenant Information"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/textback"
 
+            android:text="Tenant Information"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:textStyle="bold" />
 
         <!-- Tenant Permanent Address -->
         <EditText
             android:id="@+id/editTextTenantPAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="@drawable/textback"
 
-            android:hint="Tenant Permanent Address"/>
+            android:hint="Tenant Permanent Address" />
 
         <!-- Tenant Occupation -->
         <EditText
             android:id="@+id/editTextTenantOccupation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="@drawable/textback"
 
-            android:hint="Tenant Occupation"/>
+            android:hint="Tenant Occupation" />
 
         <!-- Start Date -->
         <EditText
             android:id="@+id/editTextStartDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="@drawable/textback"
 
-            android:hint="Start Date"/>
+            android:hint="Start Date" />
 
         <!-- End Date -->
         <EditText
             android:id="@+id/editTextEndDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="@drawable/textback"
 
-            android:hint="End Date"/>
+            android:hint="End Date" />
 
         <!-- Purpose of Tenancy -->
         <EditText
             android:id="@+id/editTextPurposeOfTenancy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
+            android:background="@drawable/textback"
 
-            android:hint="Purpose of Tenancy"/>
+            android:hint="Purpose of Tenancy" />
 
         <!-- Signature Photo -->
         <ImageView
             android:id="@+id/imageViewSignaturePhoto"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_margin="20dp"
-              />
+            android:layout_margin="20dp" />
 
         <!-- Station -->
         <Spinner
             android:id="@+id/editTextStationId"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:text="Choose Station"/>
+            android:background="@drawable/textback"
+            android:text="Choose Station" />
 
         <!-- Submit Button -->
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginBottom="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
-            android:text="Submit"/>
+            android:text="Submit" />
 
     </LinearLayout>
 

@@ -12,7 +12,8 @@
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Petroleum Information"
             android:textSize="20sp"
             android:layout_margin="20dp"
@@ -24,7 +25,8 @@
         <EditText
             android:id="@+id/editTextWhichPetroleum"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Which Petroleum"/>
@@ -33,7 +35,8 @@
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -41,7 +44,8 @@
         <EditText
             android:id="@+id/editTextOfficeNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Office Number"/>
@@ -50,7 +54,8 @@
         <EditText
             android:id="@+id/editTextResidenceNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Residence Number"/>
@@ -59,7 +64,8 @@
         <EditText
             android:id="@+id/editTextOccupation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Occupation"/>
 
@@ -67,7 +73,8 @@
         <EditText
             android:id="@+id/editTextQuantity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Quantity"/>
@@ -76,7 +83,8 @@
         <EditText
             android:id="@+id/editTextBlastingDetail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Blasting Detail"/>
 
@@ -86,7 +94,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+ android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

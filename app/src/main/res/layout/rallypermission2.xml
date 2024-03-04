@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Safety and Security Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -24,7 +26,8 @@
         <EditText
             android:id="@+id/editTextRallyPurpose"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Purpose/Objective of the Rally"/>
@@ -33,7 +36,8 @@
         <EditText
             android:id="@+id/editTextSafetyMeasures"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Safety and Security Measures"/>
@@ -42,7 +46,8 @@
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -50,7 +55,8 @@
         <EditText
             android:id="@+id/editTextCrowdManagement"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Plan for Crowd Management"/>
@@ -59,7 +65,8 @@
         <EditText
             android:id="@+id/editTextFirstAid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Provision of First Aid Facilities"/>
@@ -68,7 +75,8 @@
         <EditText
             android:id="@+id/editTextEmergencyServices"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Coordination with Emergency Services"/>
@@ -77,7 +85,8 @@
         <EditText
             android:id="@+id/editTextAdditionalSafetyMeasures"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Additional Safety Measures Implemented"/>
@@ -86,11 +95,12 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"
-            android:text="Submit"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:text="Submit" />
 
     </LinearLayout>
 

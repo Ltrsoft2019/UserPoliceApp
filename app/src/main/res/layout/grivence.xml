@@ -12,131 +12,147 @@
         <!-- Nature of Grievance -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Nature of Grievance"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Nature of Grievance" />
 
         <EditText
             android:id="@+id/editTextNatureOfGrievance"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="textMultiLine"
-            android:hint="Enter Nature of Grievance"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Nature of Grievance"
+            android:inputType="textMultiLine" />
 
         <!-- Date -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Date"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Date" />
 
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="date"
-            android:hint="Select Date"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Select Date"
+            android:inputType="date" />
 
         <!-- Location -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Location"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Location" />
 
         <EditText
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Location"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Location"
+            android:inputType="text" />
 
         <!-- Description -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
 
-            android:text="Description"/>
+            android:text="Description" />
 
         <EditText
             android:id="@+id/editTextDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="textMultiLine"
-            android:hint="Enter Description"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Description"
+            android:inputType="textMultiLine" />
 
         <!-- Photo -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Photo"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Photo" />
 
         <!-- Add a Button or ImageView for uploading a photo -->
 
         <!-- Audio/Video -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Audio/Video"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Audio/Video" />
 
         <!-- Add a Button or ImageView for uploading audio/video -->
 
         <!-- Action Required -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Action Required"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Action Required" />
 
         <EditText
             android:id="@+id/editTextActionRequired"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="textMultiLine"
-            android:hint="Enter Action Required"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Action Required"
+            android:inputType="textMultiLine" />
 
         <!-- Outcome -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Outcome"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Outcome" />
 
         <EditText
             android:id="@+id/editTextOutcome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:inputType="textMultiLine"
-            android:hint="Enter Outcome"/>
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Outcome"
+            android:inputType="textMultiLine" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@drawable/buttonback"
+            android:text="save and submit" />
 
     </LinearLayout>
 </ScrollView>

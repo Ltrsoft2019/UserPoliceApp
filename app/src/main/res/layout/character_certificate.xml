@@ -6,152 +6,171 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Station ID -->
+        <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="Station ID"/>
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/textback"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Charector Certificate" />
 
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:text="Choose Station"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:text="Choose Station" />
 
         <!-- Building -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Building"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Building" />
 
         <EditText
             android:id="@+id/editTextBuilding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Building"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Building"
+            android:inputType="text" />
 
         <!-- Street -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Street"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Street" />
 
         <EditText
             android:id="@+id/editTextStreet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Street"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Street"
+            android:inputType="text" />
 
         <!-- Landmark -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Landmark"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Landmark" />
 
         <EditText
             android:id="@+id/editTextLandmark"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Landmark"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Landmark"
+            android:inputType="text" />
 
         <!-- Locality -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Locality"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Locality" />
 
         <EditText
             android:id="@+id/editTextLocality"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter Locality"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Locality"
+            android:inputType="text" />
 
         <!-- State ID -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="State"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="State" />
 
         <Spinner
             android:id="@+id/editTextStateID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter State"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter State"
+            android:inputType="text" />
 
         <!-- District ID -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="District"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="District" />
 
         <Spinner
             android:id="@+id/editTextDistrictID"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="text"
-            android:hint="Enter District"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter District"
+            android:inputType="text" />
 
         <!-- Pincode -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:text="Pincode"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:text="Pincode" />
 
         <EditText
             android:id="@+id/editTextPincode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            android:inputType="number"
-            android:hint="Enter Pincode"/>
+            android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
+            android:hint="Enter Pincode"
+            android:inputType="number" />
 
         <Button
             android:id="@+id/buttonSaveSubmit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="save and submit"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"/>
+            android:backgroundTint="@drawable/buttonback"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="save and submit" />
 
     </LinearLayout>
 </ScrollView>

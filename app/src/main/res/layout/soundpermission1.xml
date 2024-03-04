@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Event Information"
             android:textSize="20sp"
             android:layout_margin="20dp"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextEventName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Event Name"/>
 
@@ -31,7 +34,8 @@
         <EditText
             android:id="@+id/editTextPurpose"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Purpose"/>
 
@@ -39,7 +43,8 @@
         <EditText
             android:id="@+id/editTextNoOfSpeaker"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Number of Speakers"/>
 
@@ -47,7 +52,8 @@
         <EditText
             android:id="@+id/editTextPositionInEvent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Position in Event"/>
 
@@ -55,7 +61,8 @@
         <EditText
             android:id="@+id/editTextDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Date"/>
 
@@ -63,7 +70,8 @@
         <EditText
             android:id="@+id/editTextFrom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="From"/>
 
@@ -71,7 +79,8 @@
         <EditText
             android:id="@+id/editTextTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="To"/>
 
@@ -79,7 +88,8 @@
         <EditText
             android:id="@+id/editTextLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
 
             android:hint="Location"/>
@@ -88,7 +98,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

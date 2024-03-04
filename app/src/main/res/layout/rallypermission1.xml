@@ -6,13 +6,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+         android:layout_height="50dp"
+            android:background="@drawable/textback"
         android:orientation="vertical">
 
         <!-- Title -->
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:text="Rally  Information"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -23,7 +25,8 @@
         <EditText
             android:id="@+id/editTextOrganizationName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Organization/Group Name"/>
 
@@ -31,7 +34,8 @@
         <EditText
             android:id="@+id/editTextAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Address"/>
 
@@ -39,7 +43,8 @@
         <EditText
             android:id="@+id/editTextEventDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Event Details"/>
 
@@ -47,7 +52,8 @@
         <EditText
             android:id="@+id/editTextRallyName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Name of the Rally"/>
 
@@ -55,7 +61,8 @@
         <EditText
             android:id="@+id/editTextRallyDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Date of the Rally"/>
 
@@ -63,7 +70,8 @@
         <EditText
             android:id="@+id/editTextRallyTime"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Time of the Rally"/>
 
@@ -71,7 +79,8 @@
         <EditText
             android:id="@+id/editTextRouteLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Proposed Route/Location"/>
 
@@ -79,7 +88,8 @@
         <EditText
             android:id="@+id/editTextParticipantsNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Expected Number of Participants"/>
 
@@ -87,7 +97,8 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="50dp"
+            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

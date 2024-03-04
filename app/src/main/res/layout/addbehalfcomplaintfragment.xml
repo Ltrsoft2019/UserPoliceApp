@@ -16,12 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@drawable/textback"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:text="User Information"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -30,48 +32,54 @@
             <EditText
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="First Name" />
 
             <!-- Middle Name -->
             <EditText
                 android:id="@+id/editTextMiddleName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Middle Name" />
 
             <!-- Last Name -->
             <EditText
                 android:id="@+id/editTextLastName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Last Name" />
 
             <!-- Address -->
             <EditText
                 android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Address" />
 
             <!-- Email -->
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Email" />
 
             <!-- Password -->
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Password"
                 android:inputType="textPassword" />
 
@@ -79,23 +87,26 @@
             <Spinner
                 android:id="@+id/spinnerGender"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:autofillHints="Gender" />
+                android:autofillHints="Gender"
+                android:background="@drawable/textback" />
 
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:text="Date of Birth" />
 
 
             <DatePicker
                 android:id="@+id/datePickerDob"
                 android:layout_width="match_parent"
-                android:layout_height="106dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner" />
 
@@ -103,8 +114,9 @@
             <EditText
                 android:id="@+id/editTextMobile1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Mobile Number 1"
                 android:inputType="phone" />
 
@@ -112,8 +124,9 @@
             <EditText
                 android:id="@+id/editTextMobile2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Mobile Number 2"
                 android:inputType="phone" />
 
@@ -121,8 +134,9 @@
             <EditText
                 android:id="@+id/editTextAadhar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Aadhar Number"
                 android:inputType="number" />
 
@@ -130,92 +144,103 @@
             <EditText
                 android:id="@+id/editTextPAN"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="PAN Number" />
 
             <!-- Occupation -->
             <EditText
                 android:id="@+id/editTextOccupation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Occupation" />
 
             <!-- Nationality -->
             <EditText
                 android:id="@+id/editTextNationality"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Nationality" />
 
             <!-- Driving License -->
             <EditText
                 android:id="@+id/editTextDrivingLicense"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Driving License" />
 
             <!-- Notification Token -->
             <EditText
-                android:visibility="gone"
                 android:id="@+id/editTextNotificationToken"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:hint="Notification Token" />
+                android:background="@drawable/textback"
+                android:hint="Notification Token"
+                android:visibility="gone" />
 
             <!-- Station -->
             <Spinner
-                android:visibility="gone"
                 android:id="@+id/spinnerstation"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:text="Choose Station" />
+                android:background="@drawable/textback"
+                android:text="Choose Station"
+                android:visibility="gone" />
 
             <!-- Country -->
             <Spinner
                 android:id="@+id/editTextCountryId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="Country" />
 
             <!-- State -->
             <Spinner
                 android:id="@+id/editTextStateId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="State" />
 
             <!-- District -->
             <Spinner
                 android:id="@+id/editTextDistrictId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="District" />
 
             <!-- City -->
             <Spinner
                 android:id="@+id/editTextCityId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:hint="City" />
 
             <!-- Submit Button -->
             <Button
-                android:visibility="gone"
                 android:id="@+id/UserSubmit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:text="Next" />
+                android:backgroundTint="@drawable/buttonback"
+                android:text="Next"
+                 />
 
 
         </LinearLayout>
@@ -224,12 +249,15 @@
             android:id="@+id/onbehalflayput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/textback"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
+                android:background="@drawable/textback"
                 android:text="Complaint Information"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -238,8 +266,9 @@
             <EditText
                 android:id="@+id/editTextComplaintSubject"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
 
                 android:hint="Complaint Subject" />
 
@@ -247,8 +276,9 @@
             <EditText
                 android:id="@+id/editTextComplaintDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
 
                 android:hint="Complaint Description" />
 
@@ -256,8 +286,9 @@
             <EditText
                 android:id="@+id/editTextAgainst"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
 
                 android:hint="Against" />
 
@@ -265,8 +296,9 @@
             <DatePicker
                 android:id="@+id/datePickerIncidentDate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"
 
@@ -276,35 +308,39 @@
             <Spinner
                 android:id="@+id/editTextSubtypeId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp" />
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/textback" />
 
             <!-- Latitude -->
             <EditText
-                android:visibility="gone"
                 android:id="@+id/editTextLatitude"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
+                android:hint="Latitude"
 
-                android:hint="Latitude" />
+                android:visibility="gone" />
 
             <!-- Longitude -->
             <EditText
-                android:visibility="gone"
                 android:id="@+id/editTextLongitude"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:background="@drawable/textback"
+                android:hint="Longitude"
 
-                android:hint="Longitude" />
+                android:visibility="gone" />
 
             <!-- Submit Button -->
             <Button
                 android:id="@+id/ComplaintSubmit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="20dp"
+                android:backgroundTint="@drawable/buttonback"
 
                 android:text="Submit" />
         </LinearLayout>
