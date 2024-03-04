@@ -46,6 +46,7 @@ public class AddFragment extends Fragment {
     }
 
     private void loadFragment(Fragment fragment) {
+
         FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
         transaction.addToBackStack(null);
         transaction.replace(R.id.main_container2, fragment);
