@@ -16,7 +16,7 @@ public class MainDashBoard extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.main_dashboard_layout, container, false);
+        view = inflater.inflate(R.layout.dashboard_layout, container, false);
         return view;
     }
 }

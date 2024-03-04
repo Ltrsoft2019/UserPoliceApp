@@ -43,24 +43,25 @@ public class MainNavigation extends Fragment  implements NavigationView.OnNaviga
     }
 
     private void initilizeDrwer() {
+
+
         drawerLayout = view.findViewById(R.id.drawerlayout);
         navigationView= view.findViewById(R.id.navigation);
         toolbar = view.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(getActivity(), drawerLayout,toolbar,  R.string.nav_open, R.string.nav_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         actionBarDrawerToggle.getDrawerArrowDrawable().setColor(getContext().getColor(R.color.black));
         navigationView.setNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
         return false;
     }
 }
