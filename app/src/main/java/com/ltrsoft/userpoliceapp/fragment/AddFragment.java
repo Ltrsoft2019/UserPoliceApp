@@ -41,9 +41,45 @@ public class AddFragment extends Fragment {
                 loadFragment(new AddComplaintt());
             }
         });
+        addCyberCrime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new CyberCrime());
+            }
+        });
+        addGrievance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new GrievanceFragment());
+            }
+        });
+        addMissingPerson.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            //    loadFragment(new Miss);
+            }
+        });
+       quickComplaint.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               loadFragment(new AddQuickComplaint());
+           }
+       });
 
-        // Add click listeners for other RelativeLayouts here
-    }
+       unidentifiedBody.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               loadFragment(new UnidentifiedBody1());
+           }
+       });
+       unidentifiedObj.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               loadFragment(new UnidentifiedObjectFragment() );
+           }
+       });
+     }
+
 
     private void loadFragment(Fragment fragment) {
 
