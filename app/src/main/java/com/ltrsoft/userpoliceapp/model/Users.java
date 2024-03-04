@@ -34,6 +34,9 @@ public class Users {
         this.station_id = station_id;
     }
 
+    public Users() {
+    }
+
     public String getUser_id() {
         return user_id;
     }

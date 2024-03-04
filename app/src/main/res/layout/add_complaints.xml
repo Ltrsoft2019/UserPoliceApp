@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EBEBEB">
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="#FFFFFF"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        android:theme="?attr/actionBarTheme">-->
+
+<!--        <ImageButton-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp" />-->
+<!--        &lt;!&ndash;            android:background="@drawable/align_left"/>&ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="Add Complaints"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold" />-->
+
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/complaints"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+<!--                android:background="@drawable/complain" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Complaints"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/quickcomplaints"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/complaint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Quick Complaints"
+                android:gravity="center"
+                android:textColor="#66000000"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/unidentified_body"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+<!--                android:background="@drawable/digital_services" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Unidentified Body"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/unidentified_obj"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+<!--                android:background="@drawable/businessman" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="UnIdentified Objects"
+                android:textColor="#66000000"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/cyber_complaints"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+<!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Cyber Complaints"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/add_grievence"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+            <!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Add Grievence"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/add_missing_person"
+            android:layout_width="190dp"
+            android:layout_height="90dp"
+            android:background="@drawable/card_background"
+            android:elevation="1dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"/>
+            <!--                android:background="@drawable/hacker" />-->
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="50dp"
+                android:text="Add Missing Person"
+                android:textColor="#66000000"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

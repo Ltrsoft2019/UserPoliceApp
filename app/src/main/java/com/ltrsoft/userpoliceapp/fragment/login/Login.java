@@ -15,12 +15,14 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
-import com.ltrsoft.userpoliceapp.fragment.Registration;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 import com.ltrsoft.userpoliceapp.utils.SessionManager;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.Validations;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -71,15 +73,8 @@ public class Login extends Fragment {
 
                 if (Validations.isValidEmail(emailEditText,"Enter Valid Email") &&
                 Validations.validateEditText(passwordEditText,"password is null")) {
-
-                    Toast.makeText(getContext(), "all fields are valid", Toast.LENGTH_SHORT).show();
-                    new SessionManager(getContext()).setLogin(true);
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction()
-                            .remove(new Login())
-                            .replace(R.id.main_container,new MainNavigation())
-                            .commit();
-
+//                    Toast.makeText(getContext(), "all fields are valid", Toast.LENGTH_SHORT).show();
+                    loginUser(emailEditText.getText().toString(),passwordEditText.getText().toString());
                 }else {
                     Toast.makeText(getContext(), "Null values ", Toast.LENGTH_SHORT).show();
                 }
@@ -89,7 +84,6 @@ public class Login extends Fragment {
 
     private void loginUser(String email,String password) {
         DAO dao = new DAO(getContext());
-
         HashMap<String,String>map = new HashMap<>();
         map.put("email",email);
         map.put("password",password);
@@ -101,7 +95,22 @@ public class Login extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
-                Toast.makeText(getContext(), "response "+(String) object, Toast.LENGTH_SHORT).show();
+
+                try {
+                    JSONObject jsonObject = new JSONObject((String) object);
+                    String success = jsonObject.getString("Message");
+                    Toast.makeText(getContext(), "response "+success, Toast.LENGTH_SHORT).show();
+                    System.out.println("response "+(String) object);
+                    if (success.contains("100")){
+                        loginSuccess();
+                    }
+                    else {
+                        loginFailed();
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
             }
 
             @Override
@@ -109,5 +118,23 @@ public class Login extends Fragment {
                 Toast.makeText(getContext(), "Result Empty", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void loginFailed() {
+
+        emailEditText.setText("");
+        passwordEditText.setText("");
+        emailEditText.setError("wrong credentials");
+
+
+    }
+
+    public void loginSuccess(){
+        new SessionManager(getContext()).setLogin(true);
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .remove(new Login())
+                .replace(R.id.main_container,new MainNavigation())
+                .commit();
     }
 }

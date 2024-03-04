@@ -40,6 +40,7 @@ private View view;
         grantedTextView.setText("1");
         rejectedTextView.setText("2");
         pendingTextView.setText("2");
+
         return view;
     }
     private void intilizeView() {

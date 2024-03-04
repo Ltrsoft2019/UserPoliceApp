@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.fragment.AddComplaintt;
+import com.ltrsoft.userpoliceapp.fragment.AddFragment;
 import com.ltrsoft.userpoliceapp.fragment.UserDashBoard;
 import com.ltrsoft.userpoliceapp.fragment.login.Login;
 
@@ -25,7 +27,7 @@ public class MainbottomNavigation extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.bottom_navigation, container, false);
-        loadBadeFragmemt();
+        loadBadeFragmemt(new UserDashBoard());
         navigationView = view.findViewById(R.id.bottom_nav);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -34,15 +36,19 @@ public class MainbottomNavigation extends Fragment {
 
                 if (id== R.id.dashboard){
                     Toast.makeText(getContext(), "dashboard clicked", Toast.LENGTH_SHORT).show();
-                    loadBadeFragmemt();
+                    loadBadeFragmemt(new UserDashBoard());
                 } else if (id==R.id.my_complaint) {
+                    loadBadeFragmemt(new UserDashBoard());
                     Toast.makeText(getContext(), "my complaints clicked", Toast.LENGTH_SHORT).show();
                 }else if (id==R.id.add) {
+                    loadBadeFragmemt(new AddFragment());
                     Toast.makeText(getContext(), "add clicked", Toast.LENGTH_SHORT).show();
                 }else if (id==R.id.eservices) {
+                    loadBadeFragmemt(new UserDashBoard());
                     Toast.makeText(getContext(), "eservices clicked", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.emergency_calling) {
+                    loadBadeFragmemt(new UserDashBoard());
                     Toast.makeText(getContext(), "emergency clicked", Toast.LENGTH_SHORT).show();
                 }
                 return true;
@@ -51,10 +57,10 @@ public class MainbottomNavigation extends Fragment {
         return view;
     }
 
-    private void loadBadeFragmemt() {
+    private void loadBadeFragmemt(Fragment fragment) {
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.main_container2,new UserDashBoard())
+                .replace(R.id.main_container2,fragment)
                 .commit();
     }
 
