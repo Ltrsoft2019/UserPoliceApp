@@ -183,7 +183,6 @@
                 android:id="@+id/editTextStationId"
                 android:layout_width="200dp"
                  android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
                 android:layout_margin="20dp"
                 android:text="Choose Station" />
 
@@ -228,7 +227,6 @@
                 android:id="@+id/UserSubmit"
                 android:layout_width="wrap_content"
                  android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
                 android:layout_margin="20dp"
                 android:text="Next" />
 
@@ -308,7 +306,6 @@
                 android:id="@+id/ComplaintSubmit"
                 android:layout_width="match_parent"
                  android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
                 android:layout_marginBottom="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"

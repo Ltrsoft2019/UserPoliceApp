@@ -9,44 +9,46 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.ltrsoft.userpoliceapp.R;
-
 public class AddFragment extends Fragment {
-    private View view;
-    private RelativeLayout addComplaint,quickComplaint,unidentifiedObj,unidentifiedbody,addcybercrime,addgrievence,addmissingperson;
+    private RelativeLayout addComplaint, quickComplaint, unidentifiedObj, unidentifiedBody, addCyberCrime, addGrievance, addMissingPerson;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.add_complaints, container, false);
-        inisilizeView();
-
+        View view = inflater.inflate(R.layout.add_complaints, container, false);
+        initializeView(view);
+        setClickListeners();
         return view;
     }
 
-    private void inisilizeView() {
-        //    private RelativeLayout addComplaint,quickComplaint,unidentifiedObj,unidentifiedbody,addcybercrime,addgrievence,addmissingperson
+    private void initializeView(View view) {
         addComplaint = view.findViewById(R.id.complaints);
         quickComplaint = view.findViewById(R.id.quickcomplaints);
         unidentifiedObj = view.findViewById(R.id.unidentified_obj);
-        unidentifiedbody = view.findViewById(R.id.unidentified_body);
-        addcybercrime = view.findViewById(R.id.cyber_complaints);
-        addgrievence = view.findViewById(R.id.add_grievence);
-        addmissingperson = view.findViewById(R.id.add_missing_person);
+        unidentifiedBody = view.findViewById(R.id.unidentified_body);
+        addCyberCrime = view.findViewById(R.id.cyber_complaints);
+        addGrievance = view.findViewById(R.id.add_grievence);
+        addMissingPerson = view.findViewById(R.id.add_missing_person);
+    }
 
+    private void setClickListeners() {
         addComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFramnet();
+                loadFragment(new AddComplaintt());
             }
         });
 
-
-
+        // Add click listeners for other RelativeLayouts here
     }
 
-    private void loadFramnet() {
-
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
+        transaction.addToBackStack(null);
+        transaction.replace(R.id.main_container2, fragment);
+        transaction.commit();
     }
 }

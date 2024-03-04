@@ -238,7 +238,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:backgroundTint="@drawable/buttonback"
                 android:text="Next"
                  />
 
@@ -329,7 +328,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/textback"
                 android:hint="Longitude"
 
                 android:visibility="gone" />
@@ -340,7 +338,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:backgroundTint="@drawable/buttonback"
 
                 android:text="Submit" />
         </LinearLayout>

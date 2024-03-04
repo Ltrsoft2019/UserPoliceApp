@@ -53,23 +53,23 @@ public class AddComplaintOnBehalf extends Fragment {
 
     private void setUpAdapter() {
 
-        LocationDao locationDao = new LocationDao(getContext());
-        locationDao.getCountryAdapter(new NewCallBack() {
-            @Override
-            public void onError(String error) {
-                Toast.makeText(getContext() , "error "+error, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onSuccess(Object object) {
-                adapter = (ArrayAdapter<String>) object;
-                editTextCountryId.setAdapter(adapter);
-            }
-
-            @Override
-            public void onEmpty() {
-                Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        LocationDao locationDao = new LocationDao(getContext());
+//        locationDao.getCountryAdapter(new NewCallBack() {
+//            @Override
+//            public void onError(String error) {
+//                Toast.makeText(getContext() , "error "+error, Toast.LENGTH_SHORT).show();
+//            }
+//            @Override
+//            public void onSuccess(Object object) {
+//                adapter = (ArrayAdapter<String>) object;
+//                editTextCountryId.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void onEmpty() {
+//                Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     private void setId() {
