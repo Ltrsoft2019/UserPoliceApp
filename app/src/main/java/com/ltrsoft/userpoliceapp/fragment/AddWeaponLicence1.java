@@ -65,10 +65,7 @@ public class AddWeaponLicence1 extends Fragment  {
         valid &= Validations.validateEditText(editTextResidingSince,"Enter The ResidingSince ");
         valid &= Validations.validateEditText(editTextOfficeNumber," Enter TextOfficeNumber");
         valid &= Validations.validateEditText(editTextResidenceNumber," Enter The Residence Number");
-
         valid &= Validations.validateSpinner(editTextStationId,"Select Station Id ");
-
-
         return valid;
     }
 }
