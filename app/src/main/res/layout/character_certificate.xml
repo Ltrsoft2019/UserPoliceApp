@@ -26,7 +26,6 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_margin="20dp"
-            android:backgroundTint="@drawable/buttonback"
             android:text="Choose Station" />
 
         <!-- Building -->
@@ -166,7 +165,6 @@
             android:id="@+id/buttonSaveSubmit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

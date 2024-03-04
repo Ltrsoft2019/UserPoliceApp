@@ -24,17 +24,16 @@
         <EditText
             android:id="@+id/editTextParentOrSpouseName"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
-
             android:hint="Parent or Spouse Name"/>
 
         <!-- Village -->
         <EditText
             android:id="@+id/editTextVillage"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
 
@@ -44,17 +43,16 @@
         <EditText
             android:id="@+id/editTextPresentAddress"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
-
             android:hint="Present Address"/>
 
         <!-- Residing Since -->
         <EditText
             android:id="@+id/editTextResidingSince"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
 
@@ -64,7 +62,7 @@
         <EditText
             android:id="@+id/editTextOfficeNumber"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
 
@@ -74,7 +72,7 @@
         <EditText
             android:id="@+id/editTextResidenceNumber"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
 
@@ -84,8 +82,7 @@
         <Button
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
- android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
+            android:layout_height="50dp"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -93,7 +90,7 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"

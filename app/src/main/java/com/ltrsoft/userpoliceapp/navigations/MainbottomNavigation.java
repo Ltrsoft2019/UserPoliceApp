@@ -15,6 +15,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.fragment.AddComplaintt;
 import com.ltrsoft.userpoliceapp.fragment.AddFragment;
+import com.ltrsoft.userpoliceapp.fragment.EservicesCard;
+import com.ltrsoft.userpoliceapp.fragment.MyListings;
 import com.ltrsoft.userpoliceapp.fragment.UserDashBoard;
 import com.ltrsoft.userpoliceapp.fragment.login.Login;
 
@@ -38,13 +40,13 @@ public class MainbottomNavigation extends Fragment {
                     Toast.makeText(getContext(), "dashboard clicked", Toast.LENGTH_SHORT).show();
                     loadBadeFragmemt(new UserDashBoard());
                 } else if (id==R.id.my_complaint) {
-                    loadBadeFragmemt(new UserDashBoard());
+                    loadBadeFragmemt(new MyListings());
                     Toast.makeText(getContext(), "my complaints clicked", Toast.LENGTH_SHORT).show();
                 }else if (id==R.id.add) {
                     loadBadeFragmemt(new AddFragment());
                     Toast.makeText(getContext(), "add clicked", Toast.LENGTH_SHORT).show();
                 }else if (id==R.id.eservices) {
-                    loadBadeFragmemt(new UserDashBoard());
+                    loadBadeFragmemt(new EservicesCard());
                     Toast.makeText(getContext(), "eservices clicked", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.emergency_calling) {
@@ -54,6 +56,7 @@ public class MainbottomNavigation extends Fragment {
                 return true;
             }
         });
+
         return view;
     }
 
@@ -63,6 +66,5 @@ public class MainbottomNavigation extends Fragment {
                 .replace(R.id.main_container2,fragment)
                 .commit();
     }
-
 
 }
