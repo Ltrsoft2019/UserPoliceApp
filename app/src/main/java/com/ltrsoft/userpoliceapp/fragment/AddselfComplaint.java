@@ -1,6 +1,5 @@
 package com.ltrsoft.userpoliceapp.fragment;
 
-import com.google.android.gms.location.LocationServices;
 import android.Manifest;
 import android.location.Location;
 import android.os.Bundle;
@@ -18,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.helper.LocationHelper;
 import com.ltrsoft.userpoliceapp.model.Complaint;

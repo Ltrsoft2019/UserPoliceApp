@@ -104,6 +104,7 @@ public class AddComplaintOnBehalf extends Fragment {
         buttonUserSubmit = view.findViewById(R.id.UserSubmit);
         buttonComplaintSubmit = view.findViewById(R.id.ComplaintSubmit);
 
+
     }
 
     private boolean   validateForm() {
