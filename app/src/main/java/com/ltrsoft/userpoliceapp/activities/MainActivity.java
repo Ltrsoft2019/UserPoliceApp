@@ -1,12 +1,10 @@
 package com.ltrsoft.userpoliceapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
 import com.ltrsoft.userpoliceapp.R;
-import com.ltrsoft.userpoliceapp.fragment.MainDashBoard;
 import com.ltrsoft.userpoliceapp.fragment.login.Login;
 import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 import com.ltrsoft.userpoliceapp.utils.SessionManager;
@@ -30,6 +28,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(R.id.main_container,new Login())
                     .commit();
         }
-
     }
+
 }

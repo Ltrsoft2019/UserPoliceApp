@@ -1,52 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#EBEBEB">
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme">
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/align"/>
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tue, 05 Dec"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hii, Sultan Shaikh"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/notification"
-            android:layout_gravity="end"
-            android:layout_marginRight="20dp"/>
-    </androidx.appcompat.widget.Toolbar>
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="410dp"
@@ -74,6 +31,7 @@
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="10dp"/>
             <TextView
+                android:id="@+id/total_complaint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24"
@@ -108,6 +66,7 @@
                 android:background="@drawable/problem_solving" />
 
             <TextView
+                android:id="@+id/solved_complant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -146,6 +105,7 @@
                 android:background="@drawable/warrant" />
 
             <TextView
+                android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -179,6 +139,7 @@
                 android:background="@drawable/private_investigator" />
 
             <TextView
+                android:id="@+id/ongoint_invst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -242,6 +203,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/response_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2 Days"
@@ -251,6 +213,7 @@
             android:layout_marginTop="70dp"
             android:layout_marginLeft="50dp"/>
         <TextView
+            android:id="@+id/clearance_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20 Days"
@@ -289,6 +252,7 @@
                     android:textColor="#66000000"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/applied"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="4"
@@ -315,6 +279,7 @@
                     android:textColor="#66000000"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/granted"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
@@ -348,6 +313,7 @@
                     android:textColor="#66000000"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/rejected"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
@@ -373,6 +339,7 @@
                     android:textColor="#66000000"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/pending"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
@@ -386,13 +353,4 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="70dp"
-        android:background="@color/white"
-        app:menu="@menu/nav_menu"/>
-
 </LinearLayout>

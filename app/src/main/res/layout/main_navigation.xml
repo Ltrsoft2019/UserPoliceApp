@@ -11,11 +11,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            app:titleTextAppearance="@style/ToolbarTitleText"
             android:background="#FFFFFF"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
-
-
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -26,6 +25,7 @@
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
         android:layout_height="match_parent" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

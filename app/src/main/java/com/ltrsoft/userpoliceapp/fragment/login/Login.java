@@ -15,14 +15,11 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
-import com.ltrsoft.userpoliceapp.fragment.MainDashBoard;
 import com.ltrsoft.userpoliceapp.fragment.Registration;
-import com.ltrsoft.userpoliceapp.fragment.User_assigned_complaint;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 import com.ltrsoft.userpoliceapp.utils.SessionManager;
 import com.ltrsoft.userpoliceapp.utils.URLS;
-import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
 import java.util.HashMap;
