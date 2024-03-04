@@ -131,7 +131,7 @@ public class DAO<T> {
         };
         queue.add(request);
     }
-    public void getData(String key,String values, String url ,NewCallBack callBack){
+    public void getData(HashMap<String,String>map, String url ,NewCallBack callBack){
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -146,10 +146,6 @@ public class DAO<T> {
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String,String>map=new HashMap<>();
-                if (!key.isEmpty()){
-                    map.put(key,values);
-                }
                 return map;
             }
         };

@@ -33,7 +33,7 @@ public class Validations {
         return true;
     }
 
-    public boolean isValidMobileNumber(EditText editText, String errorMessage) {
+    public static boolean isValidMobileNumber(EditText editText, String errorMessage) {
         String mobileNumber = editText.getText().toString().trim();
 
         // Check if the mobile number is not null and has exactly 10 digits

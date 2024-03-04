@@ -51,5 +51,7 @@ dependencies {
     implementation ("com.google.android.gms:play-services-location:21.1.0")
     implementation ("com.google.android.gms:play-services-maps:18.2.0")
 
+    //for litte animation
+    implementation ("com.airbnb.android:lottie:4.2.2")
 
 }
