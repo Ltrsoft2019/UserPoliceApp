@@ -19,12 +19,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.model.QuickComplaint;
 import com.ltrsoft.userpoliceapp.utils.TakingImage;
+import com.ltrsoft.userpoliceapp.utils.URLS;
 
 import java.io.ByteArrayOutputStream;
 
@@ -33,6 +39,7 @@ public class AddQuickComplaint extends Fragment {
     }
     private View view;
     private ImageView imageView;
+    String img="";
     private Button photoPathButton;
     private Spinner stationIdButton;
     private EditText descriptionEditText;
@@ -49,6 +56,7 @@ public class AddQuickComplaint extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addquickcomplaint, container, false);
       setid();
+      setCLickListeners();
         TakingImage takingImage=new TakingImage();
         photoPathButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +67,52 @@ public class AddQuickComplaint extends Fragment {
         String address = addressEditText.getText().toString();
 //        String stationId = stationIdButton.getSelectedItem().toString();
         return view;
+    }
+
+    private void setCLickListeners() {
+        if (isValid()){
+            //  private ImageView imageView;
+            //    private Button photoPathButton;
+            //    private Spinner stationIdButton;
+            //    private EditText descriptionEditText;
+            //    private EditText addressEditText;
+            insertdata(stationIdButton.getSelectedItem().toString(),
+                    descriptionEditText.getText().toString(),
+                    addressEditText.getText().toString()
+            ,img);
+        }
+        else {
+            Toast.makeText(getContext(), "form data is not valid", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void insertdata(String station, String description, String addresse, String img) {
+
+        DAO dao = new DAO(getContext());
+        QuickComplaint quickComplaint = new QuickComplaint("",station,"1",img,description,addresse);
+        dao.insertOrUpdate(quickComplaint, new NewCallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "error "+error
+                        , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                Toast.makeText(getContext(), "success "+object, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onEmpty() {
+                Toast.makeText(getContext(), "empty response ", Toast.LENGTH_SHORT).show();
+            }
+        }, URLS.READSTATION);
+
+    }
+
+    private boolean isValid() {
+        boolean valid = true;
+        return valid;
     }
 
     private void setid() {

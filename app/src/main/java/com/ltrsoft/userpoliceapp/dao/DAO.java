@@ -131,7 +131,7 @@ public class DAO<T> {
         };
         queue.add(request);
     }
-    public void getData(HashMap<String,String>map, String url ,NewCallBack callBack){
+    public void  getData(HashMap<String,String>map, String url ,NewCallBack callBack){
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

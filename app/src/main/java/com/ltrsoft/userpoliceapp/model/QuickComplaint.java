@@ -4,6 +4,14 @@ public class QuickComplaint {
 
     private String quick_complaint_id,station_id, user_id, photo_path, description,address,status_id;
 
+    public QuickComplaint(String quick_complaint_id, String station_id, String user_id, String photo_path, String description, String address) {
+        this.quick_complaint_id = quick_complaint_id;
+        this.station_id = station_id;
+        this.user_id = user_id;
+        this.photo_path = photo_path;
+        this.description = description;
+        this.address = address;
+    }
 
     public String getQuick_complaint_id() {
         return quick_complaint_id;

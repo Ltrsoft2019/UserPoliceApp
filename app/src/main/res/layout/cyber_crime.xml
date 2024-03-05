@@ -111,22 +111,35 @@
             android:layout_marginLeft="20dp"
             android:inputType="textMultiLine"
             android:hint="Enter Where Occurred"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
 
         <!-- Evidence Photo -->
         <TextView
             android:layout_width="wrap_content"
- android:layout_height="50dp"
+            android:id="@+id/imagetaking"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:text="Evidence Photo"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:id="@+id/evidance_photo"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+
 
         <!-- Add a Button or ImageView for uploading a photo -->
 
         <!-- Description -->
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
@@ -142,12 +155,11 @@
             android:hint="Enter Description"/>
         <Button
             android:id="@+id/buttonSaveSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+              android:layout_height="50dp"
             android:text="save and submit"
-             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"/>
+             android:layout_marginBottom="40dp"/>
 
     </LinearLayout>
 </ScrollView>
