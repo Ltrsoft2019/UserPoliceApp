@@ -86,10 +86,12 @@ public class MainNavigation extends Fragment  implements NavigationView.OnNaviga
         }
         else if (id==R.id.contact_us){
             loadFragmnet(new MapFragment());
+
         }
         else if (id==R.id.logout){
             showDialogue();
         }
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
