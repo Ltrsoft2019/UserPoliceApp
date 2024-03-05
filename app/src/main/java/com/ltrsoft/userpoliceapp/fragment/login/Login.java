@@ -32,7 +32,7 @@ public class Login extends Fragment {
     private TextView forgotPasswordTextView;
     private TextView signUpTextView;
     private Button loginButton;
-    View view;
+    private View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -99,6 +99,7 @@ public class Login extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject((String) object);
                     String success = jsonObject.getString("Message");
+                    String id = jsonObject.getString("0");
                     Toast.makeText(getContext(), "response "+success, Toast.LENGTH_SHORT).show();
                     System.out.println("response "+(String) object);
                     if (success.contains("100")){

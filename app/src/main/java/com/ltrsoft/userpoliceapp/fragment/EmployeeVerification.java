@@ -54,8 +54,7 @@ public class EmployeeVerification extends Fragment {
         editTextIdentityProofDateOfExpiry = view.findViewById(R.id.editTextIdentityProofDateOfExpiry);
         editTextAddressProofDocNumber = view.findViewById(R.id.editTextAddressProofDocNumber);
         editTextAddressProofIssuingAuthority = view.findViewById(R.id.editTextAddressProofIssuingAuthority);
-        editTextAddressProofDateOfIssue = view.findViewById(R.id.editTextAddressProofDateOfIssue);
-
+        editTextAddressProofDateOfIssue = view.findViewById(R.id.editTextIdentityProofDateOfIssue);
         buttonSaveNext = view.findViewById(R.id.buttonSaveNext);
 
     }

@@ -29,16 +29,6 @@ public class MyPagerAdapter extends FragmentStateAdapter {
         else {
             return new AddselfComplaint();
         }
-//        switch (position){
-//            case 0:
-//                AddComplaintOnBehalf addComplaintOnBehalf = new AddComplaintOnBehalf();
-//                return addComplaintOnBehalf;
-//            case 1:
-//                return new AddselfComplaint();
-//            default:
-//                return new AddselfComplaint();
-//        }
-//        return new AddselfComplaint();
     }
 
     @Override

@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.fragment.login.Login;
+import com.ltrsoft.userpoliceapp.model.RallyPermission;
 import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 
 public class EservicesCard extends Fragment {
@@ -52,49 +53,49 @@ public class EservicesCard extends Fragment {
         clearance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//                loadFragment(new );
             }
         });
         domestichelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadFragment(new DomesticHelp());
             }
         });
         emp_veri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadFragment(new EmployeeVerification());
             }
         });
         passport_veri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//            loadFragment(new Pa);
             }
         });
         noc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadFragment(new NocPetroleaum());
             }
         });
         ampl_sound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadFragment(new SoundPermission1());
             }
         });
         rally.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//            loadFragment(new );
             }
         });
         festivals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//            loadFragment(new Fragment());
             }
         });
     }
@@ -112,7 +113,6 @@ public class EservicesCard extends Fragment {
         ampl_sound = view.findViewById(R.id.license_amp_sound);
         rally = view.findViewById(R.id.rally_permisssion);
         festivals = view.findViewById(R.id.permisssion_festival);
-
     }
 
     private void loadFragment(Fragment fragment){

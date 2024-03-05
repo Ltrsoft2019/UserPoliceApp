@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -45,7 +46,7 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
 
     //Gson
-    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     //for map
     implementation ("com.google.android.gms:play-services-location:21.1.0")

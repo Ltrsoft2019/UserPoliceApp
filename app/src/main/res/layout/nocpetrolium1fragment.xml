@@ -78,7 +78,7 @@
         <TextView
             android:id="@+id/editTextTypesOfControlBlasting"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:hint="Types of Control Blasting"/>
@@ -87,7 +87,7 @@
         <RadioGroup
             android:id="@+id/radioGroupLicenseNoc"
             android:layout_width="match_parent"
- android:layout_height="50dp"
+            android:layout_height="50dp"
             android:background="@drawable/textback"
             android:layout_margin="20dp"
             android:orientation="horizontal">
@@ -113,8 +113,7 @@
         <Button
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
- android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

@@ -24,7 +24,6 @@ import java.util.List;
 public class AddComplaintt extends Fragment {
     public AddComplaintt() {}
     private View view;
-    private BottomNavigationView navigationView;
     private ViewPager2 viewPager;
     private TabLayout tabLayout;
     @Nullable
@@ -36,25 +35,21 @@ public class AddComplaintt extends Fragment {
         MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),getActivity().getLifecycle());
         viewPager.setAdapter(adapter);
 
-        new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> tab.setText("Tab " + (position + 1))
-        ).attach();
-//        navigationView = view.findViewById(R.id.topnav);
+//        new TabLayoutMediator(tabLayout, viewPager,
+//                (tab, position) ->
+//                        tab.setText("Tab " + (position + 1))
+//        ).attach();
 
-//        getChildFragmentManager().beginTransaction().add(R.id.complaint_container,new AddComplaintt()).commit();
-
-//        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                int id = item.getItemId();
-//               if (id==R.id.self){
-//                   getChildFragmentManager().beginTransaction().add(R.id.complaint_container,new AddComplaintOnBehalf()).commit();
-//               } else if (id==R.id.onbehalf) {
-//                   getChildFragmentManager().beginTransaction().add(R.id.complaint_container,new AddComplaintOnBehalf()).commit();
-//               }
-//                return false;
-//            }
-//        });
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                if (position==0) {
+                    tab.setText("On Behalf");
+                }else   if (position==1) {
+                    tab.setText("On Self");
+                }
+            }
+        }).attach();
 
         return view;
     }

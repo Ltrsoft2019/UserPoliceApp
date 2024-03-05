@@ -56,7 +56,6 @@ public class MainbottomNavigation extends Fragment {
                 return true;
             }
         });
-
         return view;
     }
 

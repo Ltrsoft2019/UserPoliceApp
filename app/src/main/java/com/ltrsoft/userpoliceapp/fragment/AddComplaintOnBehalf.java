@@ -43,12 +43,17 @@ public class AddComplaintOnBehalf extends Fragment {
             public void onClick(View v) {
               if(validateForm()){
                   Toast.makeText(getContext(), " all form is validate ", Toast.LENGTH_SHORT).show();
+                  SaveData();
               }else {
                   Toast.makeText(getContext(), "form is not validate ", Toast.LENGTH_SHORT).show();
               }
             }
         });
         return view;
+    }
+
+    private void SaveData() {
+
     }
 
     private void setUpAdapter() {
