@@ -42,6 +42,7 @@ public class CyberCrime extends Fragment {
         View view = inflater.inflate(R.layout.cyber_crime, container, false);
         initializeViews(view);
          picker = new ImagePicker(getActivity());
+         evidance_photo.setImageResource(R.drawable.complaint);
         picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
             @Override
             public void onImagePicked(Bitmap bitmap) {

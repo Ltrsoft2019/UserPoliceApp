@@ -19,6 +19,7 @@ import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 import com.ltrsoft.userpoliceapp.utils.SessionManager;
 import com.ltrsoft.userpoliceapp.utils.URLS;
+import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
 import org.json.JSONException;
@@ -99,11 +100,12 @@ public class Login extends Fragment {
                 try {
                     JSONObject jsonObject = new JSONObject((String) object);
                     String success = jsonObject.getString("Message");
-                    String id = jsonObject.getString("0");
-                    Toast.makeText(getContext(), "response "+success, Toast.LENGTH_SHORT).show();
+                    JSONObject jsonObject1 = jsonObject.getJSONObject("0");
+                    String id = jsonObject1.getString("user_id");
+                    Toast.makeText(getContext(), "response "+id, Toast.LENGTH_SHORT).show();
                     System.out.println("response "+(String) object);
                     if (success.contains("100")){
-                        loginSuccess();
+                        loginSuccess(id);
                     }
                     else {
                         loginFailed();
@@ -127,10 +129,11 @@ public class Login extends Fragment {
         passwordEditText.setText("");
         emailEditText.setError("wrong credentials");
 
-
     }
 
-    public void loginSuccess(){
+    public void loginSuccess(String id){
+        UserDataAccess access = new UserDataAccess();
+        access.setUserId(id,getActivity());
         new SessionManager(getContext()).setLogin(true);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()

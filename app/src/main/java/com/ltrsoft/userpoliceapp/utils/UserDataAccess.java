@@ -7,7 +7,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 
 public class UserDataAccess {
-    String userId,complaintID;
+    String userId;
     public String getUserId(Activity activity) {
         SharedPreferences pref = activity.getSharedPreferences("UserData", MODE_PRIVATE);
         return pref.getString("userID",null);

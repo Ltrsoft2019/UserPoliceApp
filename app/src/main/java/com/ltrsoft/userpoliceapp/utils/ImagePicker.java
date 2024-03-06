@@ -1,10 +1,10 @@
 package com.ltrsoft.userpoliceapp.utils;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-
 public class ImagePicker {
 
     public static final int REQUEST_IMAGE_PICKER = 1001;
@@ -36,6 +36,9 @@ public class ImagePicker {
             }
             if (listener != null) {
                 listener.onImagePicked(bitmap);
+            }
+            else {
+                System.out.println("listener null");
             }
         }
     }

@@ -5,7 +5,7 @@ public class Complaint {
     private String complaint_id,complaint_subject, complaint_description,against,inscidant_date,
     status_id, latitude,longitude, user_id,complaint_fir_id,subtype_id;
 
-    public Complaint(String complaint_id, String complaint_subject, String complaint_description, String against, String inscidant_date, String status_id, String latitude, String longitude, String user_id, String complaint_fir_id, String subtype_id, String latitute, String longitute) {
+    public Complaint(String complaint_id, String complaint_subject, String complaint_description, String against, String inscidant_date, String status_id, String latitude, String longitude, String user_id, String complaint_fir_id, String subtype_id) {
         this.complaint_id = complaint_id;
         this.complaint_subject = complaint_subject;
         this.complaint_description = complaint_description;
