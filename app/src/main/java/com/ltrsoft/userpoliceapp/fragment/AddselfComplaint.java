@@ -36,6 +36,7 @@ public class AddselfComplaint extends Fragment implements LocationHelper.Locatio
     private static final int REQUESTCODE = 1000;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private static String lattitude ,longitude;
+    DAO dao ;
     public AddselfComplaint() {
     }
    private  View view;
@@ -52,6 +53,7 @@ public class AddselfComplaint extends Fragment implements LocationHelper.Locatio
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.addselftcomplaintfragment, container, false);
+        dao=new DAO(getContext());
          setid();
          setAdapter();
          LocationHelper helper = new LocationHelper(getContext());
@@ -80,6 +82,7 @@ public class AddselfComplaint extends Fragment implements LocationHelper.Locatio
 
     private void setAdapter() {
 
+//        dao.select(Complaint.class,"","",);
 
     }
 

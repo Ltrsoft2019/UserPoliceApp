@@ -1,129 +1,83 @@
 package com.ltrsoft.userpoliceapp.fragment;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
-import com.ltrsoft.userpoliceapp.dao.DAO;
-import com.ltrsoft.userpoliceapp.model.CyberCrimemodel;
-import com.ltrsoft.userpoliceapp.utils.ImagePicker;
-import com.ltrsoft.userpoliceapp.utils.Validations;
+import com.ltrsoft.userpoliceapp.ui.FormElement;
+import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
+
+import java.lang.annotation.ElementType;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 
 public class CyberCrime extends Fragment {
+    private LinearLayout layout;
+    private View view;
+    private FormGenerator formGenerator;
+    private Button submit;
+    private List<FormElement>elements;
+    private static final String CATEGORY = "cybe crime category";
+    private static final String LOST_MONEY = "Does you lost your money";
+    private static final String DATE_TIME = "Date and time";
+    private static final String IS_DELAY = "Is there any delay";
+    private static final String WHERE_OCCURE = "where does it occure";
+    private static final String EVIDENCE_PHOTO = "Evidence Photo";
+    private static final String DESCRIPTION = "Description About Photo";
+    private static final String STATION = "Station";
 
-    private EditText editTextLostMoney, editTextDateTime, editTextWhereOccurred, editTextDescription;
-    private RadioGroup radioGroupIsDelay;
-    private TextView imagetaking;
-    private RadioButton radioButtonYesDelay, radioButtonNoDelay;
-    private Button buttonSaveSubmit;
-    private ImagePicker picker;
-    String encodeImage=null;
+    public CyberCrime() {
 
-    private ImageView evidance_photo;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.cyber_crime, container, false);
-        initializeViews(view);
-         picker = new ImagePicker(getActivity());
-         evidance_photo.setImageResource(R.drawable.complaint);
-        picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
-            @Override
-            public void onImagePicked(Bitmap bitmap) {
-                evidance_photo.setImageBitmap(bitmap);
-            }
-        });
+        view = inflater.inflate(R.layout.common_form, container, false);
+        layout = view.findViewById(R.id.layout123);
 
-        imagetaking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                picker.pickImage();
+        elements = new ArrayList<>();
+        elements.add(new FormElement(CATEGORY,FormElement.TYPE_SPINNER,""));
+        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
+        elements.add(new FormElement(DATE_TIME,FormElement.TYPE_DATE_PICKER,""));
+        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
+        elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
+        formGenerator = new FormGenerator(layout,elements);
+        formGenerator.generateForm();
 
-            }
-        });
-        buttonSaveSubmit.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String lostMoney = editTextLostMoney.getText().toString();
-                String dateTime = editTextLostMoney.getText().toString();
-                String whereOccurred = editTextWhereOccurred.getText().toString();
-                String description = editTextDescription.getText().toString();
-
-                // Get data from RadioGroup
-                String isDelay = radioButtonYesDelay.isChecked() ? "Yes" : "No";
-
-
-                //saveAndSubmitData();
-                if (validData()){
-                    insertdata(lostMoney,dateTime,whereOccurred,description,isDelay,encodeImage);
-
-                }else {
-                    Toast.makeText(getContext(), "All fields are Compulsory", Toast.LENGTH_SHORT).show();
-                }
-
+                    if (FormValidator.isFormValid(layout)){
+                        Map<String,String> map = formGenerator.getFormData(layout);
+//                        Log.d(CATEGORY,)
+                    }
             }
         });
         return view;
     }
 
-    private void insertdata(String lostMoney, String dateTime,
-                            String whereOccurred, String description, String isDelay,
-                            String encodeImage)
-    {
-        DAO dao=new DAO(getContext());
-        CyberCrimemodel cyberCrimemodel =new CyberCrimemodel();
-        // dao.insertOrUpdate();
-    }
-
-    private void initializeViews(View view) {
-        editTextLostMoney = view.findViewById(R.id.editTextLostMoney);
-        editTextDateTime = view.findViewById(R.id.editTextDateTime);
-        editTextWhereOccurred = view.findViewById(R.id.editTextWhereOccurred);
-        editTextDescription = view.findViewById(R.id.editTextDescription);
-
-        radioGroupIsDelay = view.findViewById(R.id.radioGroupIsDelay);
-        radioButtonYesDelay = view.findViewById(R.id.radioButtonYesDelay);
-        radioButtonNoDelay = view.findViewById(R.id.radioButtonNoDelay);
-        imagetaking=view.findViewById(R.id.imagetaking);
-        buttonSaveSubmit = view.findViewById(R.id.buttonSaveSubmit);
-        evidance_photo = view.findViewById(R.id.evidance_photo);
-
-    }
-
-    private void saveAndSubmitData() {
-        // Get data from EditText fields
-
-    }
-    private boolean validData() {
-        boolean valid =true;
-
-        valid &= Validations.validateEditText(editTextLostMoney,"Enter The Lost Money ");
-        valid &= Validations.validateEditText( editTextLostMoney,"Enter the Lost Money ");
-        valid &= Validations.validateEditText(editTextWhereOccurred,"Enter The  Occured ");
-        valid &= Validations.validateEditText(editTextDescription,"Enter The Description");
-        return valid;
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        picker.onActivityResult(requestCode,resultCode,data);
+        formGenerator.onActivityResult(requestCode,resultCode,data);
     }
 }
 
