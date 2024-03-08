@@ -46,7 +46,7 @@ public class CyberCrime extends Fragment {
     private static final String EVIDENCE_PHOTO = "Evidence Photo";
     private static final String DESCRIPTION = "Description About Photo";
     private static final String STATION = "Station";
-    private static final String DATE_PICKER = "Date Of Birth";
+    private static final String DATE_PICKER = "Incidant Date";
 
     public CyberCrime() {
 
@@ -62,14 +62,18 @@ public class CyberCrime extends Fragment {
         elements = new ArrayList<>();
         elements.add(new FormElement(CATEGORY,FormElement.TYPE_SPINNER,""));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
-        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
-        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
+         elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(GENDER,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
-        formGenerator = new FormGenerator(layout,elements,this);
+
+
+
+        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
+
+        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
+        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
+         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
         Adapters adapters=new Adapters(getContext(),layout,formGenerator);
         adapters.setAdapters();

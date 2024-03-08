@@ -108,7 +108,7 @@ public class FormGenerator {
         // Apply background and padding to the EditText
         editText.setBackgroundResource(R.drawable.btn_border);
         int paddingInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics());
-        editText.setPadding(paddingInDp, 0, 0, 0);
+        editText.setPadding(paddingInDp, 0, 0, 10);
 
         // Set layout parameters for the EditText
         LinearLayout.LayoutParams editTextParams = new LinearLayout.LayoutParams(
@@ -161,8 +161,8 @@ public class FormGenerator {
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
         textViewParams.gravity = Gravity.CENTER_HORIZONTAL; // Center horizontally
-        textViewParams.setMargins(0, 20, 0, 0); // Set margin top to 10dp
-
+        textViewParams.setMargins(0, 30, 0, 0); // Set margin top to 10dp
+        textView.setPadding(0,10,0,0);
         textView.setLayoutParams(textViewParams);
         textView.setText(label);
         formLayout.addView(textView);
@@ -363,7 +363,15 @@ public class FormGenerator {
         checkBox.setText(spannableString);
 //         checkBox.setText(" " +label);
         checkBox.setTag(label);
-        checkBox.setPadding(0,8,0,0);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(0, 15, 0, 0); // Set margins (left, top, right, bottom)
+
+        checkBox.setLayoutParams(layoutParams);
+
+        checkBox.setPadding(0,6,0,0);
         checkBox.setTextSize(17);
        // checkBox.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_border));
 
