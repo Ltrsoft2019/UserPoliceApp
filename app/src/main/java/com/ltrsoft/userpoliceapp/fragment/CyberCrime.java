@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
@@ -31,16 +34,19 @@ public class CyberCrime extends Fragment {
     private View view;
     private FormGenerator formGenerator;
     private Button submit;
+    private TextView heading;
     private List<FormElement>elements;
-    private static final String CATEGORY = "cybe crime category";
+    private static final String GENDER = "Gender";
+
+    private static final String CATEGORY = "Cyber crime category";
     private static final String LOST_MONEY = "Does you lost your money";
     private static final String DATE_TIME = "Date and time";
     private static final String IS_DELAY = "Is there any delay";
-    private static final String WHERE_OCCURE = "where does it occure";
+    private static final String WHERE_OCCURE = "Where Does It Occure";
     private static final String EVIDENCE_PHOTO = "Evidence Photo";
     private static final String DESCRIPTION = "Description About Photo";
     private static final String STATION = "Station";
-    private static final String DATE_PICKER = "date of birth";
+    private static final String DATE_PICKER = "Date Of Birth";
 
     public CyberCrime() {
 
@@ -51,7 +57,8 @@ public class CyberCrime extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.common_form, container, false);
         layout = view.findViewById(R.id.layout123);
-
+        heading=view.findViewById(R.id.heading);
+        heading.setText("Cyber Crime");
         elements = new ArrayList<>();
         elements.add(new FormElement(CATEGORY,FormElement.TYPE_SPINNER,""));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
@@ -61,6 +68,7 @@ public class CyberCrime extends Fragment {
         elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(GENDER,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
         Adapters adapters=new Adapters(getContext(),layout,formGenerator);

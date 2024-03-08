@@ -5,7 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -77,17 +81,8 @@ public class FormGenerator {
             }
         }
     }
-    private  void generateEditText(String label,String subtype) {
-
-        TextView textView = new TextView(context);
-        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, context.getResources().getDisplayMetrics())
-        );
-        textView.setLayoutParams(textViewParams);
-        textView.setText(label);
-        textView.setPadding(5, 20, 0, 0);
-        formLayout.addView(textView);
+    private void generateEditText(String label, String subtype) {
+        genratetextview(label);
 
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
@@ -95,10 +90,10 @@ public class FormGenerator {
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        System.out.println("label"+label);
+
         // Create EditText
         EditText editText = new EditText(context);
-        switch (subtype){
+        switch (subtype) {
             case FormElement.SUBTYPE_EMAIL:
                 editText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
                 break;
@@ -109,15 +104,21 @@ public class FormGenerator {
                 editText.setInputType(InputType.TYPE_CLASS_TEXT);
                 break;
         }
+
+        // Apply background and padding to the EditText
+        editText.setBackgroundResource(R.drawable.btn_border);
+        int paddingInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics());
+        editText.setPadding(paddingInDp, 0, 0, 0);
+
+        // Set layout parameters for the EditText
         LinearLayout.LayoutParams editTextParams = new LinearLayout.LayoutParams(
                 0,
-                ViewGroup.LayoutParams.WRAP_CONTENT,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics()),
                 1
         );
-        editText.setBackground(context.getResources().getDrawable(R.drawable.btn_border));
+        editTextParams.gravity = Gravity.CENTER_VERTICAL;
         editText.setLayoutParams(editTextParams);
         editText.setTag(label);
-
 
         // Create ImageView
         ImageView imageView = new ImageView(context);
@@ -151,23 +152,33 @@ public class FormGenerator {
 
         // Add the LinearLayout to the parent formLayout
         formLayout.addView(linearLayout);
-
     }
+
     private void generateImageView(String label) {
+        TextView textView = new TextView(context);
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        textViewParams.gravity = Gravity.CENTER_HORIZONTAL; // Center horizontally
+        textViewParams.setMargins(0, 20, 0, 0); // Set margin top to 10dp
+
+        textView.setLayoutParams(textViewParams);
+        textView.setText(label);
+        formLayout.addView(textView);
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.cam2);
         imageView.setTag(label);
 
         // Adjust the layout parameters for the ImageView
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams imageLayoutParams = new LinearLayout.LayoutParams(
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, context.getResources().getDisplayMetrics()),
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, context.getResources().getDisplayMetrics())
         );
-        layoutParams.gravity = Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL; // Center both vertically and horizontally
-        layoutParams.setMargins(0, 20, 0, 0); // Adjust margins as needed/ Adjust margins as needed
+        imageLayoutParams.gravity = Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL; // Center both vertically and horizontally
+        imageLayoutParams.setMargins(0, 0, 0, 0); // Adjust margins as needed
 
-
-        imageView.setLayoutParams(layoutParams);
+        imageView.setLayoutParams(imageLayoutParams);
         picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
             @Override
             public void onImagePicked(Bitmap bitmap) {
@@ -181,12 +192,24 @@ public class FormGenerator {
             }
         });
         formLayout.addView(imageView);
+
+
     }
+
     private void generateButton(String label) {
+         genratetextview(label);
         Button button = new Button(context);
+        LinearLayout.LayoutParams buttonparam = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics())
+        );
+        buttonparam.setMargins(0, 0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics()), 0);
+
+        button.setLayoutParams(buttonparam);
         button.setTag(label);
         button.setText(label);
         button.setTag(label);
+        button.setBackground(context.getResources().getDrawable(R.drawable.btn_border));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,13 +241,16 @@ public class FormGenerator {
     }
     private void generateRadioGroup(String label, List<String> options) {
         // Create a new RadioGroup
+        genratetextview(label+" :");
         RadioGroup radioGroup = new RadioGroup(context);
-        radioGroup.setOrientation(LinearLayout.HORIZONTAL); // Set orientation to vertical
+        radioGroup.setPadding(0,10,0,10);
+         radioGroup.setOrientation(LinearLayout.HORIZONTAL); // Set orientation to vertical
         // Create RadioButtons based on the options provided
         for (int i = 0; i < options.size(); i++) {
             String gendername = options.get(i);
             RadioButton radioButton = new RadioButton(context);
             radioButton.setText(gendername);
+
             radioGroup.addView(radioButton); // Add RadioButton to RadioGroup
         }{
 
@@ -279,23 +305,17 @@ public class FormGenerator {
         return formDataMap;
     }
     public Spinner generateSpinner(String label, ArrayList<String> originallist, ArrayAdapter<String> adapter, AdapterView.OnItemSelectedListener selectedListener) {
-        TextView textView = new TextView(context);
-        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, context.getResources().getDisplayMetrics())
-        );
-        textView.setLayoutParams(textViewParams);
-        textView.setText(label);
-        textView.setPadding(5, 20, 0, 0);
-        formLayout.addView(textView);
+        genratetextview(label);
 
         Spinner spinner = new Spinner(context);
         LinearLayout.LayoutParams spinnerParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics())
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics())
         );
         spinner.setTag(label);
         spinner.setLayoutParams(spinnerParams);
+        spinnerParams.setMargins(0, 0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics()), 0);
+
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(selectedListener);
         spinner.setOnTouchListener(new View.OnTouchListener() {
@@ -326,18 +346,45 @@ public class FormGenerator {
                 return false;
             }
         });
+        spinner.setBackground(context.getResources().getDrawable(R.drawable.btn_border));
+
         formLayout.addView(spinner);
         return spinner;
     }
 
     private  void generateCheckBox(String label) {
         CheckBox checkBox = new CheckBox(context);
-        checkBox.setText(label);
+        SpannableString spannableString = new SpannableString(" " + label);
+
+        // Apply bold style to the SpannableString
+        spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        // Set the SpannableString as the text of the CheckBox
+        checkBox.setText(spannableString);
+//         checkBox.setText(" " +label);
         checkBox.setTag(label);
+        checkBox.setPadding(0,8,0,0);
+        checkBox.setTextSize(17);
+       // checkBox.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_border));
+
         formLayout.addView(checkBox);
     }
     private  void generateDatePicker() {
 
+    }
+    private void genratetextview(String label){
+        TextView textView = new TextView(context);
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, context.getResources().getDisplayMetrics())
+        );
+        textView.setTextSize(16);
+         textViewParams.setMargins(10,20,0,0);
+        textView.setLayoutParams(textViewParams);
+        textView.setText(label);
+
+        textView.setPadding(5, 20, 0, 0);
+        formLayout.addView(textView);
     }
 }
 

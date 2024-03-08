@@ -12,8 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:titleTextAppearance="@style/ToolbarTitleText"
-            android:background="#FFFFFF"
-            android:minHeight="?attr/actionBarSize"
+             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme">
             <ImageButton
                 android:layout_width="30dp"
@@ -36,8 +35,7 @@
         android:layout_height="match_parent"
         app:layout_anchorGravity="start"
         android:layout_gravity="start"
-        android:backgroundTint="#F5F5F5"
-        app:headerLayout="@layout/header"
+         app:headerLayout="@layout/header"
         app:menu="@menu/side_nav_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
