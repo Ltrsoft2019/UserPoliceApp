@@ -55,15 +55,12 @@ public class Searchviews {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                String selectedItem = originallist.get(position);
+               // Remove the selected item from its current position
                originallist.remove(position);
                // Add the selected item to the top
                originallist.add(0, selectedItem);
-
-               // Update the adapter associated with the spinner
-               adapter1.clear(); // Clear existing items
-               adapter1.addAll(originallist); // Add the updated list
-               adapter1.notifyDataSetChanged(); // Notify the adapter of the change
-
+               // Notify the adapter of the data change
+              // adapter1.notifyDataSetChanged();
                // Call onSuccess callback with the selected item
                callBack.onSuccess(selectedItem);
                // Dismiss the dialog
