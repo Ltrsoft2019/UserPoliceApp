@@ -26,7 +26,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-
 public class Login extends Fragment {
     private EditText emailEditText;
     private EditText passwordEditText;
@@ -49,7 +48,6 @@ public class Login extends Fragment {
         forgotPasswordTextView =view. findViewById(R.id.forgot_password);
         signUpTextView = view.findViewById(R.id.registration);
         loginButton =view. findViewById(R.id.loginbtn);
-
 
         forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,23 +94,26 @@ public class Login extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
-                loginSuccess("1");
-//                try {
-//                    JSONObject jsonObject = new JSONObject((String) object);
-//                    String success = jsonObject.getString("Message");
-//                    JSONObject jsonObject1 = jsonObject.getJSONObject("0");
-//                    String id = jsonObject1.getString("user_id");
-//                    Toast.makeText(getContext(), "response "+id, Toast.LENGTH_SHORT).show();
-//                    System.out.println("response "+(String) object);
-//                    if (success.contains("100")){
-//                        loginSuccess(id);
-//                    }
-//                    else {
-//                        loginFailed();
-//                    }
-//                } catch (JSONException e) {
-//                    throw new RuntimeException(e);
-//                }
+//                loginSuccess("1");
+
+                try {
+                    JSONObject jsonObject = new JSONObject((String) object);
+                    String success = jsonObject.getString("Message");
+
+                    System.out.println("response "+(String) object);
+                    if (success.contains("100")){
+                        JSONObject jsonObject1 = jsonObject.getJSONObject("0");
+                        String id = jsonObject1.getString("user_id");
+                        Toast.makeText(getContext(), "response "+id, Toast.LENGTH_SHORT).show();
+                        loginSuccess(id);
+                    }
+                    else {
+                        loginFailed();
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
             }
 
             @Override

@@ -1,6 +1,6 @@
 package com.ltrsoft.userpoliceapp.ui;
-
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,29 +28,31 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.utils.ImagePicker;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class FormGenerator {
-
     private Context context;
     private LinearLayout formLayout;
     private List<FormElement> formElements;
     ArrayAdapter<String>changeAdapter;
     private ImagePicker picker;
+    private Fragment fragment;
 
-    public FormGenerator(LinearLayout layout, List<FormElement> list) {
+    public FormGenerator(LinearLayout layout, List<FormElement> list,Fragment fragment) {
         this.formLayout = layout;
         this.formElements = list;
         this.context = layout.getContext();
-        this.picker = new ImagePicker((Activity) context);
+        this.picker = new ImagePicker(fragment);
+        this.fragment = fragment;
     }
     public void generateForm() {
 
@@ -70,6 +73,7 @@ public class FormGenerator {
                 case FormElement.TYPE_RADIO_GROUP:
                     generateRadioGroup(element.getLabel(), element.getOptions());
                     break;
+
             }
         }
     }
@@ -186,7 +190,28 @@ public class FormGenerator {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                generateDatePicker();
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        context,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int selectedYear, int selectedMonth, int selectedDay) {
+                                // Handle the date selection or update the TextView
+                                String dateOfBirth = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
+                                button.setText(dateOfBirth);
+                            }
+                        },
+                        year,
+                        month,
+                        day);
+
+                // Show the date picker dialog
+                datePickerDialog.show();
             }
         });
         formLayout.addView(button);
@@ -245,9 +270,11 @@ public class FormGenerator {
                 Spinner spinner = (Spinner) childView;
                 formDataMap.put(spinner.getTag().toString(), spinner.getSelectedItem().toString());
                 /* Get selected item from spinner and add it to formDataMap */
-            }
-
-            // Add handling for other types of form elements
+            } else if (childView instanceof Button) {
+          Button button = (Button) childView;
+              formDataMap.put(button.getTag().toString(),button.getText().toString());
+              /* Get selected item from spinner and add it to formDataMap */
+          }
         }
         return formDataMap;
     }
@@ -280,7 +307,6 @@ public class FormGenerator {
                         public void onError(String error) {
                             Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
                         }
-
                         @Override
                         public void onSuccess(Object object) {
                             String selected = (String) object;
@@ -310,4 +336,11 @@ public class FormGenerator {
         checkBox.setTag(label);
         formLayout.addView(checkBox);
     }
+    private  void generateDatePicker() {
+
+    }
 }
+
+
+
+

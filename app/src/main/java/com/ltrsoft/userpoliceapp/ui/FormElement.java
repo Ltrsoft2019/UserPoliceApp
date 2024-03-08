@@ -11,11 +11,14 @@ public class FormElement {
     public static final String TYPE_DATE_PICKER = "date_picker";
     public static final String TYPE_CHECKBOX = "checkbox";
     public static final String TYPE_SPINNER = "spinner";
+    public static final String TYPE_RADIO_GROUP = "radiogroup";
+
 
     public static final String SUBTYPE_EMAIL = "email";
     public static final String SUBTYPE_NUMBER = "number";
     public static final String SUBTYPE_TEXT = "text";
-    public static final String TYPE_RADIO_GROUP = "radiogroup";
+    public static final String SYBTYPE_SPINNER_STATION = "stations";
+
 
 
     private String label;

@@ -44,7 +44,7 @@ public class GlobalForm extends Fragment {
         list.add(new FormElement("Gender",FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
         list.add(new FormElement("Is Ever Criminal",FormElement.TYPE_CHECKBOX,FormElement.SUBTYPE_TEXT));
         list.add(new FormElement("Image",FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
-        formGenerator= new FormGenerator(layout,list);
+        formGenerator= new FormGenerator(layout,list,this);
         formGenerator.generateForm();
         Adapters adapters = new Adapters(getContext(),layout,formGenerator);
         adapters.setAdapters();

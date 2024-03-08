@@ -40,6 +40,7 @@ public class CyberCrime extends Fragment {
     private static final String EVIDENCE_PHOTO = "Evidence Photo";
     private static final String DESCRIPTION = "Description About Photo";
     private static final String STATION = "Station";
+    private static final String DATE_PICKER = "date of birth";
 
     public CyberCrime() {
 
@@ -53,25 +54,31 @@ public class CyberCrime extends Fragment {
 
         elements = new ArrayList<>();
         elements.add(new FormElement(CATEGORY,FormElement.TYPE_SPINNER,""));
-        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
-        elements.add(new FormElement(DATE_TIME,FormElement.TYPE_DATE_PICKER,""));
-        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
+        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
+        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
         elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
-        formGenerator = new FormGenerator(layout,elements);
+        elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT));
+        formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
         Adapters adapters=new Adapters(getContext(),layout,formGenerator);
         adapters.setAdapters();
-
 
         view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     if (FormValidator.isFormValid(layout)){
                         Map<String,String> map = formGenerator.getFormData(layout);
-//                        Log.d(CATEGORY,)
+//                        Log.d(CATEGORY,map.get(CATEGORY));
+//                        Log.d(LOST_MONEY,map.get(LOST_MONEY));
+//                        Log.d(DATE_TIME,map.get(DATE_TIME));
+//                        Log.d(IS_DELAY,map.get(IS_DELAY));
+//                        Log.d(WHERE_OCCURE,map.get(WHERE_OCCURE));
+//                        Log.d(EVIDENCE_PHOTO,map.get(EVIDENCE_PHOTO));
+//                        Log.d(DESCRIPTION,map.get(DESCRIPTION));
+//                        Log.d(STATION,map.get(STATION));
                     }
             }
         });

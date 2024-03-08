@@ -7,20 +7,22 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 
+import androidx.fragment.app.Fragment;
+
 public class ImagePicker {
 
     public static final int REQUEST_IMAGE_PICKER = 1001;
 
-    private Activity activity;
+    private Fragment fragment;
     private OnImagePickedListener listener;
 
-    public ImagePicker(Activity activity) {
-        this.activity = activity;
+    public ImagePicker(Fragment fragment) {
+        this.fragment=fragment;
     }
 
     public void pickImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        activity.startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_PICKER);
+        fragment.startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_IMAGE_PICKER);
     }
 
     public void setOnImagePickedListener(OnImagePickedListener listener) {
@@ -32,7 +34,7 @@ public class ImagePicker {
             Uri selectedImageUri = data.getData();
             Bitmap bitmap = null;
             try {
-                bitmap = MediaStore.Images.Media.getBitmap(activity.getContentResolver(), selectedImageUri);
+                bitmap = MediaStore.Images.Media.getBitmap((fragment.getActivity()).getContentResolver(), selectedImageUri);
             } catch (Exception e) {
                 e.printStackTrace();
             }
