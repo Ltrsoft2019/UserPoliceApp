@@ -5,7 +5,6 @@ public class CyberCrimemodel {
     private String cyber_crime_id, cyber_crime_category_id,lost_money, date_time, is_delay,
     where_accure, evidance_photo, description, user_id,station_id,status_id;
 
-
     public String getCyber_crime_id() {
         return cyber_crime_id;
     }

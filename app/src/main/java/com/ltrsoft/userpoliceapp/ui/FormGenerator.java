@@ -36,6 +36,7 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.utils.EncodedImage;
 import com.ltrsoft.userpoliceapp.utils.ImagePicker;
 
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 public class FormGenerator {
+    private Intent data;
     private Context context;
     private LinearLayout formLayout;
     private List<FormElement> formElements;
@@ -169,6 +171,7 @@ public class FormGenerator {
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.cam2);
         imageView.setTag(label);
+        imageView.setDrawingCacheEnabled(true);
 
         // Adjust the layout parameters for the ImageView
         LinearLayout.LayoutParams imageLayoutParams = new LinearLayout.LayoutParams(
@@ -261,7 +264,7 @@ public class FormGenerator {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         picker.onActivityResult(requestCode,resultCode,data);
     }
-    public Map<String, String> getFormData(LinearLayout formLayout) {
+    public static Map<String, String> getFormData(LinearLayout formLayout) {
         Map<String, String> formDataMap = new HashMap<>();
         for (int i = 0; i < formLayout.getChildCount(); i++) {
             View childView = formLayout.getChildAt(i);
@@ -272,35 +275,49 @@ public class FormGenerator {
                    View childView2 = layout.getChildAt(j);
                    if (childView2 instanceof EditText) {
                        EditText editText = (EditText) childView2;
-                      formDataMap.put(editText.getTag().toString(),editText.getText().toString());
+                      formDataMap.put((String)editText.getTag(),editText.getText().toString());
+                       System.out.println("editetxt "+(String) editText.getTag());
                    }
                }
            }
-          if (childView instanceof RadioGroup) {
+        if (childView instanceof RadioGroup) {
                RadioGroup radioGroup = (RadioGroup) childView;
                int radioButtonId = radioGroup.getCheckedRadioButtonId();
-               Log.d("id",String.valueOf(radioButtonId));
+               System.out.println("radiogroup"+(String) radioGroup.getTag());
                if (radioButtonId != -1) {
                    RadioButton radioButton = radioGroup.findViewById(radioButtonId);
                    if (radioButton != null) {
-                       formDataMap.put(radioGroup.getTag().toString(), radioButton.getText().toString());
+                       formDataMap.put((String)radioGroup.getTag(), radioButton.getText().toString());
                    } else {
-                       formDataMap.put(radioGroup.getTag().toString(), "nul");
+                       formDataMap.put((String)radioGroup.getTag(), "nul");
                    }
                }
            }
            else if (childView instanceof CheckBox) {
                 CheckBox checkBox = (CheckBox) childView;
-                    formDataMap.put(checkBox.getText().toString(),checkBox.isChecked()?"true":"false");
+                    formDataMap.put((String)checkBox.getTag(),checkBox.isChecked()?"true":"false");
+                    System.out.println("checkbox"+(String)checkBox.getTag());
             } else if (childView instanceof Spinner) {
                 Spinner spinner = (Spinner) childView;
-                formDataMap.put(spinner.getTag().toString(), spinner.getSelectedItem().toString());
+                formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()+1));
+                System.out.println("spinner"+(String)spinner.getTag());
                 /* Get selected item from spinner and add it to formDataMap */
             } else if (childView instanceof Button) {
-          Button button = (Button) childView;
-              formDataMap.put(button.getTag().toString(),button.getText().toString());
-              /* Get selected item from spinner and add it to formDataMap */
+                Button button = (Button) childView;
+              formDataMap.put((String) button.getTag(),button.getText().toString());
+                 System.out.println("button"+(String)button.getTag());
+            /* Get selected item from spinner and add it to formDataMap */
           }
+        else if (childView instanceof ImageView) {
+            ImageView imageView = (ImageView) childView;
+            Bitmap bitmap = imageView.getDrawingCache();
+            if (!(bitmap==null)) {
+                String encodedImage = EncodedImage.encodeImage(bitmap);
+                formDataMap.put((String) imageView.getTag(),encodedImage);
+            }else {
+                Log.d("image","null bitmap");
+               }
+             }
         }
         return formDataMap;
     }
@@ -395,7 +412,3 @@ public class FormGenerator {
         formLayout.addView(textView);
     }
 }
-
-
-
-
