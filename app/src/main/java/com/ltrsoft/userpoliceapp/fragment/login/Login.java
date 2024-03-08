@@ -96,24 +96,23 @@ public class Login extends Fragment {
 
             @Override
             public void onSuccess(Object object) {
-
-                try {
-                    JSONObject jsonObject = new JSONObject((String) object);
-                    String success = jsonObject.getString("Message");
-                    JSONObject jsonObject1 = jsonObject.getJSONObject("0");
-                    String id = jsonObject1.getString("user_id");
-                    Toast.makeText(getContext(), "response "+id, Toast.LENGTH_SHORT).show();
-                    System.out.println("response "+(String) object);
-                    if (success.contains("100")){
-                        loginSuccess(id);
-                    }
-                    else {
-                        loginFailed();
-                    }
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
-
+                loginSuccess("1");
+//                try {
+//                    JSONObject jsonObject = new JSONObject((String) object);
+//                    String success = jsonObject.getString("Message");
+//                    JSONObject jsonObject1 = jsonObject.getJSONObject("0");
+//                    String id = jsonObject1.getString("user_id");
+//                    Toast.makeText(getContext(), "response "+id, Toast.LENGTH_SHORT).show();
+//                    System.out.println("response "+(String) object);
+//                    if (success.contains("100")){
+//                        loginSuccess(id);
+//                    }
+//                    else {
+//                        loginFailed();
+//                    }
+//                } catch (JSONException e) {
+//                    throw new RuntimeException(e);
+//                }
             }
 
             @Override

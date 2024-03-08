@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
@@ -61,6 +62,9 @@ public class CyberCrime extends Fragment {
         elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
         formGenerator = new FormGenerator(layout,elements);
         formGenerator.generateForm();
+        Adapters adapters=new Adapters(getContext(),layout,formGenerator);
+        adapters.setAdapters();
+
 
         view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +77,7 @@ public class CyberCrime extends Fragment {
         });
         return view;
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

@@ -48,30 +48,30 @@ public class Adapters {
 
         adapter1 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,country);
         adapter1.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spinner1= formGenerator.generateSpinner("country",adapter1, new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "value "+country.get(position), Toast.LENGTH_SHORT).show();
+        spinner1= formGenerator.generateSpinner("country", country, adapter1,new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-            }
+                    }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
         adapter1 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,country);
         adapter1.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spinner2=formGenerator.generateSpinner("country",adapter1, new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getContext(), "value "+country.get(position), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        spinner2=formGenerator.generateSpinner("country",  new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+////                Toast.makeText(getContext(), "value "+country.get(position), Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
     }
 }

@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.text.InputType;
-import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -29,8 +29,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.utils.ImagePicker;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,12 +42,14 @@ public class FormGenerator {
     private Context context;
     private LinearLayout formLayout;
     private List<FormElement> formElements;
+    ArrayAdapter<String>changeAdapter;
     private ImagePicker picker;
 
     public FormGenerator(LinearLayout layout, List<FormElement> list) {
         this.formLayout = layout;
         this.formElements = list;
         this.context = layout.getContext();
+        this.picker = new ImagePicker((Activity) context);
     }
     public void generateForm() {
 
@@ -158,7 +162,7 @@ public class FormGenerator {
         layoutParams.gravity = Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL; // Center both vertically and horizontally
         layoutParams.setMargins(0, 20, 0, 0); // Adjust margins as needed/ Adjust margins as needed
 
-        picker = new ImagePicker((Activity) context);
+
         imageView.setLayoutParams(layoutParams);
         picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
             @Override
@@ -247,8 +251,7 @@ public class FormGenerator {
         }
         return formDataMap;
     }
-    public Spinner generateSpinner(String label,ArrayAdapter<String> adapter, AdapterView.OnItemSelectedListener selectedListener) {
-
+    public Spinner generateSpinner(String label, ArrayList<String> originallist, ArrayAdapter<String> adapter, AdapterView.OnItemSelectedListener selectedListener) {
         TextView textView = new TextView(context);
         LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -258,20 +261,50 @@ public class FormGenerator {
         textView.setText(label);
         textView.setPadding(5, 20, 0, 0);
         formLayout.addView(textView);
+
         Spinner spinner = new Spinner(context);
-        // Implement spinner population logic
         LinearLayout.LayoutParams spinnerParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, // width
+                ViewGroup.LayoutParams.MATCH_PARENT,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics())
         );
         spinner.setTag(label);
         spinner.setLayoutParams(spinnerParams);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(selectedListener);
+        spinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
+                    Searchviews.showCustomDropdown(formLayout, context, originallist, adapter, new NewCallBack() {
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onSuccess(Object object) {
+                            String selected = (String) object;
+                            originallist.remove(selected); // Remove selected item from the list
+                            originallist.add(0, selected); // Add selected item to the top
+                            adapter.notifyDataSetChanged(); // Notify the adapter of the change
+                            spinner.setSelection(0); // Set the selection to the top
+                        }
+
+                        @Override
+                        public void onEmpty() {
+                            // Handle empty callback if needed
+                        }
+                    });
+                    return true; // Consume the touch event
+                }
+                return false;
+            }
+        });
         formLayout.addView(spinner);
         return spinner;
     }
-    private  void generateCheckBox( String label) {
+
+    private  void generateCheckBox(String label) {
         CheckBox checkBox = new CheckBox(context);
         checkBox.setText(label);
         checkBox.setTag(label);

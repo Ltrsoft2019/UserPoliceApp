@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.util.Log;
 
 public class ImagePicker {
 
@@ -37,9 +38,11 @@ public class ImagePicker {
             }
             if (listener != null) {
                 listener.onImagePicked(bitmap);
+                Log.d("image","sd");
             }
             else {
                 System.out.println("listener null");
+                Log.d("image","lidtener null");
             }
         }
     }
