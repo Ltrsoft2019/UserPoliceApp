@@ -1,30 +1,35 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class City {
-    public static final String URLL="";
-    private String id,name,state_id;
+        private String city_id,city_name,district_id;
 
-    public String getId() {
-        return id;
+    public City(String city_id, String city_name, String district_id) {
+        this.city_id = city_id;
+        this.city_name = city_name;
+        this.district_id = district_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getCity_id() {
+        return city_id;
     }
 
-    public String getName() {
-        return name;
+    public void setCity_id(String city_id) {
+        this.city_id = city_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getCity_name() {
+        return city_name;
     }
 
-    public String getState_id() {
-        return state_id;
+    public void setCity_name(String city_name) {
+        this.city_name = city_name;
     }
 
-    public void setState_id(String state_id) {
-        this.state_id = state_id;
+    public String getDistrict_id() {
+        return district_id;
+    }
+
+    public void setDistrict_id(String district_id) {
+        this.district_id = district_id;
     }
 }

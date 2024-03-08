@@ -46,8 +46,8 @@ public class GlobalForm extends Fragment {
         list.add(new FormElement("Image",FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
         formGenerator= new FormGenerator(layout,list,this);
         formGenerator.generateForm();
-        Adapters adapters = new Adapters(getContext(),layout,formGenerator);
-        adapters.setAdapters();
+//        Adapters adapters = new Adapters(getContext(),layout,formGenerator);
+//        adapters.setAdapters();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

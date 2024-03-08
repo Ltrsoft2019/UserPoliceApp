@@ -37,8 +37,8 @@ public class LocationDao {
 
                 for (int i = 0; i < list.size(); i++) {
                     Country country = list.get(i);
-                    countrylist.add(country.getName());
-                    map.put(i,country.getId());
+                    countrylist.add(country.getCountry_name());
+                    map.put(i,country.getCountry_id());
                 }
                 adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,countrylist);
                 adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
@@ -66,7 +66,6 @@ public class LocationDao {
             public void onError(String error) {
                 callBack.onError(error);
             }
-
             @Override
             public void onSuccess(Object object) {
                 ArrayList<State>list = (ArrayList<State>) object;
@@ -74,8 +73,8 @@ public class LocationDao {
                 map2=new HashMap<>();
                 for (int i = 0; i < list.size(); i++) {
                     State country = list.get(i);
-                    statelist.add(country.getName());
-                    map2.put(i,country.getId());
+                    statelist.add(country.getState_name());
+                    map2.put(i,country.getState_id());
                 }
 
                 adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,statelist);
@@ -110,8 +109,8 @@ public class LocationDao {
                 map3=new HashMap<>();
                 for (int i = 0; i < list.size(); i++) {
                     District country = list.get(i);
-                    districtclass.add(country.getName());
-                    map3.put(i,country.getId());
+                    districtclass.add(country.getDistrict_name());
+                    map3.put(i,country.getDistrict_id());
                 }
 
                 adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,districtclass);

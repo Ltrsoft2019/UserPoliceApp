@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,9 +49,7 @@ public class CyberCrime extends Fragment {
     private static final String STATION = "Station";
     private static final String DATE_PICKER = "Incidant Date";
 
-    public CyberCrime() {
-
-    }
+    public CyberCrime() {}
 
     @Nullable
     @Override
@@ -75,7 +74,12 @@ public class CyberCrime extends Fragment {
         elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
          formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
-        Adapters adapters=new Adapters(getContext(),layout,formGenerator);
+        Adapters adapters=new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "error occured while loading form", Toast.LENGTH_SHORT).show();
+            }
+        });
         adapters.setAdapters();
 
         view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {

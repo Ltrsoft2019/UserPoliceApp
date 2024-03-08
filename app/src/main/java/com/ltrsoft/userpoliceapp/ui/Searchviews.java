@@ -34,8 +34,8 @@ public class Searchviews {
        searchView.setQueryHint("Search");
 
        // Create ListView
-       ListView listView = new ListView(context);
-     ArrayAdapter<String> adapter = new ArrayAdapter<>(context,
+       final ListView listView = new ListView(context);
+     final ArrayAdapter<String> adapter = new ArrayAdapter<>(context,
                android.R.layout.simple_list_item_1, originallist);
        listView.setAdapter(adapter);
 
@@ -46,7 +46,7 @@ public class Searchviews {
        // Create AlertDialog with the custom layout
        AlertDialog.Builder builder = new AlertDialog.Builder(context);
        builder.setView(layout);
-      AlertDialog dialog = builder.create();
+       final AlertDialog dialog = builder.create();
        dialog.show();
 
        // Set a listener to handle item click in the ListView
