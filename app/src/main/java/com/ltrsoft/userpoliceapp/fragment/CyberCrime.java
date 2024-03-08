@@ -21,12 +21,16 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.CyberCrimemodel;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.ui.GetLists;
+import com.ltrsoft.userpoliceapp.utils.URLS;
+import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
 import java.lang.annotation.ElementType;
 import java.util.ArrayList;
@@ -65,9 +69,7 @@ public class CyberCrime extends Fragment {
         heading=view.findViewById(R.id.heading);
         heading.setText("Cyber Crime");
         elements = new ArrayList<>();
-//        elements.add(new FormElement(CATEGORY,FormElement.TYPE_SPINNER,""));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-//         elements.add(new FormElement(STATION,FormElement.TYPE_SPINNER,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(GENDER,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
         elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
@@ -115,18 +117,48 @@ public class CyberCrime extends Fragment {
                     if (FormValidator.isFormValid(layout)){
                         Map<String,String> map = FormGenerator.getFormData(layout);
 //                        Log.d(CATEGORY, Objects.requireNonNull(map.get(CATEGORY)));
-                        Log.d(LOST_MONEY, Objects.requireNonNull(map.get(LOST_MONEY)));
-                        Log.d(DATE_TIME,map.get(DATE_PICKER));
-                        Log.d(IS_DELAY,map.get(IS_DELAY));
-                        Log.d(WHERE_OCCURE,map.get(WHERE_OCCURE));
-                        Log.d(EVIDENCE_PHOTO,map.get(STATION));
-                        Log.d(DESCRIPTION,map.get(DESCRIPTION));
-                        Log.d(STATION, map.get(STATION));
-                        Log.d(STATION, map.get(STATION));
+//                        Log.d(LOST_MONEY, Objects.requireNonNull(map.get(LOST_MONEY)));
+//                        Log.d(DATE_TIME,map.get(DATE_PICKER));
+//                        Log.d(IS_DELAY,map.get(IS_DELAY));
+//                        Log.d(WHERE_OCCURE,map.get(WHERE_OCCURE));
+//                        Log.d(EVIDENCE_PHOTO,map.get(STATION));
+//                        Log.d(DESCRIPTION,map.get(DESCRIPTION));
+//                        Log.d(STATION, map.get(STATION));
+//                        Log.d(CYBER_CRIME_CATEGORY, map.get(CYBER_CRIME_CATEGORY));
+
                         Log.d("Size", String.valueOf(map.size()));
                         CyberCrimemodel cyberCrime = new CyberCrimemodel();
-//                        cyberCrime.setCyber_crime_category_id();
+                        cyberCrime.setCyber_crime_category_id(map.get(CYBER_CRIME_CATEGORY));
+                        cyberCrime.setDate_time(map.get(DATE_PICKER));
+                        cyberCrime.setIs_delay(map.get(IS_DELAY));
+                        cyberCrime.setDescription(map.get(DESCRIPTION));
+                        cyberCrime.setEvidance_photo(map.get(EVIDENCE_PHOTO));
+                        cyberCrime.setLost_money(map.get(LOST_MONEY));
+                        cyberCrime.setWhere_accure(map.get(WHERE_OCCURE));
+                        cyberCrime.setStation_id(map.get(STATION));
+                        cyberCrime.setCyber_crime_id(map.get(STATION));
+                        cyberCrime.setStatus_id(map.get(STATION));
 
+                        cyberCrime.setUser_id((new UserDataAccess().getUserId(getActivity())));
+                        DAO dao = new DAO(getContext());
+
+                        dao.insertOrUpdate(cyberCrime, new NewCallBack() {
+                            @Override
+                            public void onError(String error) {
+                                Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onSuccess(Object object) {
+                                Toast.makeText(getContext(), "object type"+object, Toast.LENGTH_SHORT).show();
+
+                            }
+
+                            @Override
+                            public void onEmpty() {
+                                Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+                            }
+                        }, URLS.CYBER_COMPLAINT_INSERT);
                     }
             }
         });
