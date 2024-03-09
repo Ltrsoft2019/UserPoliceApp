@@ -35,10 +35,11 @@ public class Searchviews {
 
        // Create ListView
        final ListView listView = new ListView(context);
+       originallist.remove(0);
      final ArrayAdapter<String> adapter = new ArrayAdapter<>(context,
                android.R.layout.simple_list_item_1, originallist);
        listView.setAdapter(adapter);
-
+        listView.setForegroundGravity(View.TEXT_ALIGNMENT_CENTER);
        // Add SearchView and ListView to the layout
        layout.addView(searchView);
        layout.addView(listView);

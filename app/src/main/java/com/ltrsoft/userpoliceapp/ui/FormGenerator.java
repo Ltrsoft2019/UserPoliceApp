@@ -367,6 +367,8 @@ public class FormGenerator {
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
         );
         spinner.setTag(label);
+        originallist.add(0, label); // Add selected item to the top
+
 //        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
 //        spinner.setTypeface(arialTypeface);
         spinner.setLayoutParams(spinnerParams);
