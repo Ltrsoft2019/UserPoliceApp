@@ -1,6 +1,8 @@
 package com.ltrsoft.userpoliceapp.fragment;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,18 +69,9 @@ public class CyberCrime extends Fragment {
         view = inflater.inflate(R.layout.common_form, container, false);
         layout = view.findViewById(R.id.layout123);
         heading=view.findViewById(R.id.heading);
+        submit=view.findViewById(R.id.button);
         heading.setText("Cyber Crime");
         elements = new ArrayList<>();
-        elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(GENDER,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,""));
-        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,""));
-
-        formGenerator = new FormGenerator(layout,elements,this);
-        formGenerator.generateForm();
         ArrayList<String>stationlist=new ArrayList<>();
         stationlist.add("latur");
         stationlist.add("fed");
@@ -87,9 +80,11 @@ public class CyberCrime extends Fragment {
         stationlist.add("ladstur");
         stationlist.add("latfdsur");
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,stationlist);
+        ArrayAdapter <String>adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,stationlist);
         adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-       Spinner spinner= formGenerator.generateSpinner(CYBER_CRIME_CATEGORY,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
+        formGenerator = new FormGenerator(layout,elements,this);
+
+        Spinner spinner= formGenerator.generateSpinner(CYBER_CRIME_CATEGORY,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -100,7 +95,7 @@ public class CyberCrime extends Fragment {
 
             }
         });
-        Spinner spinner2= formGenerator.generateSpinner(STATION,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
+        Spinner spinner2= formGenerator.generateSpinner("Sub category",stationlist, adapter, new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -111,7 +106,29 @@ public class CyberCrime extends Fragment {
 
             }
         });
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,"",R.drawable.cam2));
+        elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,"",R.drawable.cam2));
+        elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+
+        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+
+
+        formGenerator.generateForm();
+
+        Spinner spinner3= formGenerator.generateSpinner(STATION,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     if (FormValidator.isFormValid(layout)){

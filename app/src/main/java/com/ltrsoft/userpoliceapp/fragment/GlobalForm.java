@@ -39,11 +39,11 @@ public class GlobalForm extends Fragment {
         submit = view.findViewById(R.id.button);
         layout = view.findViewById(R.id.layout123);
         List<FormElement>list = new ArrayList<>();
-        list.add(new FormElement("User Name",FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        list.add(new FormElement("User Address",FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT));
-        list.add(new FormElement("Gender",FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT));
-        list.add(new FormElement("Is Ever Criminal",FormElement.TYPE_CHECKBOX,FormElement.SUBTYPE_TEXT));
-        list.add(new FormElement("Image",FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT));
+        list.add(new FormElement("User Name",FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        list.add(new FormElement("User Address",FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        list.add(new FormElement("Gender",FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        list.add(new FormElement("Is Ever Criminal",FormElement.TYPE_CHECKBOX,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        list.add(new FormElement("Image",FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         formGenerator= new FormGenerator(layout,list,this);
         formGenerator.generateForm();
 //        Adapters adapters = new Adapters(getContext(),layout,formGenerator);

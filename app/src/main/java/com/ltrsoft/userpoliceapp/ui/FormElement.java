@@ -24,12 +24,13 @@ public class FormElement {
     private String label;
     private String type;
     private String subType;
+    private int image;
 
-
-    public FormElement(String label, String type, String subType) {
+    public FormElement(String label, String type, String subType, int image) {
         this.label = label;
         this.type = type;
         this.subType = subType;
+        this.image = image;
     }
 
     public String getLabel() {
@@ -56,11 +57,20 @@ public class FormElement {
         this.subType = subType;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
     public List<String> getOptions() {
         ArrayList<String>gender_list = new ArrayList<>();
-        gender_list.add("others");
-        gender_list.add("male");
+         gender_list.add("male");
         gender_list.add("female");
+        gender_list.add("others");
+
         return gender_list;
     }
 }

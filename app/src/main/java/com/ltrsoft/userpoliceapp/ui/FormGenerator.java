@@ -1,14 +1,22 @@
 package com.ltrsoft.userpoliceapp.ui;
+import static com.google.android.material.internal.ViewUtils.dpToPx;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
 import android.util.TypedValue;
@@ -65,7 +73,7 @@ public class FormGenerator {
         for (FormElement element : formElements) {
             switch (element.getType()) {
                 case FormElement.TYPE_EDIT_TEXT:
-                    generateEditText(element.getLabel(), element.getSubType());
+                    generateEditText(element.getLabel(), element.getSubType(), element.getImage());
                     break;
                 case FormElement.TYPE_IMAGE_VIEW:
                     generateImageView(element.getLabel());
@@ -83,8 +91,8 @@ public class FormGenerator {
             }
         }
     }
-    private void generateEditText(String label, String subtype) {
-        genratetextview(label);
+    private void generateEditText(String label, String subtype,int image) {
+//        genratetextview(label);
 
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
@@ -95,6 +103,8 @@ public class FormGenerator {
 
         // Create EditText
         EditText editText = new EditText(context);
+        setimageashint(image,editText);
+
         switch (subtype) {
             case FormElement.SUBTYPE_EMAIL:
                 editText.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
@@ -109,26 +119,37 @@ public class FormGenerator {
 
         // Apply background and padding to the EditText
         editText.setBackgroundResource(R.drawable.btn_border);
-        int paddingInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, context.getResources().getDisplayMetrics());
+        int paddingInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, context.getResources().getDisplayMetrics());
         editText.setPadding(paddingInDp, 0, 0, 10);
 
         // Set layout parameters for the EditText
         LinearLayout.LayoutParams editTextParams = new LinearLayout.LayoutParams(
                 0,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics()),
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics()),
                 1
         );
+
         editTextParams.gravity = Gravity.CENTER_VERTICAL;
+        editTextParams.setMargins(0,20,0,20);
         editText.setLayoutParams(editTextParams);
+
+         Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+        editText.setTypeface(arialTypeface);
+        editText.setTextSize(16); // Change 50 to your desired size in pixels
+        editText.setPadding(5,2,0,0);
+        editText.setHint("   "+label);
+
         editText.setTag(label);
 
         // Create ImageView
         ImageView imageView = new ImageView(context);
         LinearLayout.LayoutParams imageViewParams = new LinearLayout.LayoutParams(
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics()),
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()),
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics())
         );
+
         imageView.setImageResource(R.drawable.mic2);
+        imageViewParams.setMargins(0,15,0,0);
         imageView.setLayoutParams(imageViewParams);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,8 +183,11 @@ public class FormGenerator {
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
+        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+        textView.setTypeface(arialTypeface);
+        textView.setTextSize(16);
         textViewParams.gravity = Gravity.CENTER_HORIZONTAL; // Center horizontally
-        textViewParams.setMargins(0, 30, 0, 0); // Set margin top to 10dp
+        textViewParams.setMargins(0, 20, 0, 0); // Set margin top to 10dp
         textView.setPadding(0,10,0,0);
         textView.setLayoutParams(textViewParams);
         textView.setText(label);
@@ -200,24 +224,27 @@ public class FormGenerator {
     }
 
     private void generateButton(String label) {
-         genratetextview(label);
-        Button button = new Button(context);
+         Button button = new Button(context);
         LinearLayout.LayoutParams buttonparam = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics())
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
         );
-        buttonparam.setMargins(0, 0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics()), 0);
-
-        button.setLayoutParams(buttonparam);
+        buttonparam.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()), 20);
+         button.setLayoutParams(buttonparam);
+        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+        button.setTypeface(arialTypeface);
+        button.setForegroundGravity(View.TEXT_ALIGNMENT_CENTER);
+        button.setTextSize(16);
         button.setTag(label);
         button.setText(label);
-        button.setTag(label);
+         button.setPadding(8,2,0,0);
         button.setBackground(context.getResources().getDrawable(R.drawable.btn_border));
+        setimageashint(R.drawable.calendar,button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                generateDatePicker();
-                Calendar calendar = Calendar.getInstance();
+                 Calendar calendar = Calendar.getInstance();
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
@@ -244,16 +271,26 @@ public class FormGenerator {
     }
     private void generateRadioGroup(String label, List<String> options) {
         // Create a new RadioGroup
-        genratetextview(label+" :");
+//        genratetextview(label+" :");
+
         RadioGroup radioGroup = new RadioGroup(context);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
+        );
+        layoutParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()), 20);
+         radioGroup.setLayoutParams(layoutParams);
+        radioGroup.setBackgroundResource(R.drawable.btn_border);
         radioGroup.setPadding(0,10,0,10);
-         radioGroup.setOrientation(LinearLayout.HORIZONTAL); // Set orientation to vertical
+        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+          radioGroup.setOrientation(LinearLayout.HORIZONTAL); // Set orientation to vertical
         // Create RadioButtons based on the options provided
         for (int i = 0; i < options.size(); i++) {
             String gendername = options.get(i);
             RadioButton radioButton = new RadioButton(context);
             radioButton.setText(gendername);
-
+            radioButton.setTextSize(16);
+             radioButton.setTypeface(arialTypeface);
             radioGroup.addView(radioButton); // Add RadioButton to RadioGroup
         }{
 
@@ -322,16 +359,19 @@ public class FormGenerator {
         return formDataMap;
     }
     public Spinner generateSpinner(String label, ArrayList<String> originallist, ArrayAdapter<String> adapter, AdapterView.OnItemSelectedListener selectedListener) {
-        genratetextview(label);
+       // genratetextview(label);
 
         Spinner spinner = new Spinner(context);
         LinearLayout.LayoutParams spinnerParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 45, context.getResources().getDisplayMetrics())
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
         );
         spinner.setTag(label);
+//        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+//        spinner.setTypeface(arialTypeface);
         spinner.setLayoutParams(spinnerParams);
-        spinnerParams.setMargins(0, 0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, context.getResources().getDisplayMetrics()), 0);
+        spinnerParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()), 20);
+//
 
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(selectedListener);
@@ -371,25 +411,37 @@ public class FormGenerator {
 
     private  void generateCheckBox(String label) {
         CheckBox checkBox = new CheckBox(context);
-        SpannableString spannableString = new SpannableString(" " + label);
+        LinearLayout.LayoutParams checkparam = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+         );
+        checkparam.setMargins(0,15,0,15);
+        checkBox.setLayoutParams(checkparam);
 
         // Apply bold style to the SpannableString
-        spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+      //  spannableString.setSpan(new StyleSpan(Typeface.BOLD), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+// Load the Cambria font from the assets folder
+        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
+        checkBox.setTypeface(arialTypeface);
+//        Typeface cambriaTypeface = Typeface.createFromAsset( context.getAssets(), "Arial");
+
+// Apply the Cambria font to your TextView or any other UI element
+//        checkBox.setTypeface(cambriaTypeface);
 
         // Set the SpannableString as the text of the CheckBox
-        checkBox.setText(spannableString);
+        checkBox.setText(" "+label);
 //         checkBox.setText(" " +label);
         checkBox.setTag(label);
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        layoutParams.setMargins(0, 15, 0, 0); // Set margins (left, top, right, bottom)
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+//                LinearLayout.LayoutParams.MATCH_PARENT,
+//                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
+//        );
+//        layoutParams.setMargins(0,  50, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()), 5);
 
-        checkBox.setLayoutParams(layoutParams);
+        //checkBox.setLayoutParams(layoutParams);
 
         checkBox.setPadding(0,6,0,0);
-        checkBox.setTextSize(17);
+        checkBox.setTextSize(16);
        // checkBox.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_border));
 
         formLayout.addView(checkBox);
@@ -401,7 +453,7 @@ public class FormGenerator {
         TextView textView = new TextView(context);
         LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, context.getResources().getDisplayMetrics())
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics())
         );
         textView.setTextSize(16);
          textViewParams.setMargins(10,20,0,0);
@@ -411,4 +463,32 @@ public class FormGenerator {
         textView.setPadding(5, 20, 0, 0);
         formLayout.addView(textView);
     }
+    private int dpToPx(int dp) {
+        float density = context.getResources().getDisplayMetrics().density;
+        return Math.round((float) dp * density);
+    }
+        public void setimageashint(int image,View view){
+        Drawable drawable = context.getResources().getDrawable(image);
+// Calculate the scaled width and height in pixels
+        int widthPx = dpToPx(30);
+        int heightPx = dpToPx(30);
+
+// Scale the drawable
+        drawable.setBounds(0, 0, widthPx, heightPx);
+        if (view instanceof EditText)
+        {
+
+            ((EditText)view).setCompoundDrawables(drawable, null, null, null);
+
+        } else if (view instanceof Button) {
+            ((Button) view).setCompoundDrawables(drawable,null,null,null);
+
+        } else if (view instanceof TextView) {
+            ((TextView)view).setCompoundDrawables(drawable,null,null,null);
+        }
+
+// Set the compound drawable to the EditText
+
+    }
+
 }
