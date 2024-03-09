@@ -269,7 +269,7 @@ public class FormGenerator {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
         );
-        layoutParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()), 20);
+        layoutParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()), 20);
          radioGroup.setLayoutParams(layoutParams);
         radioGroup.setBackgroundResource(R.drawable.btn_border);
         radioGroup.setPadding(0,10,0,10);
@@ -354,9 +354,9 @@ public class FormGenerator {
 
         Spinner spinner = new Spinner(context);
         LinearLayout.LayoutParams spinnerParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
+                 ViewGroup.LayoutParams.MATCH_PARENT,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
-        );
+                        );
         spinner.setTag(label);
         originallist.add(0, label); // Add selected item to the top
 
@@ -425,13 +425,6 @@ public class FormGenerator {
         checkBox.setText(" "+label);
 //         checkBox.setText(" " +label);
         checkBox.setTag(label);
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
-//        );
-//        layoutParams.setMargins(0,  50, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, context.getResources().getDisplayMetrics()), 5);
-
-        //checkBox.setLayoutParams(layoutParams);
 
         checkBox.setPadding(0,6,0,0);
         checkBox.setTextSize(16);

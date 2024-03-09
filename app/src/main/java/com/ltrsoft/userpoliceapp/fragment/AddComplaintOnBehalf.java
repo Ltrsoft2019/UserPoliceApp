@@ -3,32 +3,25 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.sax.Element;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
-import com.ltrsoft.userpoliceapp.dao.LocationDao;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.Users;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.ui.UserBehalf;
 import com.ltrsoft.userpoliceapp.utils.URLS;
-import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
-import com.ltrsoft.userpoliceapp.utils.Validations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +66,11 @@ public class AddComplaintOnBehalf extends Fragment {
         heading=view.findViewById(R.id.heading);
         heading.setText("Register Complaint");
         submit= view.findViewById(R.id.button);
-        intiForm(layout);
+        heading.setVisibility(View.GONE);
+        //intiForm(layout);
+        UserBehalf userBehalf =new UserBehalf(getContext(),layout);
+        AddComplaintOnBehalf addComplaintOnBehalf=new AddComplaintOnBehalf();
+        userBehalf.getneateUserOnBehalf(this,submit,new AddComplainbehalf2());
         return view;
     }
 
@@ -93,16 +90,18 @@ public class AddComplaintOnBehalf extends Fragment {
         elements.add(new FormElement(USERPAN, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(USEROCCUPATION, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(USERNATIONALITY, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+
+
         elements.add(new FormElement(USERDRIVING, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
-        Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+        Adapters adapters1 = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
             @Override
             public void onError(String error) {
                 Toast.makeText(getContext(), "error while loading spinner", Toast.LENGTH_SHORT).show();
             }
         });
-        adapters.setAdapters();
+        adapters1.setAdapters();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
