@@ -18,7 +18,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,127 +31,67 @@ import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.QuickComplaint;
+import com.ltrsoft.userpoliceapp.ui.Adapters;
+import com.ltrsoft.userpoliceapp.ui.FormElement;
+import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.utils.TakingImage;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddQuickComplaint extends Fragment {
     public AddQuickComplaint() {
     }
     private View view;
-    private ImageView imageView;
-    String img="";
-    private Button photoPathButton;
-    private Spinner stationIdButton;
-    private EditText descriptionEditText;
-    private EditText addressEditText;
-    private Button submitButton;
-    private static final int CAMERA_REQ_CODE = 104;
-    private static final int GALLERY_REQ_CODE = 105;
-    private Bitmap bitmap;
-    private String encodeImage;
+    private LinearLayout layout;
+    private FormGenerator formGenerator;
+    private Button submit;
+    private TextView heading;
+    private List<FormElement> elements;
+    private Adapters adapters;
+    public String PHOTO="Select Photo";
+    public String DESCRIPTION="Add Discription About Photo";
+    public String ADDRESS ="Add Address ";
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.addquickcomplaint, container, false);
-      setid();
-      setCLickListeners();
-        TakingImage takingImage=new TakingImage();
-        photoPathButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-             }
-        });
-        String description = descriptionEditText.getText().toString();
-        String address = addressEditText.getText().toString();
-//        String stationId = stationIdButton.getSelectedItem().toString();
-        return view;
-    }
-
-    private void setCLickListeners() {
-        if (isValid()){
-            //  private ImageView imageView;
-            //    private Button photoPathButton;
-            //    private Spinner stationIdButton;
-            //    private EditText descriptionEditText;
-            //    private EditText addressEditText;
-            insertdata(stationIdButton.getSelectedItem().toString(),
-                    descriptionEditText.getText().toString(),
-                    addressEditText.getText().toString()
-            ,img);
-        }
-        else {
-            Toast.makeText(getContext(), "form data is not valid", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void insertdata(String station, String description, String addresse, String img) {
-
-        DAO dao = new DAO(getContext());
-        QuickComplaint quickComplaint = new QuickComplaint("",station,"1",img,description,addresse);
-        dao.insertOrUpdate(quickComplaint, new NewCallBack() {
+         view = inflater.inflate(R.layout.common_form, container, false);
+        layout = view.findViewById(R.id.layout123);
+        heading=view.findViewById(R.id.heading);
+        heading.setText("Add Quick Complaint");
+        elements=new ArrayList<>();
+        initialform(layout);
+        formGenerator=new FormGenerator(layout,elements,this);
+        submit= view.findViewById(R.id.button);
+        adapters=new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
             @Override
             public void onError(String error) {
-                Toast.makeText(getContext(), "error "+error
-                        , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
             }
-
+        });
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(Object object) {
-                Toast.makeText(getContext(), "success "+object, Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
             }
+        });
 
-            @Override
-            public void onEmpty() {
-                Toast.makeText(getContext(), "empty response ", Toast.LENGTH_SHORT).show();
-            }
-        }, URLS.READSTATION);
-
+        adapters.setStation();
+     return view;
     }
 
-    private boolean isValid() {
-        boolean valid = true;
-        return valid;
-    }
-
-    private void setid() {
-        imageView = view.findViewById(R.id.imageView);
-        photoPathButton = view.findViewById(R.id.editTextPhotoPath);
-        stationIdButton = view.findViewById(R.id.editTextStationId);
-        descriptionEditText = view.findViewById(R.id.editTextDescription);
-        addressEditText = view.findViewById(R.id.editTextAddress);
-        submitButton = view.findViewById(R.id.buttonSubmit);
-    }
+    private void initialform(LinearLayout layout) {
+     elements.add(new FormElement(PHOTO,FormElement.TYPE_IMAGE_VIEW,"",R.drawable.cam2));
+     elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
+        elements.add(new FormElement(ADDRESS,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.logout));
 
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-//        ImageSelectionUtil.handleActivityResult(requestCode,resultCode,data,imageView,getContext());
 
-    }
+        formGenerator = new FormGenerator(layout,elements,this);
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        if (requestCode == ImageSelectionUtil.PERMISSION_REQUEST_CODE) {
-//            // Check if all permissions are granted
-//            boolean allPermissionsGranted = true;
-//            for (int grantResult : grantResults) {
-//                if (grantResult != PackageManager.PERMISSION_GRANTED) {
-//                    allPermissionsGranted = false;
-//                    break;
-//                }
-//            }
-//            if (allPermissionsGranted) {
-//                // Permissions granted, proceed with image selection
-//                ImageSelectionUtil.selectImage(getActivity(), imageView);
-//            } else {
-//                Toast.makeText(getActivity(), "Permissions required for image selection", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-    }
+        formGenerator.generateForm();    }
 }

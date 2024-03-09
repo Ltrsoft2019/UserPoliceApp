@@ -68,7 +68,7 @@ public class AddselfComplaint extends Fragment implements LocationHelper.Locatio
                 Complaint complaint = new Complaint("",editTextComplaintSubject.getText().toString(),
                         editTextComplaintDescription.getText().toString(),
                         editTextAgainst.getText().toString(),
-                        date,"",lattitude,longitude,"1","1","1");
+                        date,"",lattitude,longitude,"1","1","1","1");
                 complaintRegister(complaint);
             }
             else {

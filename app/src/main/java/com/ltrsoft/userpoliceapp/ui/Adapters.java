@@ -20,7 +20,9 @@ public class Adapters extends GetLists{
     private ArrayAdapter<String>adapter2;
     public ArrayAdapter<String>adapter3;
     public ArrayAdapter<String>adapter4;
-    private Spinner spinner1,spinner2,spinner3;
+    public ArrayAdapter<String>adapter5;
+
+    private Spinner spinner1,spinner2,spinner3,spinner4;
 
     public Adapters(Context context, LinearLayout layout,FormGenerator formGenerator,CallBack callBack) {
         super(context,callBack);
@@ -57,6 +59,30 @@ public class Adapters extends GetLists{
         }, 500);
 
     }
+    public void setStation(){
+      getStation(new ListCallBack() {
+          @Override
+          public void onSuccess(ArrayList<String> list) {
+              for (String item :list){
+                  Log.d("ListItem", item);
+                 adapter5=new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
+                 adapter5.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                 spinner4=formGenerator.generateSpinner(FormElement.STATION, list, adapter5, new AdapterView.OnItemSelectedListener() {
+                     @Override
+                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                         Toast.makeText(context, ""+list.get(position), Toast.LENGTH_SHORT).show();
+                     }
+
+                     @Override
+                     public void onNothingSelected(AdapterView<?> parent) {
+
+                     }
+                 });
+
+              }
+          }
+      });
+    }
     private void setCountry() {
         getCountry(new ListCallBack() {
             @Override
@@ -70,7 +96,7 @@ public class Adapters extends GetLists{
                 spinner1= formGenerator.generateSpinner(FormElement.COUNTRY, list, adapter1,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> adapterView) {
@@ -93,7 +119,7 @@ public class Adapters extends GetLists{
                 spinner2= formGenerator.generateSpinner(FormElement.STATE, list, adapter2,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
 
                     }
                     @Override
@@ -117,7 +143,7 @@ public class Adapters extends GetLists{
                 spinner3= formGenerator.generateSpinner(FormElement.DISTRICT, list, adapter3,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
 
                     }
                     @Override
@@ -141,7 +167,7 @@ public class Adapters extends GetLists{
                 spinner3= formGenerator.generateSpinner(FormElement.CITY, list, adapter4,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
 
                     }
                     @Override

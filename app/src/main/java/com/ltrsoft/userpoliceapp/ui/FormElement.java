@@ -20,9 +20,11 @@ public class FormElement {
     public static final String SYBTYPE_SPINNER_STATION = "stations";
 
 
-    public static final String COUNTRY = "selct country";
-    public static final String STATE = "selct state";
-    public static final String DISTRICT = "selct district";
+    public static final String COUNTRY = "Select Country";
+    public static final String STATION = "Select Station";
+
+    public static final String STATE = "Select State";
+    public static final String DISTRICT = "Select District";
     public static final String CITY = "selct city";
     private String label;
     private String type;

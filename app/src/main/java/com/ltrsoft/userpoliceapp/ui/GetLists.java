@@ -9,6 +9,7 @@ import com.ltrsoft.userpoliceapp.model.City;
 import com.ltrsoft.userpoliceapp.model.Country;
 import com.ltrsoft.userpoliceapp.model.District;
 import com.ltrsoft.userpoliceapp.model.State;
+import com.ltrsoft.userpoliceapp.model.Station;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 
 import java.util.ArrayList;
@@ -20,6 +21,31 @@ public class GetLists {
     public GetLists(Context context, Adapters.CallBack callBack) {
         this.context = context;
         this.callBack = callBack;
+
+    }
+    public void getStation(Adapters.ListCallBack listCallBack){
+        dao =new DAO(context);
+        dao.select(Station.class, "", "", new NewCallBack() {
+            @Override
+            public void onError(String error) {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                ArrayList<String>stations=new ArrayList<>();
+                ArrayList<Station>stations1= (ArrayList<Station>) object;
+                for (Station s :stations1) {
+                    stations.add(s.getPolice_station_name());
+                }
+                listCallBack.onSuccess(stations);
+            }
+
+            @Override
+            public void onEmpty() {
+
+            }
+        },URLS.READSTATION);
 
     }
     public  void getCountry(Adapters.ListCallBack listCallBack){
