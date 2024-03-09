@@ -11,4 +11,5 @@ public class URLS {
     public final  static String DISTRICT_GET = "https://rj.ltr-soft.com/public/police_api/district/select_district.php";
     public final  static String CITY_GET = "https://rj.ltr-soft.com/public/police_api/city/select_city.php";
     public final  static String CYBER_COMPLAINT_INSERT = "https://rj.ltr-soft.com/public/police_api/cyber_crimes/create_cyber_crime.php";
+    public final  static String INSERT_USER = "https://rj.ltr-soft.com/public/police_api/user/user_insert.php";
 }

@@ -1,5 +1,4 @@
 package com.ltrsoft.userpoliceapp.ui;
-import static com.google.android.material.internal.ViewUtils.dpToPx;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -7,17 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.InputType;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.StyleSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;

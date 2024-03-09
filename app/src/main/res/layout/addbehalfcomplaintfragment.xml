@@ -292,6 +292,8 @@
                 android:hint="Against" />
 
             <!-- Incident Date -->
+
+            <!-- Subtype -->
             <DatePicker
                 android:id="@+id/datePickerIncidentDate"
                 android:layout_width="match_parent"
@@ -303,7 +305,6 @@
 
                 android:hint="Incident Date" />
 
-            <!-- Subtype -->
             <Spinner
                 android:id="@+id/editTextSubtypeId"
                 android:layout_width="match_parent"

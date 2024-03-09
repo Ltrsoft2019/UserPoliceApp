@@ -34,8 +34,8 @@ public class Users {
         this.station_id = station_id;
     }
 
-    public Users() {
-    }
+//    public Users() {
+//    }
 
     public String getUser_id() {
         return user_id;
@@ -213,21 +213,12 @@ public class Users {
         this.notification_token = notification_token;
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
-        return longitude;
-    }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
 
     public String getStation_id() {
         return station_id;

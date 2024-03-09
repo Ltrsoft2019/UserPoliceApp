@@ -2,6 +2,9 @@ package com.ltrsoft.userpoliceapp.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+
+import android.sax.Element;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,133 +12,148 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
 import com.ltrsoft.userpoliceapp.dao.LocationDao;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.model.Users;
+import com.ltrsoft.userpoliceapp.ui.Adapters;
+import com.ltrsoft.userpoliceapp.ui.FormElement;
+import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
+import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class AddComplaintOnBehalf extends Fragment {
-    private boolean valid;
-    private EditText editTextFirstName, editTextMiddleName, editTextLastName, editTextAddress,
-            editTextEmail, editTextPassword, editTextMobile1, editTextMobile2, editTextAadhar,
-            editTextPAN, editTextOccupation, editTextNationality, editTextDrivingLicense,
-            editTextNotificationToken, editTextComplaintSubject, editTextComplaintDescription, editTextAgainst,
-             editTextLatitude, editTextLongitude;
-    private Spinner spinnerGender,editTextSubtypeId,editTextCountryId,spinnersationId, editTextStateId, editTextDistrictId,
-    editTextCityId;
-    private DatePicker datePickerDob, datePickerIncidentDate;
-    private Button buttonUserSubmit, buttonComplaintSubmit;
-    private ArrayAdapter<String>adapter;
+    private LinearLayout layout;
+    private FormGenerator formGenerator;
+    private Button submit;
+    private TextView heading;
+    private List<FormElement> elements;
     private View view;
-    public AddComplaintOnBehalf() {}
+
+
+    public String USERFNAME = "Enter User first name :";
+    public String USERMNAME = "Enter User middle name :";
+    public String USERLNAME = "Enter User last name :";
+    public String USERADDRESS = "Enter User Adress :";
+    public String USEREMAIL= "Enter User Email :";
+    public String USERPASSWORD= "Enter User password :";
+    public String USERGENDER= "Select gender";
+    public String USERDATEOFBIRTH = "Select date of birth :";
+    public String USERMOBILE1 = "Enter mobile number 1 :";
+    public String USERMOBILE2 = "Enter mobile number 2 :";
+    public String USERADHAR = "Enter adhaar :";
+    public String USERPAN = "Enter pan :";
+    public String USEROCCUPATION = "Enter Occupation :";
+    public String USERNATIONALITY = "Enter Nationality :";
+    public String USERDRIVING = "Enter Driving License no:";
+
+
+
+
+    public AddComplaintOnBehalf() {
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.addbehalfcomplaintfragment, container, false);
-        setId();
-        setUpAdapter();
-
-        buttonComplaintSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if(validateForm()){
-                  Toast.makeText(getContext(), " all form is validate ", Toast.LENGTH_SHORT).show();
-                  SaveData();
-              }else {
-                  Toast.makeText(getContext(), "form is not validate ", Toast.LENGTH_SHORT).show();
-              }
-            }
-        });
+        view = inflater.inflate(R.layout.common_form, container, false);
+        layout = view.findViewById(R.id.layout123);
+        heading=view.findViewById(R.id.heading);
+        heading.setText("Register Complaint");
+        submit= view.findViewById(R.id.button);
+        intiForm(layout);
         return view;
     }
 
-    private void SaveData() {
+    private void intiForm(LinearLayout layout) {
+        elements=new ArrayList<>();
+        elements.add(new FormElement(USERFNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERMNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERLNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERDATEOFBIRTH, FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERADDRESS, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USEREMAIL, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
+        elements.add(new FormElement(USERPASSWORD, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
+        elements.add(new FormElement(USERGENDER, FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
+        elements.add(new FormElement(USERMOBILE1, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.cam2));
+        elements.add(new FormElement(USERMOBILE2, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.cam2));
+        elements.add(new FormElement(USERADHAR, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERPAN, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USEROCCUPATION, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERNATIONALITY, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERDRIVING, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        formGenerator = new FormGenerator(layout,elements,this);
+        formGenerator.generateForm();
+        Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "error while loading spinner", Toast.LENGTH_SHORT).show();
+            }
+        });
+        adapters.setAdapters();
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               CreateUser();
+            }
+        });
+    }
+
+    private void  CreateUser(){
+            if (FormValidator.isFormValid(layout)){
+                Map<String,String> map=FormGenerator.getFormData(layout);
+                Log.d(USERDRIVING,map.get(USERDRIVING));
+                Log.d(USERDATEOFBIRTH,map.get(USERDATEOFBIRTH));
+                DAO dao = new DAO(getContext());
+                Users users = new Users("1", map.get(USERFNAME), map.get(USERMNAME), map.get(USERLNAME), map.get(USERADDRESS)
+                        ,"", map.get(FormElement.COUNTRY), map.get(FormElement.STATE),
+                        map.get(FormElement.DISTRICT), map.get(FormElement.CITY), map.get(USEREMAIL),
+                        map.get(USERPASSWORD), map.get(USERGENDER), map.get(USERDATEOFBIRTH),
+                        map.get(USERMOBILE1), map.get(USERMOBILE2), map.get(USERADHAR), map.get(USERPAN),
+                        map.get(USEROCCUPATION), map.get(USERNATIONALITY), map.get(USERDRIVING), "",
+                        map.get(USERGENDER), map.get(USERGENDER), "1");
+                dao.insertOrUpdate(users, new NewCallBack() {
+                    @Override
+                    public void onError(String error) {
+                        Toast.makeText(getContext(), "errro "+error, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(Object object) {
+                        Toast.makeText(getContext(), "response "+object, Toast.LENGTH_SHORT).show();
+//                        layout.removeAllViews();
+//                        createCompalint();
+                        loadFragment();
+                    }
+
+                    @Override
+                    public void onEmpty() {
+                        Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+                    }
+                }, URLS.INSERT_USER);
+            }
+    }
+
+    private void loadFragment() {
 
     }
 
-    private void setUpAdapter() {
+    private void createCompalint() {
+        submit.setText("Submit Complaint");
 
-//        LocationDao locationDao = new LocationDao(getContext());
-//        locationDao.getCountryAdapter(new NewCallBack() {
-//            @Override
-//            public void onError(String error) {
-//                Toast.makeText(getContext() , "error "+error, Toast.LENGTH_SHORT).show();
-//            }
-//            @Override
-//            public void onSuccess(Object object) {
-//                adapter = (ArrayAdapter<String>) object;
-//                editTextCountryId.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onEmpty() {
-//                Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-    }
-
-    private void setId() {
-        spinnersationId = view.findViewById(R.id.spinnerstation);
-        editTextFirstName = view.findViewById(R.id.editTextFirstName);
-        editTextMiddleName = view.findViewById(R.id.editTextMiddleName);
-        editTextLastName = view.findViewById(R.id.editTextLastName);
-        editTextAddress = view.findViewById(R.id.editTextAddress);
-        editTextEmail = view.findViewById(R.id.editTextEmail);
-        editTextPassword = view.findViewById(R.id.editTextPassword);
-        editTextMobile1 = view.findViewById(R.id.editTextMobile1);
-        editTextMobile2 = view.findViewById(R.id.editTextMobile2);
-        editTextAadhar = view.findViewById(R.id.editTextAadhar);
-        editTextPAN = view.findViewById(R.id.editTextPAN);
-        editTextOccupation = view.findViewById(R.id.editTextOccupation);
-        editTextNationality = view.findViewById(R.id.editTextNationality);
-        editTextDrivingLicense = view.findViewById(R.id.editTextDrivingLicense);
-        editTextNotificationToken = view.findViewById(R.id.editTextNotificationToken);
-        editTextCountryId = view.findViewById(R.id.editTextCountryId);
-        editTextStateId = view.findViewById(R.id.editTextStateId);
-        editTextDistrictId = view.findViewById(R.id.editTextDistrictId);
-        editTextCityId = view.findViewById(R.id.editTextCityId);
-        spinnerGender = view.findViewById(R.id.spinnerGender);
-        datePickerDob = view.findViewById(R.id.datePickerDob);
-        editTextComplaintSubject = view.findViewById(R.id.editTextComplaintSubject);
-        editTextComplaintDescription = view.findViewById(R.id.editTextComplaintDescription);
-        editTextAgainst = view.findViewById(R.id.editTextAgainst);
-        datePickerIncidentDate = view.findViewById(R.id.datePickerIncidentDate);
-        editTextSubtypeId = view.findViewById(R.id.editTextSubtypeId);
-        editTextLatitude = view.findViewById(R.id.editTextLatitude);
-        editTextLongitude = view.findViewById(R.id.editTextLongitude);
-        buttonUserSubmit = view.findViewById(R.id.UserSubmit);
-        buttonComplaintSubmit = view.findViewById(R.id.ComplaintSubmit);
-
-
-    }
-
-    private boolean   validateForm() {
-        boolean isValid = true;
-
-        isValid &= Validations.validateEditText(editTextFirstName, "First Name");
-        isValid &= Validations.validateEditText(editTextMiddleName, "Middle Name");
-        isValid &= Validations.validateEditText(editTextLastName, "Last Name");
-        isValid &= Validations.validateEditText(editTextAddress, "Address");
-        isValid &= Validations.validateEditText(editTextEmail, "Email");
-        isValid &= Validations.validateEditText(editTextPassword, "Password");
-        isValid &= Validations.validateEditText(editTextMobile1, "Mobile Number 1");
-        isValid &= Validations.validateEditText(editTextMobile2, "Mobile Number 2");
-        isValid &= Validations.validateEditText(editTextAadhar, "Aadhar Number");
-        isValid &= Validations.validateEditText(editTextPAN, "PAN Number");
-        isValid &= Validations.validateEditText(editTextOccupation, "Occupation");
-        isValid &= Validations.validateEditText(editTextNationality, "Nationality");
-        isValid &= Validations.validateEditText(editTextDrivingLicense, "Driving License");
-//        isValid &= validateEditText(editTextCountryId, "Country");
-        isValid &= Validations.validateSpinner(editTextStateId, "State");
-        isValid &= Validations.validateSpinner(editTextDistrictId, "District");
-        isValid &= Validations.validateSpinner(editTextCityId, "City");
-        isValid &= Validations.validateEditText(editTextComplaintSubject, "Complaint Subject");
-        isValid &= Validations.validateEditText(editTextComplaintDescription, "Complaint Description");
-        isValid &= Validations.validateEditText(editTextAgainst, "Against");
-
-        return isValid;
+        formGenerator.generateForm();
     }
 }

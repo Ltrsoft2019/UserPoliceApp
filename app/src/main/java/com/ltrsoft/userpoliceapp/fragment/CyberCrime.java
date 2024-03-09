@@ -60,6 +60,7 @@ public class CyberCrime extends Fragment {
     private static final String STATION = "Station";
     private static final String DATE_PICKER = "Incidant Date";
     private static final String CYBER_CRIME_CATEGORY = "Select Cyber Category";
+    private static final String CYBER_CRIME_SUBCATEGORY = "Select Sub category";
 
     public CyberCrime() {}
 
@@ -95,7 +96,7 @@ public class CyberCrime extends Fragment {
 
             }
         });
-        Spinner spinner2= formGenerator.generateSpinner("Sub category",stationlist, adapter, new AdapterView.OnItemSelectedListener() {
+        Spinner spinner2= formGenerator.generateSpinner(CYBER_CRIME_SUBCATEGORY,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -111,9 +112,7 @@ public class CyberCrime extends Fragment {
         elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,"",R.drawable.mic2));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.mic2));
         elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-
         elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-
 
         formGenerator.generateForm();
 
@@ -133,15 +132,15 @@ public class CyberCrime extends Fragment {
             public void onClick(View v) {
                     if (FormValidator.isFormValid(layout)){
                         Map<String,String> map = FormGenerator.getFormData(layout);
-//                        Log.d(CATEGORY, Objects.requireNonNull(map.get(CATEGORY)));
-//                        Log.d(LOST_MONEY, Objects.requireNonNull(map.get(LOST_MONEY)));
-//                        Log.d(DATE_TIME,map.get(DATE_PICKER));
-//                        Log.d(IS_DELAY,map.get(IS_DELAY));
-//                        Log.d(WHERE_OCCURE,map.get(WHERE_OCCURE));
-//                        Log.d(EVIDENCE_PHOTO,map.get(STATION));
-//                        Log.d(DESCRIPTION,map.get(DESCRIPTION));
-//                        Log.d(STATION, map.get(STATION));
-//                        Log.d(CYBER_CRIME_CATEGORY, map.get(CYBER_CRIME_CATEGORY));
+                        Log.d(CYBER_CRIME_CATEGORY, Objects.requireNonNull(map.get(CYBER_CRIME_CATEGORY)));
+                        Log.d(LOST_MONEY, Objects.requireNonNull(map.get(LOST_MONEY)));
+                        Log.d(DATE_TIME,map.get(DATE_PICKER));
+                        Log.d(IS_DELAY,map.get(IS_DELAY));
+                        Log.d(WHERE_OCCURE,map.get(WHERE_OCCURE));
+                        Log.d(EVIDENCE_PHOTO,map.get(STATION));
+                        Log.d(DESCRIPTION,map.get(DESCRIPTION));
+                        Log.d(STATION, map.get(STATION));
+                        Log.d(CYBER_CRIME_SUBCATEGORY, map.get(CYBER_CRIME_SUBCATEGORY));
 
                         Log.d("Size", String.valueOf(map.size()));
                         CyberCrimemodel cyberCrime = new CyberCrimemodel();
@@ -155,10 +154,8 @@ public class CyberCrime extends Fragment {
                         cyberCrime.setStation_id(map.get(STATION));
                         cyberCrime.setCyber_crime_id(map.get(STATION));
                         cyberCrime.setStatus_id(map.get(STATION));
-
                         cyberCrime.setUser_id((new UserDataAccess().getUserId(getActivity())));
                         DAO dao = new DAO(getContext());
-
                         dao.insertOrUpdate(cyberCrime, new NewCallBack() {
                             @Override
                             public void onError(String error) {

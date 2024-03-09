@@ -67,7 +67,7 @@ public class Adapters extends GetLists{
                 }
                 adapter1 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
                 adapter1.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                spinner1= formGenerator.generateSpinner("country", list, adapter1,new AdapterView.OnItemSelectedListener() {
+                spinner1= formGenerator.generateSpinner(FormElement.COUNTRY, list, adapter1,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
@@ -90,7 +90,7 @@ public class Adapters extends GetLists{
                 }
                 adapter2 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
                 adapter2.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                spinner2= formGenerator.generateSpinner("states", list, adapter2,new AdapterView.OnItemSelectedListener() {
+                spinner2= formGenerator.generateSpinner(FormElement.STATE, list, adapter2,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
@@ -114,7 +114,7 @@ public class Adapters extends GetLists{
                 }
                 adapter3 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
                 adapter3.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                spinner3= formGenerator.generateSpinner("district", list, adapter3,new AdapterView.OnItemSelectedListener() {
+                spinner3= formGenerator.generateSpinner(FormElement.DISTRICT, list, adapter3,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();
@@ -138,7 +138,7 @@ public class Adapters extends GetLists{
                 }
                 adapter4 = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
                 adapter4.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                spinner3= formGenerator.generateSpinner("City", list, adapter4,new AdapterView.OnItemSelectedListener() {
+                spinner3= formGenerator.generateSpinner(FormElement.CITY, list, adapter4,new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         Toast.makeText(context, "item"+list.get(i), Toast.LENGTH_SHORT).show();

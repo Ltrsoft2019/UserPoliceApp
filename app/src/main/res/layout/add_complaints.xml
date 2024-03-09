@@ -7,29 +7,29 @@
     android:orientation="vertical"
     android:background="#EBEBEB">
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:background="#FFFFFF"-->
-<!--        android:minHeight="?attr/actionBarSize"-->
-<!--        android:theme="?attr/actionBarTheme">-->
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="80dp"-->
+    <!--        android:background="#FFFFFF"-->
+    <!--        android:minHeight="?attr/actionBarSize"-->
+    <!--        android:theme="?attr/actionBarTheme">-->
 
-<!--        <ImageButton-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="30dp" />-->
-<!--        &lt;!&ndash;            android:background="@drawable/align_left"/>&ndash;&gt;-->
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:text="Add Complaints"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold" />-->
+    <!--        <ImageButton-->
+    <!--            android:layout_width="30dp"-->
+    <!--            android:layout_height="30dp" />-->
+    <!--        &lt;!&ndash;            android:background="@drawable/align_left"/>&ndash;&gt;-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:text="Add Complaints"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="20dp"-->
+    <!--            android:textStyle="bold" />-->
 
 
-<!--    </androidx.appcompat.widget.Toolbar>-->
+    <!--    </androidx.appcompat.widget.Toolbar>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"/>
-<!--                android:background="@drawable/complain" />-->
+            <!--                android:background="@drawable/complain" />-->
 
             <TextView
                 android:layout_width="110dp"
@@ -109,7 +109,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"/>
-<!--                android:background="@drawable/digital_services" />-->
+            <!--                android:background="@drawable/digital_services" />-->
 
             <TextView
                 android:layout_width="110dp"
@@ -137,7 +137,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"/>
-<!--                android:background="@drawable/businessman" />-->
+            <!--                android:background="@drawable/businessman" />-->
 
             <TextView
                 android:layout_width="110dp"
@@ -169,7 +169,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"/>
-<!--                android:background="@drawable/hacker" />-->
+            <!--                android:background="@drawable/hacker" />-->
 
             <TextView
                 android:layout_width="110dp"
@@ -222,28 +222,28 @@
             android:background="@drawable/card_background"
             android:elevation="1dp"
             android:layout_margin="8dp">
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center">
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"/>
-            <!--                android:background="@drawable/hacker" />-->
-
-            <TextView
-                android:gravity="center"
-                  android:layout_width="150dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp"
-                android:text="Add Missing Person"
-                android:textColor="#66000000"
-                android:textStyle="bold" />
-          </LinearLayout>
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"/>
+                <!--                android:background="@drawable/hacker" />-->
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Add Missing Person"
+                    android:textColor="#66000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
 
         </RelativeLayout>
