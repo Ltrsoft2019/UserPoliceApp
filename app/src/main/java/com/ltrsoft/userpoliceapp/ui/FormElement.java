@@ -19,6 +19,8 @@ public class FormElement {
     public static final String SUBTYPE_TEXT = "text";
     public static final String SYBTYPE_SPINNER_STATION = "stations";
     public static final String SYBTYPE_SEXT_TEXT = "stations";
+    public static final String SUBTYPE_BUTTON_LOCATION= "location picker";
+    public static final String SUBTYPE_BUTTON_DATEPICKER= "datepicker button";
 
 
     public static final String COUNTRY = "Select Country";

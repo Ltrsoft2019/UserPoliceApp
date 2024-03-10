@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.text.InputType;
 import android.util.Log;
 import android.util.TypedValue;
@@ -34,9 +35,11 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.interfaces.LocationCallBack;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.utils.EncodedImage;
 import com.ltrsoft.userpoliceapp.utils.ImagePicker;
+import com.ltrsoft.userpoliceapp.utils.LocationProvider;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -70,7 +73,7 @@ public class FormGenerator {
                     generateImageView(element.getLabel());
                     break;
                 case FormElement.TYPE_BUTTON:
-                    generateButton(element.getLabel());
+                    generateButton(element.getLabel(),element.getSubType());
                     break;
                 case FormElement.TYPE_CHECKBOX:
                     generateCheckBox(element.getLabel());
@@ -217,7 +220,7 @@ public class FormGenerator {
 
     }
 
-    private void generateButton(String label) {
+    private void generateButton(String label,String subtype) {
          Button button = new Button(context);
         LinearLayout.LayoutParams buttonparam = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
@@ -237,28 +240,45 @@ public class FormGenerator {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                generateDatePicker();
-                 Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        context,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker datePicker, int selectedYear, int selectedMonth, int selectedDay) {
-                                // Handle the date selection or update the TextView
-                                String dateOfBirth = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
-                                button.setText(dateOfBirth);
-                            }
-                        },
-                        year,
-                        month,
-                        day);
+                if (subtype==FormElement.SUBTYPE_BUTTON_LOCATION) {
+                    LocationProvider.getCurrentLocation(context, new LocationCallBack() {
+                        @Override
+                        public void onLocationGet(Location latLng) {
+//                            Toast.makeText(context, "lats"+latLng.getLatitude(), Toast.LENGTH_SHORT).show();
+                            double lat = latLng.getLatitude();
+                            double log = latLng.getLongitude();
+                            button.setText(String.valueOf(lat)+","+String.valueOf(log));
+                        }
 
-                // Show the date picker dialog
-                datePickerDialog.show();
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(context, "error please try again", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                } else{
+                    Calendar calendar = Calendar.getInstance();
+                    int year = calendar.get(Calendar.YEAR);
+                    int month = calendar.get(Calendar.MONTH);
+                    int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(
+                            context,
+                            new DatePickerDialog.OnDateSetListener() {
+                                @Override
+                                public void onDateSet(DatePicker datePicker, int selectedYear, int selectedMonth, int selectedDay) {
+                                    // Handle the date selection or update the TextView
+                                    String dateOfBirth = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
+                                    button.setText(dateOfBirth);
+                                }
+                            },
+                            year,
+                            month,
+                            day);
+
+                    // Show the date picker dialog
+                    datePickerDialog.show();
+                }
             }
         });
         formLayout.addView(button);
@@ -286,8 +306,6 @@ public class FormGenerator {
             radioButton.setTextSize(16);
              radioButton.setTypeface(arialTypeface);
             radioGroup.addView(radioButton); // Add RadioButton to RadioGroup
-        }{
-
         }
         radioGroup.setTag(label);
         formLayout.addView(radioGroup);
@@ -330,7 +348,7 @@ public class FormGenerator {
                     System.out.println("checkbox"+(String)checkBox.getTag());
             } else if (childView instanceof Spinner) {
                 Spinner spinner = (Spinner) childView;
-                formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()));
+                formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()+1));
                 System.out.println("spinner"+spinner.getTag());
                 /* Get selected item from spinner and add it to formDataMap */
             } else if (childView instanceof Button) {

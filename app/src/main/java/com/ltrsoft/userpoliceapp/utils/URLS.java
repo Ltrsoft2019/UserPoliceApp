@@ -15,4 +15,5 @@ public class URLS {
     public final  static String CYBER_COMPLAINT_INSERT = "https://rj.ltr-soft.com/public/police_api/cyber_crimes/create_cyber_crime.php";
     public final  static String INSERT_USER = "https://rj.ltr-soft.com/public/police_api/user/user_insert.php";
     public final  static String GET_USER = "https://rj.ltr-soft.com/public/police_api/data/user_read.php";
+    public final  static String INSRT_UNIDENTIFIED_OBJ = "https://rj.ltr-soft.com/public/police_api/unidentified_objects/create_unidentified_objects.php";
 }

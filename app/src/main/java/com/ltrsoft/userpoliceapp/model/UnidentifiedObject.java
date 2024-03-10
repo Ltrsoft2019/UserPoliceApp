@@ -11,7 +11,22 @@ public class UnidentifiedObject {
             photo_path,
             latitude,
             longitude,
-            station_id;
+            station_id,
+            user_id;
+
+    public UnidentifiedObject(String unidentified_object_id, String date_and_time_of_discovery, String location_found, String object_condition, String identifying_marks_or_features, String object_description, String photo_path, String latitude, String longitude, String station_id,String user_id) {
+        this.unidentified_object_id = unidentified_object_id;
+        this.date_and_time_of_discovery = date_and_time_of_discovery;
+        this.location_found = location_found;
+        this.object_condition = object_condition;
+        this.identifying_marks_or_features = identifying_marks_or_features;
+        this.object_description = object_description;
+        this.photo_path = photo_path;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.station_id = station_id;
+        this.user_id=user_id;
+    }
 
     public String getUnidentified_object_id() {
         return unidentified_object_id;
