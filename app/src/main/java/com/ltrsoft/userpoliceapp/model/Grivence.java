@@ -2,7 +2,8 @@ package com.ltrsoft.userpoliceapp.model;
 
 public class Grivence {
 
-    private String grievance_id, nature_of_grievance, date, location, description, photo, audio_video, action_required, outcome, user_id, status_id, station_id;
+    private String grievance_id, nature_of_grievance, date, location, description,
+            photo, audio_video, action_required, outcome, user_id, status_id, station_id;
 
     public String getGrievance_id() {
         return grievance_id;

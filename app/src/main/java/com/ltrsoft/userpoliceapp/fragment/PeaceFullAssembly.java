@@ -34,7 +34,7 @@ public class PeaceFullAssembly extends Fragment {
     private Button submit;
     private TextView heading;
     private List<FormElement> elements;
-     public String Name="Name Of The Organization :",
+     public static String Name="Name Of The Organization :",
              REGISTERED_ORG="is_organization_registered :",
              PROCESSION_REASON="Procession_Reason :",
              DATE ="Enter Date :",
