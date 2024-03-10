@@ -363,8 +363,7 @@ public class FormGenerator {
         spinner.setTag(label);
         originallist.add(0, label); // Add selected item to the top
 
-//        Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
-//        spinner.setTypeface(arialTypeface);
+//
         spinner.setLayoutParams(spinnerParams);
         spinnerParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()), 20);
 //
@@ -383,10 +382,11 @@ public class FormGenerator {
                         @Override
                         public void onSuccess(Object object) {
                             String selected = (String) object;
-                            originallist.remove(selected); // Remove selected item from the list
-                            originallist.add(0, selected); // Add selected item to the top
-                            adapter.notifyDataSetChanged(); // Notify the adapter of the change
-                            spinner.setSelection(0); // Set the selection to the top
+                            Toast.makeText(context, ""+selected, Toast.LENGTH_SHORT).show();
+                           //// originallist.remove(selected); // Remove selected item from the list
+                           // originallist.add(0, selected); // Add selected item to the top
+                            //adapter.notifyDataSetChanged(); // Notify the adapter of the change
+                            spinner.setSelection(originallist.indexOf(object)); // Set the selection to the top
                         }
 
                         @Override

@@ -35,7 +35,7 @@ public class Searchviews {
 
        // Create ListView
        final ListView listView = new ListView(context);
-       originallist.remove(0);
+//       originallist.remove(0);
      final ArrayAdapter<String> adapter = new ArrayAdapter<>(context,
                android.R.layout.simple_list_item_1, originallist);
        listView.setAdapter(adapter);
@@ -57,9 +57,9 @@ public class Searchviews {
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                String selectedItem = originallist.get(position);
                // Remove the selected item from its current position
-               originallist.remove(position);
+              // originallist.remove(position);
                // Add the selected item to the top
-               originallist.add(0, selectedItem);
+              // originallist.add(0, selectedItem);
                // Notify the adapter of the data change
               // adapter1.notifyDataSetChanged();
                // Call onSuccess callback with the selected item
