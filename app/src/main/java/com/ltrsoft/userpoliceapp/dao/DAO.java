@@ -33,8 +33,9 @@ public class DAO<T> {
     private HashMap<String,String> hashMap;
     public DAO(Context context) {
         this.context = context;
-        queue= Volley.newRequestQueue(context);
+        this.queue= Volley.newRequestQueue(context);
     }
+
     public void select(Class<T>clas,String key,String values, NewCallBack callBack,String url) {
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

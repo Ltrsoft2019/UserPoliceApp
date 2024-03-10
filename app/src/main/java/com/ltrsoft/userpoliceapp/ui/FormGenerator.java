@@ -103,6 +103,9 @@ public class FormGenerator {
             case FormElement.SUBTYPE_NUMBER:
                 editText.setInputType(InputType.TYPE_CLASS_NUMBER);
                 break;
+            case FormElement.SYBTYPE_SEXT_TEXT:
+                editText.setText(label);
+                break;
             default:
                 editText.setInputType(InputType.TYPE_CLASS_TEXT);
                 break;

@@ -31,15 +31,18 @@ import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
 import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.QuickComplaint;
+import com.ltrsoft.userpoliceapp.model.Station;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.utils.TakingImage;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class AddQuickComplaint extends Fragment {
     public AddQuickComplaint() {
@@ -76,7 +79,32 @@ public class AddQuickComplaint extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(FormValidator.isFormValid(layout)){
+                    Map<String,String> map=FormGenerator.getFormData(layout);
+                    DAO dao=new DAO(getContext());
+                    QuickComplaint quickComplaint=new QuickComplaint(map.get(FormElement.STATION),"1","1", map.get(DESCRIPTION),map.get(ADDRESS),
+                            "pending","2","1");
+                   dao.insertOrUpdate(quickComplaint, new NewCallBack() {
+                       @Override
+                       public void onError(String error) {
 
+                       }
+
+                       @Override
+                       public void onSuccess(Object object) {
+                           Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                       }
+
+                       @Override
+                       public void onEmpty() {
+
+                       }
+                   },URLS.QUICKCOMPLAINTADD);
+
+                }
+                else {
+                    Toast.makeText(getContext(), "All Fields Are Mandatory", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

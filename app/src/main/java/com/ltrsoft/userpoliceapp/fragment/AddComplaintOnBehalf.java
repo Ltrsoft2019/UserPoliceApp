@@ -21,6 +21,7 @@ import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.ui.UserBehalf;
+import com.ltrsoft.userpoliceapp.ui.UserSelf;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 
 import java.util.ArrayList;
@@ -68,9 +69,11 @@ public class AddComplaintOnBehalf extends Fragment {
         submit= view.findViewById(R.id.button);
         heading.setVisibility(View.GONE);
         //intiForm(layout);
-        UserBehalf userBehalf =new UserBehalf(getContext(),layout);
         AddComplaintOnBehalf addComplaintOnBehalf=new AddComplaintOnBehalf();
-        userBehalf.getneateUserOnBehalf(this,submit,new AddComplainbehalf2());
+//        UserBehalf userBehalf =new UserBehalf(getContext(),layout);
+//        userBehalf.getneateUserOnBehalf(this,submit,new AddComplainbehalf2());
+        UserSelf userSelf = new UserSelf(getContext(),layout);
+        userSelf.generateUserSelf(this,submit,new AddComplainbehalf2());
         return view;
     }
 
@@ -124,7 +127,7 @@ public class AddComplaintOnBehalf extends Fragment {
                         map.get(USERMOBILE1), map.get(USERMOBILE2), map.get(USERADHAR), map.get(USERPAN),
                         map.get(USEROCCUPATION), map.get(USERNATIONALITY), map.get(USERDRIVING), "",
                         map.get(USERGENDER), map.get(USERGENDER), "1");
-                dao.insertOrUpdate(users, new NewCallBack() {
+                      dao.insertOrUpdate(users, new NewCallBack() {
                     @Override
                     public void onError(String error) {
                         Toast.makeText(getContext(), "errro "+error, Toast.LENGTH_SHORT).show();

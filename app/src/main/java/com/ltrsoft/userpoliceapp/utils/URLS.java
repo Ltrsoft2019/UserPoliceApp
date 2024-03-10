@@ -1,6 +1,8 @@
 package com.ltrsoft.userpoliceapp.utils;
 
 public class URLS {
+    public final static String PEACEFULLASSEMBLY_INSERT="rj.ltr-soft.com/public/police_api/peaceful_assemblies/create_peaceful_assemblies.php";
+    public final static String QUICKCOMPLAINTADD="https://rj.ltr-soft.com/public/police_api/quick_complaints/create_quick_complaint.php";
     public final  static String LOGINURL = "https://rj.ltr-soft.com/public/police_api/login/user_login.php";
     public final  static String REGISTERURL = "https://rj.ltr-soft.com/public/police_api/user/user_insert.php";
     public final  static String READSTATION = "https://rj.ltr-soft.com/public/police_api/police_station/read_police_station.php";
@@ -12,4 +14,5 @@ public class URLS {
     public final  static String CITY_GET = "https://rj.ltr-soft.com/public/police_api/city/select_city.php";
     public final  static String CYBER_COMPLAINT_INSERT = "https://rj.ltr-soft.com/public/police_api/cyber_crimes/create_cyber_crime.php";
     public final  static String INSERT_USER = "https://rj.ltr-soft.com/public/police_api/user/user_insert.php";
+    public final  static String GET_USER = "https://rj.ltr-soft.com/public/police_api/data/user_read.php";
 }
