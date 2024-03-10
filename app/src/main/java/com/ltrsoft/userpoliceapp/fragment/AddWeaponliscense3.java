@@ -7,111 +7,116 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.ArmLicenses;
+import com.ltrsoft.userpoliceapp.ui.FormElement;
+import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.Validations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class AddWeaponliscense3 extends Fragment {
     public AddWeaponliscense3() {
     }
   private View view;
-    private CheckBox checkBoxApplicantAppliedBefore, checkBoxFamilyMemberSuspendedForWeapon,
-            checkBoxApplicantSuspended, checkBoxHasSafePlace, checkBoxHasTraining,
-            checkBoxNeedForLicense;
+    LinearLayout layout;
+    FormGenerator formGenerator;
+    private List<FormElement> elements;
+    Button button;
+    TextView heading;
+    private static String
+            NEED_FOR_LICENSE = "Need for License",
+    ARMS_TYPE = "Arms Type",
+    AMMUNITION_DESC = "Ammunition Description",
+    AREA_OF_ARM_CARRY = "Area of Arm Carry",
+    SPECIAL_CONSIDERATION = "Special Consideration",
+    DETAIL_FOR_FORM_IV = "Detail for Form IV",
+    PLACE_OF_BIRTH = "Place of Birth",
+    DOB_IN_WORDS = "Date of Birth in Words",
+    STATUS_ID = "Status ID",
+    PERMISSION_ID = "Permission ID";
 
-    private EditText editTextArmsType, editTextAmmunationDescription, editTextAreaOfArmCarry,
-            editTextSpecialConsideration, editTextDetailForFormIV, editTextPlaceOfBirth,
-            editTextDobInWords;
-
-    private Button buttonSubmit;
+   ArmLicenses armLicenses;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.addweapenlicence3, container, false);
-
-        setid();
-
-        buttonSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                submit();
-            }
-        });
+        view = inflater.inflate(R.layout.common_form, container, false);
+        layout=view.findViewById(R.id.layout123);
+        heading=view.findViewById(R.id.heading);
+        heading.setText("Add Weapon Licence");
+        button=view.findViewById(R.id.button);
+        button.setText("Next");
+        Bundle bundle=getArguments();
+        if (bundle!=null){
+            armLicenses=bundle.getParcelable("armLicenses");
+        }
+        initform(layout,button);
         return view;
     }
 
-    private void submit() {
-        String armsType = editTextArmsType.getText().toString();
-        String ammunationDescription = editTextAmmunationDescription.getText().toString();
-        String areaOfArmCarry = editTextAreaOfArmCarry.getText().toString();
-        String specialConsideration = editTextSpecialConsideration.getText().toString();
-        String detailForFormIV = editTextDetailForFormIV.getText().toString();
-        String placeOfBirth = editTextPlaceOfBirth.getText().toString();
-        String dobInWords = editTextDobInWords.getText().toString();
+    private void initform(LinearLayout layout, Button button) {
+        elements=new ArrayList<>();
+        formGenerator=new FormGenerator(layout,elements,this);
 
-        // Get checked status from CheckBox fields
-        boolean applicantAppliedBefore = checkBoxApplicantAppliedBefore.isChecked();
-        boolean familyMemberSuspendedForWeapon = checkBoxFamilyMemberSuspendedForWeapon.isChecked();
-        boolean applicantSuspended = checkBoxApplicantSuspended.isChecked();
-        boolean hasSafePlace = checkBoxHasSafePlace.isChecked();
-        boolean hasTraining = checkBoxHasTraining.isChecked();
-        boolean needForLicense = checkBoxNeedForLicense.isChecked();
-         ArmLicenses formData=new ArmLicenses();
-        formData.setArms_type(armsType);
-        formData.setAmmunition_desc(ammunationDescription);
-        formData.setArea_of_arm_carry(areaOfArmCarry);
-        formData. setSpecial_consideration(specialConsideration);
-        formData.setDetail_for_form_IV(detailForFormIV);
-        formData.setPlace_of_birth(placeOfBirth);
-        formData.setDob_in_words(dobInWords);
-        formData.setWhether_applicant_applied_before(String.valueOf(applicantAppliedBefore));
-        formData.setWhether_applicant_family_member_suspended_for_using_weapon(String.valueOf(familyMemberSuspendedForWeapon));
-        formData.setWhether_applicant_suspended(String.valueOf(applicantSuspended));
-        formData.setHas_safe_place_to_keep_arm(String.valueOf(hasSafePlace));
-        formData.setHas_training(String.valueOf(hasTraining));
-        formData.setNeed_for_license(String.valueOf(needForLicense));
+        elements.add(new FormElement(NEED_FOR_LICENSE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(ARMS_TYPE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(AMMUNITION_DESC,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(AREA_OF_ARM_CARRY,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(SPECIAL_CONSIDERATION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(DETAIL_FOR_FORM_IV,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(PLACE_OF_BIRTH,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(NEED_FOR_LICENSE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        elements.add(new FormElement(PERMISSION_ID,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.clipboard));
+        formGenerator.generateForm();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(FormValidator.isFormValid(layout)){
+                    Map<String,String>map=FormGenerator.getFormData(layout);
+                              armLicenses.setArms_type(map.get(ARMS_TYPE));
+                              armLicenses.setAmmunition_desc(map.get(AMMUNITION_DESC));
+                              armLicenses.setArea_of_arm_carry(map.get(AREA_OF_ARM_CARRY));
+                            armLicenses.setSpecial_consideration(map.get(SPECIAL_CONSIDERATION));
+                            armLicenses.setDetail_for_form_IV(map.get(DETAIL_FOR_FORM_IV));
+                            armLicenses.setPlace_of_birth(map.get(PLACE_OF_BIRTH));
+                            armLicenses.setDob_in_words(map.get(DOB_IN_WORDS));
+                            armLicenses.setPermission_id(PERMISSION_ID);
+                    armLicenses.setNeed_for_license(map.get(NEED_FOR_LICENSE));
+                    DAO dao=new DAO(getContext());
+                    dao.insertOrUpdate(armLicenses, new NewCallBack() {
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+                        }
 
+                        @Override
+                        public void onSuccess(Object object) {
+                            Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onEmpty() {
+
+                        }
+                    }, URLS.CREATEWEAPONLISCENSE);
+                }
+            }
+        });
     }
 
-    private void setid() {
-        checkBoxApplicantAppliedBefore = view.findViewById(R.id.checkBoxApplicantAppliedBefore);
-        checkBoxFamilyMemberSuspendedForWeapon = view.findViewById(R.id.checkBoxFamilyMemberSuspendedForWeapon);
-        checkBoxApplicantSuspended = view.findViewById(R.id.checkBoxApplicantSuspended);
-        checkBoxHasSafePlace = view.findViewById(R.id.checkBoxHasSafePlace);
-        checkBoxHasTraining = view.findViewById(R.id.checkBoxHasTraining);
-        checkBoxNeedForLicense = view.findViewById(R.id.checkBoxNeedForLicense);
 
-        // Find all EditTexts
-        editTextArmsType = view.findViewById(R.id.editTextArmsType);
-        editTextAmmunationDescription = view.findViewById(R.id.editTextAmmunationDescription);
-        editTextAreaOfArmCarry = view.findViewById(R.id.editTextAreaOfArmCarry);
-        editTextSpecialConsideration = view.findViewById(R.id.editTextSpecialConsideration);
-        editTextDetailForFormIV = view.findViewById(R.id.editTextDetailForFormIV);
-        editTextPlaceOfBirth = view.findViewById(R.id.editTextPlaceOfBirth);
-        editTextDobInWords = view.findViewById(R.id.editTextDobInWords);
-
-        // Find the Button
-        buttonSubmit = view.findViewById(R.id.buttonSubmit);
-    }
-    private boolean validData() {
-        boolean valid =true;
-
-        valid &= Validations.validateEditText(editTextArmsType,"Enter The ArmsType ");
-        valid &= Validations.validateEditText( editTextAmmunationDescription,"Enter the AmmunationDescription ");
-        valid &= Validations.validateEditText(editTextAreaOfArmCarry,"Enter The AreaOfArmCarry ");
-        valid &= Validations.validateEditText(editTextSpecialConsideration,"Enter The SpecialConsideration ");
-        valid &= Validations.validateEditText(editTextDetailForFormIV," Enter DetailForFormIV");
-        valid &= Validations.validateEditText(editTextPlaceOfBirth," Enter The PlaceOfBirth");
-        valid &= Validations.validateEditText(editTextDobInWords," Enter The DobInWords");
-
-//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
-//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
-
-        return valid;
-    }
 }

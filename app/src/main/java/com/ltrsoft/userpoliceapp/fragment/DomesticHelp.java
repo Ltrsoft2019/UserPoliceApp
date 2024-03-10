@@ -6,101 +6,161 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.model.DomesticWorkers;
+import com.ltrsoft.userpoliceapp.ui.Adapters;
+import com.ltrsoft.userpoliceapp.ui.FormElement;
+import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.utils.Validations;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class DomesticHelp extends Fragment {
 
-    private EditText editTextFullName, editTextDateOfBirth, editTextPermanentAddress,
-            editTextContactNumber, editTextEmailAddress, editTextPreviousEmployer,
-            editTextDurationOfEmployment, editTextReasonForLeaving, editTextIdentificationDocuments,
-            editTextIdentityProofDocNumber, editTextIdentityProofIssuingAuthority,
-            editTextIdentityProofDateOfIssue, editTextIdentityProofDateOfExpiry,
-            editTextAddressProofDocNumber, editTextAddressProofIssuingAuthority;
-    private Spinner spinnerGender;
-    private Button buttonSaveNext;
+
+    private LinearLayout layout;
+    private View view;
+    private FormGenerator formGenerator;
+    private List<FormElement> elements;
+
+    private Button submit;
+    private TextView heading;
+    private String DOMESTIC_ID = "Domestic ID",
+            USER_ID = "User ID",
+            FULL_NAME_OF_DOMESTIC_HELP = "Full Name of Domestic Help",
+            GENDER = "Gender",
+            DATE_OF_BIRTH = "Date of Birth",
+            PERMANENT_ADDRESS = "Permanent Address",
+            CONTACT_NUMBER = "Contact Number",
+            EMAIL_ADDRESS = "Email Address",
+            NAME_OF_PREVIOUS_EMPLOYER = "Name of Previous Employer",
+            DURATION_OF_EMPLOYMENT = "Duration of Employment",
+            REASON_FOR_LEAVING = "Reason for Leaving",
+            IDENTIFICATION_DOCUMENTS_SUBMITTED = "Identification Documents Submitted",
+            IDENTITY_PROOF_DOC_NUMBER = "Identity Proof Doc Number",
+            IDENTITY_PROOF_ISSUING_AUTHORITY = "Identity Proof Issuing Authority",
+            IDENTITY_PROOF_DATE_OF_ISSUE = "Identity Proof Date of Issue",
+            IDENTITY_PROOF_DATE_OF_EXPIRY = "Identity Proof Date of Expiry",
+            ADDRESS_PROOF_DOC_NUMBER = "Address Proof Doc Number",
+            ADDRESS_PROOF_ISSUING_AUTHORITY = "Address Proof Issuing Authority",
+            ADDRESS_PROOF_DATE_OF_ISSUE = "Address Proof Date of Issue",
+            PURPOSE_OF_EMPLOYMENT = "Purpose of Employment",
+            JOB_TITLE_OR_ROLE = "Job Title or Role",
+            START_DATE_OF_EMPLOYMENT = "Start Date of Employment",
+            SALARY_OR_COMPENSATION_DETAILS = "Salary or Compensation Details",
+            ADDITIONAL_INFORMATION_ABOUT_EMPLOYMENT = "Additional Information About Employment",
+            STATION_ID = "Station ID",
+            STATUS_ID = "Status ID",
+            PERMISSION_ID = "Permission ID";
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.domestic_help, container, false);
-        initializeViews(view);
-        buttonSaveNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveAndNext();
-            }
-        });
+        View view = inflater.inflate(R.layout.common_form, container, false);
+        layout = view.findViewById(R.id.layout123);
+        heading=view.findViewById(R.id.heading);
+        submit=view.findViewById(R.id.button);
+        heading.setText("Domestic Help");
+        init(layout,submit);
         return view;
     }
 
-    private void initializeViews(View view) {
-        editTextFullName = view.findViewById(R.id.editTextFullName);
-        editTextDateOfBirth = view.findViewById(R.id.editTextDateOfBirth);
-        editTextPermanentAddress = view.findViewById(R.id.editTextPermanentAddress);
-        editTextContactNumber = view.findViewById(R.id.editTextContactNumber);
-        editTextEmailAddress = view.findViewById(R.id.editTextEmailAddress);
-        editTextPreviousEmployer = view.findViewById(R.id.editTextPreviousEmployer);
-        editTextDurationOfEmployment = view.findViewById(R.id.editTextDurationOfEmployment);
-        editTextReasonForLeaving = view.findViewById(R.id.editTextReasonForLeaving);
-        editTextIdentificationDocuments = view.findViewById(R.id.editTextIdentificationDocuments);
-        editTextIdentityProofDocNumber = view.findViewById(R.id.editTextIdentityProofDocNumber);
-        editTextIdentityProofIssuingAuthority = view.findViewById(R.id.editTextIdentityProofIssuingAuthority);
-        editTextIdentityProofDateOfIssue = view.findViewById(R.id.editTextIdentityProofDateOfIssue);
-        editTextIdentityProofDateOfExpiry = view.findViewById(R.id.editTextIdentityProofDateOfExpiry);
-        editTextAddressProofDocNumber = view.findViewById(R.id.editTextAddressProofDocNumber);
-        editTextAddressProofIssuingAuthority = view.findViewById(R.id.editTextAddressProofIssuingAuthority);
+    private void init(LinearLayout layout, Button submit) {
+        elements = new ArrayList<>();
+        formGenerator=new FormGenerator(layout,elements,this);
+        elements.add(new FormElement(FULL_NAME_OF_DOMESTIC_HELP,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.location));
+         elements.add(new FormElement(GENDER, FormElement.TYPE_RADIO_GROUP, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(DATE_OF_BIRTH, FormElement.TYPE_BUTTON, FormElement.SUBTYPE_BUTTON_DATEPICKER, R.drawable.location));
+        elements.add(new FormElement(PERMANENT_ADDRESS, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(CONTACT_NUMBER, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.call));
+        elements.add(new FormElement(EMAIL_ADDRESS, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_EMAIL, R.drawable.location));
+        elements.add(new FormElement(NAME_OF_PREVIOUS_EMPLOYER, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(DURATION_OF_EMPLOYMENT, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(REASON_FOR_LEAVING, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(IDENTIFICATION_DOCUMENTS_SUBMITTED, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(IDENTITY_PROOF_DOC_NUMBER, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_NUMBER, R.drawable.location));
+        elements.add(new FormElement(IDENTITY_PROOF_ISSUING_AUTHORITY, FormElement.TYPE_IMAGE_VIEW, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement(IDENTITY_PROOF_DATE_OF_ISSUE, FormElement.TYPE_BUTTON, FormElement.SUBTYPE_BUTTON_DATEPICKER, R.drawable.location));
+        elements.add(new FormElement(IDENTITY_PROOF_DATE_OF_EXPIRY, FormElement.TYPE_BUTTON, FormElement.SUBTYPE_BUTTON_DATEPICKER, R.drawable.location));
+        elements.add(new FormElement(ADDRESS_PROOF_DOC_NUMBER, FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("ADDRESS_PROOF_ISSUING_AUTHORITY", FormElement.TYPE_IMAGE_VIEW, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("ADDRESS_PROOF_DATE_OF_ISSUE", FormElement.TYPE_BUTTON, FormElement.SUBTYPE_BUTTON_DATEPICKER, R.drawable.location));
+        elements.add(new FormElement("PURPOSE_OF_EMPLOYMENT", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("JOB_TITLE_OR_ROLE", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("START_DATE_OF_EMPLOYMENT", FormElement.TYPE_BUTTON, FormElement.SUBTYPE_BUTTON_DATEPICKER, R.drawable.location));
+        elements.add(new FormElement("SALARY_OR_COMPENSATION_DETAILS", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("ADDITIONAL_INFORMATION_ABOUT_EMPLOYMENT", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        // elements.add(new FormElement("STATUS_ID", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        elements.add(new FormElement("PERMISSION_ID", FormElement.TYPE_EDIT_TEXT, FormElement.SUBTYPE_TEXT, R.drawable.location));
+        Adapters adapters=new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "their is a error", Toast.LENGTH_SHORT).show();
+            }
+        });
+        adapters.setStation();
+        formGenerator.generateForm();
+    submit.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (FormValidator.isFormValid(layout)){
+                Map<String,String>map=FormGenerator.getFormData(layout);
+                DAO dao=new DAO(getContext());
+                DomesticWorkers domesticWorkers=new DomesticWorkers("",
+                         "",
+                         map.get(FULL_NAME_OF_DOMESTIC_HELP),
 
-        spinnerGender = view.findViewById(R.id.spinnerGender);
+                        map.get(GENDER),
+                        map.get(DATE_OF_BIRTH),
+                        map.get(PERMANENT_ADDRESS),
+                        map.get(CONTACT_NUMBER),
 
-        buttonSaveNext = view.findViewById(R.id.buttonSaveNext);
+                        map.get(EMAIL_ADDRESS),
+                        map.get(NAME_OF_PREVIOUS_EMPLOYER),
+
+                        map.get(DURATION_OF_EMPLOYMENT),
+                        map.get(REASON_FOR_LEAVING),
+                        map.get(IDENTIFICATION_DOCUMENTS_SUBMITTED),
+                        map.get(IDENTITY_PROOF_DOC_NUMBER),
+                        map.get(IDENTITY_PROOF_ISSUING_AUTHORITY),
+                        map.get(IDENTITY_PROOF_DATE_OF_ISSUE),
+                        map.get(IDENTITY_PROOF_DATE_OF_EXPIRY),
+                        map.get(ADDRESS_PROOF_DOC_NUMBER),
+                        map.get(ADDRESS_PROOF_ISSUING_AUTHORITY),
+                        map.get(ADDRESS_PROOF_DATE_OF_ISSUE),
+                        map.get(PURPOSE_OF_EMPLOYMENT),
+                        map.get(JOB_TITLE_OR_ROLE),
+                        map.get(START_DATE_OF_EMPLOYMENT),
+
+                        map.get(SALARY_OR_COMPENSATION_DETAILS),
+                        map.get(ADDITIONAL_INFORMATION_ABOUT_EMPLOYMENT),
+                         map.get(map.get(FormElement.STATION)),
+                        "",
+                        map.get(PERMISSION_ID));
+
+            }
+            else {
+                Toast.makeText(getContext(), "All Fields Are Mandatory", Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
 
     }
 
-    private void saveAndNext() {
-        String fullName = editTextFullName.getText().toString();
-        String dateOfBirth = editTextDateOfBirth.getText().toString();
-        String permanentAddress = editTextPermanentAddress.getText().toString();
-        String contactNumber = editTextContactNumber.getText().toString();
-        String emailAddress = editTextEmailAddress.getText().toString();
-        String previousEmployer = editTextPreviousEmployer.getText().toString();
-        String durationOfEmployment = editTextDurationOfEmployment.getText().toString();
-        String reasonForLeaving = editTextReasonForLeaving.getText().toString();
-        String identificationDocuments = editTextIdentificationDocuments.getText().toString();
-        String identityProofDocNumber = editTextIdentityProofDocNumber.getText().toString();
-        String identityProofIssuingAuthority = editTextIdentityProofIssuingAuthority.getText().toString();
-        String identityProofDateOfIssue = editTextIdentityProofDateOfIssue.getText().toString();
-        String identityProofDateOfExpiry = editTextIdentityProofDateOfExpiry.getText().toString();
-        String addressProofDocNumber = editTextAddressProofDocNumber.getText().toString();
-        String addressProofIssuingAuthority = editTextAddressProofIssuingAuthority.getText().toString();
-    }
-    private boolean validData() {
-        boolean valid =true;
 
-        valid &= Validations.validateEditText(editTextFullName,"Enter The Name ");
-        valid &= Validations.validateEditText( editTextDateOfBirth,"Enter the Date of Birth ");
-        valid &= Validations.validateEditText(editTextPermanentAddress,"Enter The Permanant Address");
-        valid &= Validations.validateEditText(editTextContactNumber,"Enter The Contact Number ");
-        valid &= Validations.isValidEmail(editTextEmailAddress," Enter Email");
-        valid &= Validations.validateEditText(editTextPreviousEmployer," Enter The Privious Employer");
-        valid &= Validations.validateEditText(editTextReasonForLeaving," Enter The Reason For Leaving");
-        valid &= Validations.validateEditText(editTextIdentificationDocuments," Enter The Identification Documents");
-        valid &= Validations.validateEditText(editTextIdentityProofDocNumber," Enter The Identity Proof DocNumber");
-        valid &= Validations.validateEditText(editTextIdentityProofIssuingAuthority," Enter The Identity ProofIssuing Authority");
-        valid &= Validations.validateEditText(editTextIdentityProofDateOfIssue," Enter The Identity Proof Date Of Issue");
-        valid &= Validations.validateEditText(editTextIdentityProofDateOfExpiry," Enter The Identity Proof Date Of Expiry");
-        valid &= Validations.validateEditText(editTextAddressProofDocNumber," Enter The Address Proof DocNumber");
-        valid &= Validations.validateEditText(editTextAddressProofIssuingAuthority," Enter The Address Proof Issuing Authority");
-
-//        valid &= Validations.validateSpinner(spinnerComplaintId,"complaint type");
-//        valid &= Validations.validateSpinner(spinnerTextEvidenceTypeId,"evidenece type");
-
-        return valid;
-    }
 }
 

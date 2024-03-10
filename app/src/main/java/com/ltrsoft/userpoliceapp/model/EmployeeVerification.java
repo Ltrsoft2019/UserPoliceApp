@@ -2,7 +2,32 @@ package com.ltrsoft.userpoliceapp.model;
 
 public class EmployeeVerification {
 
-    private String employee_verification_id, company_name, company_address, job_title, joining_date, salary, previous_employer_name, duration_of_employer, reason_for_leaving, job_description_responsibilities, user_id, station_id, identity_proof_doc_number, identity_proof_issuing_authority, identity_proof_date_of_issue, identity_proof_date_of_expiry, address_proof_doc_number, address_proof_issuing_authority, address_proof_date_of_issue, purpose_of_employment, status_id, permission_i;
+    private String employee_verification_id, company_name, company_address, job_title, joining_date, salary, previous_employer_name, duration_of_employer, reason_for_leaving, job_description_responsibilities, user_id, station_id, identity_proof_doc_number, identity_proof_issuing_authority, identity_proof_date_of_issue, identity_proof_date_of_expiry, address_proof_doc_number, address_proof_issuing_authority, address_proof_date_of_issue, purpose_of_employment, status_id, permission_id;
+
+    public EmployeeVerification(String employee_verification_id, String company_name, String company_address, String job_title, String joining_date, String salary, String previous_employer_name, String duration_of_employer, String reason_for_leaving, String job_description_responsibilities, String user_id, String station_id, String identity_proof_doc_number, String identity_proof_issuing_authority, String identity_proof_date_of_issue, String identity_proof_date_of_expiry, String address_proof_doc_number, String address_proof_issuing_authority, String address_proof_date_of_issue, String purpose_of_employment, String status_id, String permission_id) {
+        this.employee_verification_id = employee_verification_id;
+        this.company_name = company_name;
+        this.company_address = company_address;
+        this.job_title = job_title;
+        this.joining_date = joining_date;
+        this.salary = salary;
+        this.previous_employer_name = previous_employer_name;
+        this.duration_of_employer = duration_of_employer;
+        this.reason_for_leaving = reason_for_leaving;
+        this.job_description_responsibilities = job_description_responsibilities;
+        this.user_id = user_id;
+        this.station_id = station_id;
+        this.identity_proof_doc_number = identity_proof_doc_number;
+        this.identity_proof_issuing_authority = identity_proof_issuing_authority;
+        this.identity_proof_date_of_issue = identity_proof_date_of_issue;
+        this.identity_proof_date_of_expiry = identity_proof_date_of_expiry;
+        this.address_proof_doc_number = address_proof_doc_number;
+        this.address_proof_issuing_authority = address_proof_issuing_authority;
+        this.address_proof_date_of_issue = address_proof_date_of_issue;
+        this.purpose_of_employment = purpose_of_employment;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
 
     public String getEmployee_verification_id() {
         return employee_verification_id;
@@ -172,11 +197,11 @@ public class EmployeeVerification {
         this.status_id = status_id;
     }
 
-    public String getPermission_i() {
-        return permission_i;
+    public String getPermission_id() {
+        return permission_id;
     }
 
-    public void setPermission_i(String permission_i) {
-        this.permission_i = permission_i;
+    public void setPermission_id(String permission_id) {
+        this.permission_id = permission_id;
     }
 }

@@ -4,6 +4,36 @@ public class DomesticWorkers {
 
     private String domestic_id, user_id, full_name_of_domestic_help, gender, date_of_birth, permanent_address, contact_number, email_address, name_of_previous_employer, duration_of_employment, reason_for_leaving, identification_documents_submitted, identity_proof_doc_number, identity_proof_issuing_authority, identity_proof_date_of_issue, identity_proof_date_of_expiry, address_proof_doc_number, address_proof_issuing_authority, address_proof_date_of_issue, purpose_of_employment, job_title_or_role, start_date_of_employment, salary_or_compensation_details, additional_information_about_employment, station_id, status_id, permission_id;
 
+    public DomesticWorkers(String domestic_id, String user_id, String full_name_of_domestic_help, String gender, String date_of_birth, String permanent_address, String contact_number, String email_address, String name_of_previous_employer, String duration_of_employment, String reason_for_leaving, String identification_documents_submitted, String identity_proof_doc_number, String identity_proof_issuing_authority, String identity_proof_date_of_issue, String identity_proof_date_of_expiry, String address_proof_doc_number, String address_proof_issuing_authority, String address_proof_date_of_issue, String purpose_of_employment, String job_title_or_role, String start_date_of_employment, String salary_or_compensation_details, String additional_information_about_employment, String station_id, String status_id, String permission_id) {
+        this.domestic_id = domestic_id;
+        this.user_id = user_id;
+        this.full_name_of_domestic_help = full_name_of_domestic_help;
+        this.gender = gender;
+        this.date_of_birth = date_of_birth;
+        this.permanent_address = permanent_address;
+        this.contact_number = contact_number;
+        this.email_address = email_address;
+        this.name_of_previous_employer = name_of_previous_employer;
+        this.duration_of_employment = duration_of_employment;
+        this.reason_for_leaving = reason_for_leaving;
+        this.identification_documents_submitted = identification_documents_submitted;
+        this.identity_proof_doc_number = identity_proof_doc_number;
+        this.identity_proof_issuing_authority = identity_proof_issuing_authority;
+        this.identity_proof_date_of_issue = identity_proof_date_of_issue;
+        this.identity_proof_date_of_expiry = identity_proof_date_of_expiry;
+        this.address_proof_doc_number = address_proof_doc_number;
+        this.address_proof_issuing_authority = address_proof_issuing_authority;
+        this.address_proof_date_of_issue = address_proof_date_of_issue;
+        this.purpose_of_employment = purpose_of_employment;
+        this.job_title_or_role = job_title_or_role;
+        this.start_date_of_employment = start_date_of_employment;
+        this.salary_or_compensation_details = salary_or_compensation_details;
+        this.additional_information_about_employment = additional_information_about_employment;
+        this.station_id = station_id;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
+
     public String getDomestic_id() {
         return domestic_id;
     }

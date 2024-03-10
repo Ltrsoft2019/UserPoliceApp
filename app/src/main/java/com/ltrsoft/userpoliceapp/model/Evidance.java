@@ -1,7 +1,20 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class Evidance {
-   private String evidence_id, evidence_number, complaint_id, seizure_date_time, type_id, item_description, serial_numbers_or_identifiers;
+   private String evidence_id, evidence_number, complaint_id, seizure_date_time,
+           evidance_type_id, item_description, serial_numbers_or_identifiers;
+
+    public Evidance(String evidence_id, String evidence_number, String complaint_id,
+                    String seizure_date_time, String evidance_type_id,
+                    String item_description, String serial_numbers_or_identifiers) {
+        this.evidence_id = evidence_id;
+        this.evidence_number = evidence_number;
+        this.complaint_id = complaint_id;
+        this.seizure_date_time = seizure_date_time;
+        this.evidance_type_id = evidance_type_id;
+        this.item_description = item_description;
+        this.serial_numbers_or_identifiers = serial_numbers_or_identifiers;
+    }
 
     public String getEvidence_id() {
         return evidence_id;
@@ -35,12 +48,12 @@ public class Evidance {
         this.seizure_date_time = seizure_date_time;
     }
 
-    public String getType_id() {
-        return type_id;
+    public String getEvidance_type_id() {
+        return evidance_type_id;
     }
 
-    public void setType_id(String type_id) {
-        this.type_id = type_id;
+    public void setEvidance_type_id(String evidance_type_id) {
+        this.evidance_type_id = evidance_type_id;
     }
 
     public String getItem_description() {

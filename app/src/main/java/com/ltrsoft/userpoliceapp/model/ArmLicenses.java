@@ -1,40 +1,35 @@
 package com.ltrsoft.userpoliceapp.model;
 
-import android.database.Observable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class ArmLicenses extends Observable {
+public class ArmLicenses implements Parcelable {
 
-  private   String arm_license_id, parent_or_spouse_name,village,
-            present_address,
-            residing_since,
-            office_no,
-            residence_no,
-            station_id,
-            office_or_business_address,
-            additional_particulars,
-            area_or_land_of_cultivation,
-            location_of_cultivation,
-            whether_applicant_convicted,
-            whether_applicant_ordered_to_convicted,
-            whether_applicant_prohibited,
-            whether_applicant_applied_before,
-            whether_applicant_family_member_suspended_for_using_weapon,
-            whether_applicant_suspended,
-            has_safe_place_to_keep_arm,
-            has_training,
-            need_for_license,
-            arms_type,
-            ammunition_desc,
-            area_of_arm_carry,
-            special_consideration,
-            detail_for_form_IV,
-            place_of_birth,
-            dob_in_words,
-            status_id,
-            permission_id;
+    private String arm_license_id, parent_or_spouse_name, village, present_address, residing_since,
+            office_no, residence_no, station_id, office_or_business_address, additional_particulars,
+            area_or_land_of_cultivation, location_of_cultivation, whether_applicant_convicted,
+            whether_applicant_ordered_to_convicted, whether_applicant_prohibited, whether_applicant_applied_before,
+            whether_applicant_family_member_suspended_for_using_weapon, whether_applicant_suspended,
+            has_safe_place_to_keep_arm, has_training, need_for_license, arms_type, ammunition_desc,
+            area_of_arm_carry, special_consideration, detail_for_form_IV, place_of_birth, dob_in_words,
+            status_id, permission_id;
+
+    // Constructor
 
 
-    public ArmLicenses(String arm_license_id, String parent_or_spouse_name, String village, String present_address, String residing_since, String office_no, String residence_no, String station_id, String office_or_business_address, String additional_particulars, String area_or_land_of_cultivation, String location_of_cultivation, String whether_applicant_convicted, String whether_applicant_ordered_to_convicted, String whether_applicant_prohibited, String whether_applicant_applied_before, String whether_applicant_family_member_suspended_for_using_weapon, String whether_applicant_suspended, String has_safe_place_to_keep_arm, String has_training, String need_for_license, String arms_type, String ammunition_desc, String area_of_arm_carry, String special_consideration, String detail_for_form_IV, String place_of_birth, String dob_in_words, String status_id, String permission_id) {
+    public ArmLicenses(String arm_license_id, String parent_or_spouse_name,
+                       String village, String present_address, String residing_since,
+                       String office_no, String residence_no, String station_id,
+                       String office_or_business_address, String additional_particulars,
+                       String area_or_land_of_cultivation, String location_of_cultivation,
+                       String whether_applicant_convicted, String whether_applicant_ordered_to_convicted,
+                       String whether_applicant_prohibited, String whether_applicant_applied_before,
+                       String whether_applicant_family_member_suspended_for_using_weapon,
+                       String whether_applicant_suspended, String has_safe_place_to_keep_arm,
+                       String has_training, String need_for_license, String arms_type,
+                       String ammunition_desc, String area_of_arm_carry, String special_consideration,
+                       String detail_for_form_IV, String place_of_birth, String dob_in_words,
+                       String status_id, String permission_id) {
         this.arm_license_id = arm_license_id;
         this.parent_or_spouse_name = parent_or_spouse_name;
         this.village = village;
@@ -67,8 +62,89 @@ public class ArmLicenses extends Observable {
         this.permission_id = permission_id;
     }
 
-    public ArmLicenses() {
+    // Parcelable implementation
+    protected ArmLicenses(Parcel in) {
+        arm_license_id = in.readString();
+        parent_or_spouse_name = in.readString();
+        village = in.readString();
+        present_address = in.readString();
+        residing_since = in.readString();
+        office_no = in.readString();
+        residence_no = in.readString();
+        station_id = in.readString();
+        office_or_business_address = in.readString();
+        additional_particulars = in.readString();
+        area_or_land_of_cultivation = in.readString();
+        location_of_cultivation = in.readString();
+        whether_applicant_convicted = in.readString();
+        whether_applicant_ordered_to_convicted = in.readString();
+        whether_applicant_prohibited = in.readString();
+        whether_applicant_applied_before = in.readString();
+        whether_applicant_family_member_suspended_for_using_weapon = in.readString();
+        whether_applicant_suspended = in.readString();
+        has_safe_place_to_keep_arm = in.readString();
+        has_training = in.readString();
+        need_for_license = in.readString();
+        arms_type = in.readString();
+        ammunition_desc = in.readString();
+        area_of_arm_carry = in.readString();
+        special_consideration = in.readString();
+        detail_for_form_IV = in.readString();
+        place_of_birth = in.readString();
+        dob_in_words = in.readString();
+        status_id = in.readString();
+        permission_id = in.readString();
+    }
 
+    public static final Creator<ArmLicenses> CREATOR = new Creator<ArmLicenses>() {
+        @Override
+        public ArmLicenses createFromParcel(Parcel in) {
+            return new ArmLicenses(in);
+        }
+
+        @Override
+        public ArmLicenses[] newArray(int size) {
+            return new ArmLicenses[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeString(arm_license_id);
+        parcel.writeString(parent_or_spouse_name);
+        parcel.writeString(village);
+        parcel.writeString(present_address);
+        parcel.writeString(residing_since);
+        parcel.writeString(office_no);
+        parcel.writeString(residence_no);
+        parcel.writeString(station_id);
+        parcel.writeString(office_or_business_address);
+        parcel.writeString(additional_particulars);
+        parcel.writeString(area_or_land_of_cultivation);
+        parcel.writeString(location_of_cultivation);
+        parcel.writeString(whether_applicant_convicted);
+        parcel.writeString(whether_applicant_ordered_to_convicted);
+        parcel.writeString(whether_applicant_prohibited);
+        parcel.writeString(whether_applicant_applied_before);
+        parcel.writeString(whether_applicant_family_member_suspended_for_using_weapon);
+        parcel.writeString(whether_applicant_suspended);
+        parcel.writeString(has_safe_place_to_keep_arm);
+        parcel.writeString(has_training);
+        parcel.writeString(need_for_license);
+        parcel.writeString(arms_type);
+        parcel.writeString(ammunition_desc);
+        parcel.writeString(area_of_arm_carry);
+        parcel.writeString(special_consideration);
+        parcel.writeString(detail_for_form_IV);
+        parcel.writeString(place_of_birth);
+        parcel.writeString(dob_in_words);
+        parcel.writeString(status_id);
+        parcel.writeString(permission_id);
     }
 
     public String getArm_license_id() {
@@ -310,4 +386,7 @@ public class ArmLicenses extends Observable {
     public void setPermission_id(String permission_id) {
         this.permission_id = permission_id;
     }
+// Getters and setters
+
+    // You can generate getters and setters using your IDE or write them manually
 }

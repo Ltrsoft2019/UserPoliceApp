@@ -93,7 +93,7 @@ public class GrievanceFragment extends Fragment {
       });
       adapters.setStation();
     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        formGenerator.generateSpinner("grievence", list,adapter, new AdapterView.OnItemSelectedListener() {
+        formGenerator.generateSpinner(NATURE_OF_GRIEVANCES, list,adapter, new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -121,7 +121,7 @@ public class GrievanceFragment extends Fragment {
                 {
                     Map<String,String>map=FormGenerator.getFormData(layout);
                     DAO dao=new DAO(getContext());
-                    Grivence grivence=new Grivence("",map.get(NATURE_OF_GRIEVANCES),map.get(DATE),
+                    Grivence grivence=new Grivence("1",map.get(NATURE_OF_GRIEVANCES),map.get(DATE),
                             map.get(LOCATION),map.get(LOCATION), "","",map.get(ACTION_REQUIRED),
                             map.get(OUTCOME),new UserDataAccess().getUserId(getActivity()),"",map.get(FormElement.STATION));
                         dao.insertOrUpdate(grivence, new NewCallBack() {
@@ -132,14 +132,14 @@ public class GrievanceFragment extends Fragment {
 
                             @Override
                             public void onSuccess(Object object) {
-
+                                Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onEmpty() {
 
                             }
-                        },  "");
+                        },  URLS.INSERTGRIVENCES);
                 }
                 else{
                     Toast.makeText(getContext(), "All Fields Are Mandatory", Toast.LENGTH_SHORT).show();

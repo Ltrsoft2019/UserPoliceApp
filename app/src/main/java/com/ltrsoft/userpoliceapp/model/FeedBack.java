@@ -12,6 +12,18 @@ public class FeedBack {
             user_id,
             feedback_description;
 
+    public FeedBack(String feedback_id, String feedback_queestion1, String feedback_queestion2, String feedback_queestion3, String feedback_queestion4, String feedback_queestion5, String feedback_queestion6, String user_id, String feedback_description) {
+        this.feedback_id = feedback_id;
+        this.feedback_queestion1 = feedback_queestion1;
+        this.feedback_queestion2 = feedback_queestion2;
+        this.feedback_queestion3 = feedback_queestion3;
+        this.feedback_queestion4 = feedback_queestion4;
+        this.feedback_queestion5 = feedback_queestion5;
+        this.feedback_queestion6 = feedback_queestion6;
+        this.user_id = user_id;
+        this.feedback_description = feedback_description;
+    }
+
     public String getFeedback_id() {
         return feedback_id;
     }
