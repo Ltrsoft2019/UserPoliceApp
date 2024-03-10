@@ -222,6 +222,7 @@ public class FormGenerator {
 
     private void generateButton(String label,String subtype) {
          Button button = new Button(context);
+
         LinearLayout.LayoutParams buttonparam = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
@@ -234,14 +235,21 @@ public class FormGenerator {
         button.setTextSize(16);
         button.setTag(label);
         button.setText(label);
+         if (subtype==FormElement.SUBTYPE_BUTTON_LOCATION){
+             setimageashint(R.drawable.location,button);
+
+         }
+         else {
+             setimageashint(R.drawable.calendar,button);
+         }
          button.setPadding(8,2,0,0);
         button.setBackground(context.getResources().getDrawable(R.drawable.btn_border));
-        setimageashint(R.drawable.calendar,button);
-        button.setOnClickListener(new View.OnClickListener() {
+         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (subtype==FormElement.SUBTYPE_BUTTON_LOCATION) {
+
                     LocationProvider.getCurrentLocation(context, new LocationCallBack() {
                         @Override
                         public void onLocationGet(Location latLng) {
@@ -385,8 +393,7 @@ public class FormGenerator {
         spinner.setLayoutParams(spinnerParams);
         spinnerParams.setMargins(0, 20, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, context.getResources().getDisplayMetrics()), 20);
 //
-
-        spinner.setAdapter(adapter);
+         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(selectedListener);
         spinner.setOnTouchListener(new View.OnTouchListener() {
             @Override

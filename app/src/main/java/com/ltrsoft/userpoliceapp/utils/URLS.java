@@ -1,6 +1,7 @@
 package com.ltrsoft.userpoliceapp.utils;
 
 public class URLS {
+
     public final static String PEACEFULLASSEMBLY_INSERT="rj.ltr-soft.com/public/police_api/peaceful_assemblies/create_peaceful_assemblies.php";
     public final static String QUICKCOMPLAINTADD="https://rj.ltr-soft.com/public/police_api/quick_complaints/create_quick_complaint.php";
     public final  static String LOGINURL = "https://rj.ltr-soft.com/public/police_api/login/user_login.php";
