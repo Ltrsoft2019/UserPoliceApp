@@ -17,10 +17,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.model.UnidentifiedObject;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
+import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,11 +86,41 @@ public class UnidentifiedObjectFragment extends Fragment {
                 if (FormValidator.isFormValid(layout)){
                     Map <String,String>map = FormGenerator.getFormData(layout);
                     Log.d(Condition, String.valueOf(map.size()));
-//                    Log.d(FormElement.STATION,map.get(FormElement.STATION));
+                    Log.d(FormElement.STATION,map.get(FormElement.STATION));
+                    UnidentifiedObject object = new UnidentifiedObject(""
+                            ,map.get(DATE),
+                            map.get(Location),
+                            map.get(Location),
+                            map.get(IDENTIFY),
+                            map.get(DESC),
+                            "",
+                            "",
+                            "",
+                            map.get(FormElement.STATION)
+                            ,new UserDataAccess().getUserId(getActivity()));
+                    DAO dao = new DAO(getContext());
+                    dao.insertOrUpdate(object, new NewCallBack() {
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(getContext(), "errro "+error, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onSuccess(Object object) {
+                            Toast.makeText(getContext(), "resposne "+object, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onEmpty() {
+                            Toast.makeText(getContext(), "resposne empty", Toast.LENGTH_SHORT).show();
+                        }
+                    }, URLS.INSRT_UNIDENTIFIED_OBJ);
+                }
+                else {
+                    Toast.makeText(getContext(), "form is not valid", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
     }
 
 }

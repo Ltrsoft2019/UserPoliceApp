@@ -34,7 +34,7 @@ public class FormValidator {
                 }
             } else if (childView instanceof Spinner) {
                 Spinner spinner = (Spinner) childView;
-                if (spinner.getSelectedItemPosition() >0) {
+                if (spinner.getSelectedItemPosition() <0) {
                     Toast.makeText(formLayout.getContext(), "select "+spinner.getTag().toString(), Toast.LENGTH_SHORT).show();
                     return false; // Spinner has no item selected
                 }
