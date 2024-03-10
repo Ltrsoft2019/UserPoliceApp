@@ -35,6 +35,7 @@ public class GetLists {
             public void onSuccess(Object object) {
                 ArrayList<String>stations=new ArrayList<>();
                 ArrayList<Station>stations1= (ArrayList<Station>) object;
+                System.out.println("size "+stations1.size());
                 for (Station s :stations1) {
                     stations.add(s.getPolice_station_name());
                 }

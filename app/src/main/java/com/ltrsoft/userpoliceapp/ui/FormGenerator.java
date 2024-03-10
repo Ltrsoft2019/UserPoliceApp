@@ -330,8 +330,8 @@ public class FormGenerator {
                     System.out.println("checkbox"+(String)checkBox.getTag());
             } else if (childView instanceof Spinner) {
                 Spinner spinner = (Spinner) childView;
-                formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()+1));
-                System.out.println("spinner"+(String)spinner.getTag());
+                formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()));
+                System.out.println("spinner"+spinner.getTag());
                 /* Get selected item from spinner and add it to formDataMap */
             } else if (childView instanceof Button) {
                 Button button = (Button) childView;
@@ -466,7 +466,6 @@ public class FormGenerator {
         drawable.setBounds(0, 0, widthPx, heightPx);
         if (view instanceof EditText)
         {
-
             ((EditText)view).setCompoundDrawables(drawable, null, null, null);
 
         } else if (view instanceof Button) {

@@ -1,6 +1,7 @@
 package com.ltrsoft.userpoliceapp.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +20,12 @@ import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class UnidentifiedObjectFragment extends Fragment {
     private LinearLayout layout;
@@ -46,17 +50,9 @@ public class UnidentifiedObjectFragment extends Fragment {
         heading=view.findViewById(R.id.heading);
         heading.setText("Add UnIdentifird Body");
         elements=new ArrayList<>();
-        initializeViews(layout);
-        Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
-            @Override
-            public void onError(String error) {
-                Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
-            }
-        });
-        adapters.setStation();
-        formGenerator = new FormGenerator(layout,elements,this);
+        submit=view.findViewById(R.id.button);
 
-        formGenerator.generateForm();
+        initializeViews(layout);
         return view;
     }
 
@@ -69,7 +65,26 @@ public class UnidentifiedObjectFragment extends Fragment {
         elements.add(new FormElement(IDENTIFY,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.karnataka_police_logo));
         elements.add(new FormElement(DESC,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.karnataka_police_logo));
         elements.add(new FormElement(DESC,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.karnataka_police_logo));
+        formGenerator = new FormGenerator(layout,elements,this);
+        Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+            @Override
+            public void onError(String error) {
+                Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        formGenerator.generateForm();
+        adapters.setStation();
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (FormValidator.isFormValid(layout)){
+                    Map <String,String>map = FormGenerator.getFormData(layout);
+                    Log.d(Condition, String.valueOf(map.size()));
+//                    Log.d(FormElement.STATION,map.get(FormElement.STATION));
+                }
+            }
+        });
 
     }
 

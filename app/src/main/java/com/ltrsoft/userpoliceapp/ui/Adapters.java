@@ -63,8 +63,8 @@ public class Adapters extends GetLists{
       getStation(new ListCallBack() {
           @Override
           public void onSuccess(ArrayList<String> list) {
-              for (String item :list){
-                  Log.d("ListItem", item);
+              for (String item :list){}
+//                  Log.d("ListItem", item);
                  adapter5=new ArrayAdapter<>(context, android.R.layout.simple_list_item_1,list);
                  adapter5.setDropDownViewResource(android.R.layout.simple_list_item_1);
                  spinner4=formGenerator.generateSpinner(FormElement.STATION, list, adapter5, new AdapterView.OnItemSelectedListener() {
@@ -79,7 +79,7 @@ public class Adapters extends GetLists{
                      }
                  });
 
-              }
+
           }
       });
     }

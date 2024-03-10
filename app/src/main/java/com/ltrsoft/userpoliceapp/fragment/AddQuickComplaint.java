@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,13 @@ public class AddQuickComplaint extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.common_form, container, false);
         layout = view.findViewById(R.id.layout123);
+        submit= view.findViewById(R.id.button);
         heading=view.findViewById(R.id.heading);
         heading.setText("Add Quick Complaint");
         elements=new ArrayList<>();
         initialform(layout);
         formGenerator=new FormGenerator(layout,elements,this);
-        submit= view.findViewById(R.id.button);
+
         adapters=new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
             @Override
             public void onError(String error) {
@@ -81,6 +83,7 @@ public class AddQuickComplaint extends Fragment {
             public void onClick(View v) {
                 if(FormValidator.isFormValid(layout)){
                     Map<String,String> map=FormGenerator.getFormData(layout);
+                    Log.d("station",map.get(FormElement.STATION));
                     DAO dao=new DAO(getContext());
                     QuickComplaint quickComplaint=new QuickComplaint(map.get(FormElement.STATION),"1","1", map.get(DESCRIPTION),map.get(ADDRESS),
                             "pending","2","1");
@@ -116,10 +119,8 @@ public class AddQuickComplaint extends Fragment {
      elements.add(new FormElement(PHOTO,FormElement.TYPE_IMAGE_VIEW,"",R.drawable.cam2));
      elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(ADDRESS,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.logout));
-
-
-
         formGenerator = new FormGenerator(layout,elements,this);
+        formGenerator.generateForm();
 
-        formGenerator.generateForm();    }
+    }
 }
