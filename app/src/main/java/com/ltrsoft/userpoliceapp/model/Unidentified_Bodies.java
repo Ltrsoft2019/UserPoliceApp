@@ -18,7 +18,36 @@ public class Unidentified_Bodies {
     body_condition,
     latitute,
     longitute,
-    station_id;
+    station_id,user_id;
+
+    public Unidentified_Bodies(String unidentify_bodies_id, String date_and_time_of_discovery, String location_found, String gender, String age_estimate, String height, String weight, String build, String race_ethnicity, String hair_color_style, String eye_color, String distinguishing_features, String description_of_clothing, String body_condition, String latitute, String longitute, String station_id,String user_id) {
+        this.unidentify_bodies_id = unidentify_bodies_id;
+        this.date_and_time_of_discovery = date_and_time_of_discovery;
+        this.location_found = location_found;
+        this.gender = gender;
+        this.age_estimate = age_estimate;
+        this.height = height;
+        this.weight = weight;
+        this.build = build;
+        this.race_ethnicity = race_ethnicity;
+        this.hair_color_style = hair_color_style;
+        this.eye_color = eye_color;
+        this.distinguishing_features = distinguishing_features;
+        this.description_of_clothing = description_of_clothing;
+        this.body_condition = body_condition;
+        this.latitute = latitute;
+        this.longitute = longitute;
+        this.station_id = station_id;
+        this.user_id = user_id;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
 
     public String getUnidentify_bodies_id() {
         return unidentify_bodies_id;

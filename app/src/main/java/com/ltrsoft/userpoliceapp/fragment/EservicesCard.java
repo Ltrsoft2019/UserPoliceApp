@@ -41,7 +41,7 @@ public class EservicesCard extends Fragment {
         tenant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new TenantVerification());
+                loadFragment(new TenantVerificationFragment());
             }
         });
         weapon.setOnClickListener(new View.OnClickListener() {

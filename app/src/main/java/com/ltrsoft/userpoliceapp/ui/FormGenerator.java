@@ -79,7 +79,7 @@ public class FormGenerator {
                     generateCheckBox(element.getLabel());
                     break;
                 case FormElement.TYPE_RADIO_GROUP:
-                    generateRadioGroup(element.getLabel(), element.getOptions());
+                    generateRadioGroup(element.getLabel(), element.getOptions(element.getSubType()));
                     break;
 
             }

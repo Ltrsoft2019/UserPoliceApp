@@ -20,7 +20,15 @@ public class ObjToMap {
                 Object value = field.get(obj);
 
                 // Put the field name and value into the map
-                map.put(field.getName(), (String) value);
+                if (value != null) {
+                    // Convert the value to String based on its type
+                    if (value instanceof String) {
+                        map.put(field.getName(), (String) value);
+                    } else {
+                        // Handle other types accordingly, for example, converting to String
+                        map.put(field.getName(), String.valueOf(value));
+                    }
+                }
             }
         } catch (IllegalAccessException e) {
             listener.Error(e.toString());

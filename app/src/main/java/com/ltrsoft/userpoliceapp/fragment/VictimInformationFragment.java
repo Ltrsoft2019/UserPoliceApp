@@ -17,7 +17,6 @@ import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
 public class VictimInformationFragment extends Fragment {
-
     private EditText editTextFullName, editTextAddress, editTextPhoneNumber, editTextEmailAddress,
             editTextPassportNumber, editTextDriversLicense, editTextSocialSecurityNumber,
             editTextHeight, editTextWeight, editTextHairColor, editTextEyeColor,

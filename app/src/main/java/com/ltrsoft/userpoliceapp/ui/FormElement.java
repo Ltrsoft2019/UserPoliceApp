@@ -21,6 +21,7 @@ public class FormElement {
     public static final String SYBTYPE_SEXT_TEXT = "stations";
     public static final String SUBTYPE_BUTTON_LOCATION= "location picker";
     public static final String SUBTYPE_BUTTON_DATEPICKER= "datepicker button";
+    public static final String SUBTYPE_RADIO_YES_NO= "radigroup of yes or no";
 
 
     public static final String COUNTRY = "Select Country";
@@ -73,12 +74,21 @@ public class FormElement {
         this.image = image;
     }
 
-    public List<String> getOptions() {
-        ArrayList<String>gender_list = new ArrayList<>();
-         gender_list.add("male");
-        gender_list.add("female");
-        gender_list.add("others");
+    public List<String> getOptions(String subtype) {
+        if (subtype==SUBTYPE_RADIO_YES_NO){
+            ArrayList<String>options = new ArrayList<>();
+            options.add("Yes");
+            options.add("No");
+            return options;
+        }else {
+            ArrayList<String> gender_list = new ArrayList<>();
+            gender_list.add("male");
+            gender_list.add("female");
+            gender_list.add("others");
+            return gender_list;
+        }
+    }
+    public List<String>getYesNoOption(){
 
-        return gender_list;
     }
 }
