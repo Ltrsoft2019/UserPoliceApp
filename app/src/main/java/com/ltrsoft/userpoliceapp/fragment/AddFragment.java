@@ -8,12 +8,17 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.utils.Alertdialoge;
+
 public class AddFragment extends Fragment {
     private RelativeLayout addComplaint, quickComplaint, unidentifiedObj, unidentifiedBody, addCyberCrime, addGrievance, addMissingPerson;
+    public static final String cmp_frag_tag = "complaint";
+    public static final String cyber_frag_tag = "cyber";
 
     @Nullable
     @Override
@@ -38,13 +43,17 @@ public class AddFragment extends Fragment {
         addComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(new AddComplaintt());
+                Alertdialoge alertdialoge=new Alertdialoge();
+                alertdialoge.showAlert("Add complant","Add Cyber Complaint",(AppCompatActivity) getActivity(),new CyberCrime(),cmp_frag_tag);
             }
         });
         addCyberCrime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadFragment(new CyberCrime());
+                Alertdialoge alertdialoge=new Alertdialoge();
+                alertdialoge.showAlert("Add complant","Add Cyber Complaint",(AppCompatActivity) getActivity(),new CyberCrime(),cyber_frag_tag);
+
+                //loadFragment(new CyberCrime());
             }
         });
         addGrievance.setOnClickListener(new View.OnClickListener() {

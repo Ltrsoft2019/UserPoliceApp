@@ -1,6 +1,7 @@
 package com.ltrsoft.userpoliceapp.utils;
 
 public class URLS {
+    public final static String READONEUSERS="https://rj.ltr-soft.com/public/police_api/user/user_read.php";
     public final static String CREATEWEAPONLISCENSE="https://rj.ltr-soft.com/public/police_api/arm_licenses/create_arm_licenses.php";
     public final static String CREATEEVIDANCE="https://rj.ltr-soft.com/public/police_api/complaint_evidance/create_complaint_evd.php";
     public final static String INSERTGRIVENCES="https://rj.ltr-soft.com/public/police_api/grievances/create_grievances.php";

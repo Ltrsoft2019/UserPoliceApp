@@ -29,7 +29,7 @@ public class MyListings extends Fragment {
     mycomplaints.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            loadFragment(new AddEvidence());
+            loadFragment(new UserProfile());
         }
     });
 

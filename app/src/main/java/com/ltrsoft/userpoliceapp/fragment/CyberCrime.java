@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -31,6 +32,7 @@ import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.ui.GetLists;
+import com.ltrsoft.userpoliceapp.utils.Alertdialoge;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
@@ -73,7 +75,8 @@ public class CyberCrime extends Fragment {
         submit=view.findViewById(R.id.button);
         heading.setText("Cyber Crime");
         elements = new ArrayList<>();
-        ArrayList<String>stationlist=new ArrayList<>();
+
+          ArrayList<String>stationlist=new ArrayList<>();
         stationlist.add("latur");
         stationlist.add("fed");
         stationlist.add("lasdfur");

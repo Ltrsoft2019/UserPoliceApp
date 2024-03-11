@@ -34,12 +34,16 @@ public class FormElement {
     private String subType;
     private int image;
 
+
+
+
     public FormElement(String label, String type, String subType, int image) {
         this.label = label;
         this.type = type;
         this.subType = subType;
         this.image = image;
     }
+
 
     public String getLabel() {
         return label;

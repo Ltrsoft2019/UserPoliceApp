@@ -52,7 +52,8 @@ public class AddComplaintOnBehalf extends Fragment {
     public String USEROCCUPATION = "Enter Occupation :";
     public String USERNATIONALITY = "Enter Nationality :";
     public String USERDRIVING = "Enter Driving License no:";
-
+     Fragment fragment;
+    String fragmentName = null;
 
 
 
@@ -68,12 +69,18 @@ public class AddComplaintOnBehalf extends Fragment {
         heading.setText("Register Complaint");
         submit= view.findViewById(R.id.button);
         heading.setVisibility(View.GONE);
-        //intiForm(layout);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+              fragmentName = bundle.getString("fragment");
+            // Now, based on the fragmentName, you can proceed accordingly
+        }
+        intiForm(layout);
+
         AddComplaintOnBehalf addComplaintOnBehalf=new AddComplaintOnBehalf();
 //        UserBehalf userBehalf =new UserBehalf(getContext(),layout);
 //        userBehalf.getneateUserOnBehalf(this,submit,new AddComplainbehalf2());
-        UserSelf userSelf = new UserSelf(getContext(),layout);
-        userSelf.generateUserSelf(this,submit,new AddComplainbehalf2());
+//        UserSelf userSelf = new UserSelf(getContext(),layout);
+//        userSelf.generateUserSelf(this,submit,new AddComplainbehalf2());
         return view;
     }
 
@@ -136,9 +143,7 @@ public class AddComplaintOnBehalf extends Fragment {
                     @Override
                     public void onSuccess(Object object) {
                         Toast.makeText(getContext(), "response "+object, Toast.LENGTH_SHORT).show();
-//                        layout.removeAllViews();
-//                        createCompalint();
-                        loadFragment();
+                          loadFragment(fragmentName);
                     }
 
                     @Override
@@ -149,13 +154,18 @@ public class AddComplaintOnBehalf extends Fragment {
             }
     }
 
-    private void loadFragment() {
+    private void loadFragment(String fragnmae) {
+        if (fragnmae.equals(AddFragment.cmp_frag_tag)) {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container2, new AddComplaintt());
+        } else if (fragnmae.equals(AddFragment.cyber_frag_tag)) {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container2, new CyberCrime());
 
+        }
     }
 
     private void createCompalint() {
         submit.setText("Submit Complaint");
-
-        formGenerator.generateForm();
+//
     }
+
 }
