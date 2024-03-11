@@ -88,7 +88,5 @@ public class FormElement {
             return gender_list;
         }
     }
-    public List<String>getYesNoOption(){
 
-    }
 }
