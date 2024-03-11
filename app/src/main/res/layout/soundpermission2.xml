@@ -75,7 +75,6 @@
             android:id="@+id/editTextStationId"
             android:layout_width="200dp"
              android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
             android:layout_margin="20dp"
             android:text="Choose Station" />
 
@@ -93,7 +92,6 @@
             android:id="@+id/buttonSubmit"
             android:layout_width="match_parent"
              android:layout_height="50dp"
-            android:backgroundTint="@drawable/buttonback"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"

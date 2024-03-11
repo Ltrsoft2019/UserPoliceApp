@@ -20,4 +20,8 @@ public class URLS {
     public final  static String INSERT_USER = "https://rj.ltr-soft.com/public/police_api/user/user_insert.php";
     public final  static String GET_USER = "https://rj.ltr-soft.com/public/police_api/data/user_read.php";
     public final  static String INSRT_UNIDENTIFIED_OBJ = "https://rj.ltr-soft.com/public/police_api/unidentified_objects/create_unidentified_objects.php";
+    public final  static String INSRT_UNIDENTIFIED_DEAD_BODY = "https://rj.ltr-soft.com/public/police_api/unidentified_bodies/create_unidentified_bodies.php";
+    public final  static String INSRT_TENANT_VERIFICATION = "https://rcom/public/police_api/tenant_verification/create_tenant_verification.php";
+    public final  static String INSRT_SOUND_PREM = "https://rj.ltr.com/public/police_api/tenant_verification/create_tenant_verification.php";
+    public final  static String INSERT_PREMISES = "https://rj.oft.com/public/police_api/tenant_verification/create_tenant_verification.php";
 }

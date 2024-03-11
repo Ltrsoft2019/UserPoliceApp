@@ -1,8 +1,78 @@
 package com.ltrsoft.userpoliceapp.model;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class SoundPermission {
-
+public class SoundPermission implements Parcelable {
     private String sound_permission_id, event_name, purpose, no_of_speaker, position_in_event, date, from_time, to_time, location, village, state, district, country, user_id, station_id, time_of_initiation, closing_time, speaker_contractor_name, contractor_address, license_no, fees, terms_condition, permission_id;
+
+//    public SoundPermission() {
+//        // Empty constructor
+//    }
+
+//    protected SoundPermission(Parcel in) {
+//        sound_permission_id = in.readString();
+//        event_name = in.readString();
+//        purpose = in.readString();
+//        no_of_speaker = in.readString();
+//        position_in_event = in.readString();
+//        date = in.readString();
+//        from_time = in.readString();
+//        to_time = in.readString();
+//        location = in.readString();
+//        village = in.readString();
+//        state = in.readString();
+//        district = in.readString();
+//        country = in.readString();
+//        user_id = in.readString();
+//        station_id = in.readString();
+//        time_of_initiation = in.readString();
+//        closing_time = in.readString();
+//        speaker_contractor_name = in.readString();
+//        contractor_address = in.readString();
+//        license_no = in.readString();
+//        fees = in.readString();
+//        terms_condition = in.readString();
+//        permission_id = in.readString();
+//    }
+
+    public SoundPermission(String sound_permission_id, String event_name, String purpose, String no_of_speaker, String position_in_event, String date, String from_time, String to_time, String location, String village, String state, String district, String country, String user_id, String station_id, String time_of_initiation, String closing_time, String speaker_contractor_name, String contractor_address, String license_no, String fees, String terms_condition, String permission_id) {
+        this.sound_permission_id = sound_permission_id;
+        this.event_name = event_name;
+        this.purpose = purpose;
+        this.no_of_speaker = no_of_speaker;
+        this.position_in_event = position_in_event;
+        this.date = date;
+        this.from_time = from_time;
+        this.to_time = to_time;
+        this.location = location;
+        this.village = village;
+        this.state = state;
+        this.district = district;
+        this.country = country;
+        this.user_id = user_id;
+        this.station_id = station_id;
+        this.time_of_initiation = time_of_initiation;
+        this.closing_time = closing_time;
+        this.speaker_contractor_name = speaker_contractor_name;
+        this.contractor_address = contractor_address;
+        this.license_no = license_no;
+        this.fees = fees;
+        this.terms_condition = terms_condition;
+        this.permission_id = permission_id;
+    }
+
+    public static final Creator<SoundPermission> CREATOR = new Creator<SoundPermission>() {
+        @Override
+        public SoundPermission createFromParcel(Parcel in) {
+//            return new SoundPermission(in);
+            return null;
+        }
+
+        @Override
+        public SoundPermission[] newArray(int size) {
+            return new SoundPermission[size];
+        }
+    };
 
     public String getSound_permission_id() {
         return sound_permission_id;
@@ -22,10 +92,6 @@ public class SoundPermission {
 
     public String getPurpose() {
         return purpose;
-    }
-
-    public void setPurpose(String purpose) {
-        this.purpose = purpose;
     }
 
     public String getNo_of_speaker() {
@@ -186,5 +252,43 @@ public class SoundPermission {
 
     public void setPermission_id(String permission_id) {
         this.permission_id = permission_id;
+    }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
+    // Add other getters and setters...
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(sound_permission_id);
+        dest.writeString(event_name);
+        dest.writeString(purpose);
+        dest.writeString(no_of_speaker);
+        dest.writeString(position_in_event);
+        dest.writeString(date);
+        dest.writeString(from_time);
+        dest.writeString(to_time);
+        dest.writeString(location);
+        dest.writeString(village);
+        dest.writeString(state);
+        dest.writeString(district);
+        dest.writeString(country);
+        dest.writeString(user_id);
+        dest.writeString(station_id);
+        dest.writeString(time_of_initiation);
+        dest.writeString(closing_time);
+        dest.writeString(speaker_contractor_name);
+        dest.writeString(contractor_address);
+        dest.writeString(license_no);
+        dest.writeString(fees);
+        dest.writeString(terms_condition);
+        dest.writeString(permission_id);
     }
 }

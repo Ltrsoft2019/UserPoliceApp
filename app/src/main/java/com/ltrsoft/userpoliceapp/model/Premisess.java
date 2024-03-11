@@ -1,6 +1,6 @@
 package com.ltrsoft.userpoliceapp.model;
 
-public class Premises {
+public class Premisess {
 
     private String stattion_id,
             full_name,
@@ -15,6 +15,20 @@ public class Premises {
             user_id,
             status_id;
 
+    public Premisess(String stattion_id, String full_name, String occupation, String parcentage, String nationality, String native_places, String name_of_establishment, String whether_applicant_applied_for, String whether_application_suspended, String nature_of_amusement, String user_id, String status_id) {
+        this.stattion_id = stattion_id;
+        this.full_name = full_name;
+        this.occupation = occupation;
+        this.parcentage = parcentage;
+        this.nationality = nationality;
+        this.native_places = native_places;
+        this.name_of_establishment = name_of_establishment;
+        this.whether_applicant_applied_for = whether_applicant_applied_for;
+        this.whether_application_suspended = whether_application_suspended;
+        this.nature_of_amusement = nature_of_amusement;
+        this.user_id = user_id;
+        this.status_id = status_id;
+    }
 
     public String getStattion_id() {
         return stattion_id;
