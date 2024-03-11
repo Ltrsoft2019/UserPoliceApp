@@ -15,12 +15,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
+import com.ltrsoft.userpoliceapp.model.PetroleumNoc;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
+import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class NocPetroleaum extends Fragment {
 
@@ -54,12 +61,42 @@ public class NocPetroleaum extends Fragment {
         heading.setText("Noc Petroleaum");
         submit.setText("Submit");
         initializeViews(view);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (FormValidator.isFormValid(layout)){
+                    Map <String,String> map = FormGenerator.getFormData(layout);
+                    //CERTIORLIC, FATHER, PLACE_BIRTH, RESIDING_SINCE, TYPEOFBLAS,
+                    // FAX, LICENSE_NOC, WHICHPETROLEAUM, OFFICENUMVER, RESIDENCENO,
+                    // OCCUPATION, QUANTITY, BLASINGDETAIL
+                    PetroleumNoc petroleumNoc = new PetroleumNoc("",map.get(CERTIORLIC),map.get(FATHER),map.get(PLACE_BIRTH),
+                            map.get(RESIDING_SINCE),map.get(FAX),map.get(TYPEOFBLAS),map.get(LICENSE_NOC),map.get(WHICHPETROLEAUM),map.get(FormElement.STATION),
+                            map.get(OFFICENUMVER),map.get(RESIDENCENO),map.get(OCCUPATION),map.get(QUNATITY),map.get(BLASINGDETAIL),"","");
+                    DAO dao = new DAO(getContext());
+                    dao.insertOrUpdate(petroleumNoc, new NewCallBack() {
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
+                        }
 
+                        @Override
+                        public void onSuccess(Object object) {
+                            Toast.makeText(getContext(), "Response "+object, Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onEmpty() {
+                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+                        }
+                    }, URLS.INSERT_NOC);
+                }
+            }
+        });
         return view;
     }
 
     private void initializeViews(View view) {
-
+        elements=new ArrayList<>();
         elements.add(new FormElement(CERTIORLIC,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(FATHER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(PLACE_BIRTH,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
@@ -69,18 +106,15 @@ public class NocPetroleaum extends Fragment {
         elements.add(new FormElement(LICENSE_NOC,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(WHICHPETROLEAUM,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(OFFICENUMVER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
-        elements.add(new FormElement(OFFICENUMVER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
-        elements.add(new FormElement(OFFICENUMVER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
-        elements.add(new FormElement(OFFICENUMVER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
-        elements.add(new FormElement(OFFICENUMVER,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
-//        formGenerator=new FormGenerator(layout,elements,this);`
+        formGenerator=new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
         Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
             @Override
             public void onError(String error) {
-
+                Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
             }
         });
+        adapters.setStation();
         formGenerator=new FormGenerator(layout,elements,this);
     }
 }

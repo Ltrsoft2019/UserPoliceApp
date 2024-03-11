@@ -59,12 +59,7 @@ public class AddEvidence extends Fragment {
         heading=view.findViewById(R.id.heading);
         heading.setText("Add Evidance");
         button=view.findViewById(R.id.button);
-
-
-
-
         initialform(layout,button);
-
         return view;
     }
 
@@ -141,6 +136,4 @@ public class AddEvidence extends Fragment {
              }
          });
     }
-
-
 }

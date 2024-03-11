@@ -44,9 +44,9 @@ public class AddComplaintt extends Fragment {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 if (position==0) {
-                    tab.setText("On Behalf");
-                }else   if (position==1) {
                     tab.setText("On Self");
+                }else   if (position==1) {
+                    tab.setText("On Behalf");
                 }
             }
         }).attach();

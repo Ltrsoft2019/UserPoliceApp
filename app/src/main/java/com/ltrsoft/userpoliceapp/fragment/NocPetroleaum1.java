@@ -46,7 +46,7 @@ public class NocPetroleaum1 extends Fragment {
         editTextPlaceOfBirth = view.findViewById(R.id.editTextPlaceOfBirth);
         editTextResidingSince = view.findViewById(R.id.editTextResidingSince);
         editTextFax = view.findViewById(R.id.editTextFax);
-        editTextTypesOfControlBlasting = view.findViewById(R.id.editTextTypesOfControlBlasting);
+//        editTextTypesOfControlBlasting = view.findViewById(R.id.editTextTypesOfControlBlasting);
         radioGroupLicenseNoc = view.findViewById(R.id.radioGroupLicenseNoc);
         radioButtonLicense = view.findViewById(R.id.radioButtonLicense);
         radioButtonNoc = view.findViewById(R.id.radioButtonNoc);

@@ -1,8 +1,11 @@
 package com.ltrsoft.userpoliceapp.model;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class CharacterCertificate {
+public class CharacterCertificate implements Parcelable {
 
     private String character_certificate_id, user_id, station_id, pbuilding, pstreet, plandmark, plocality, pstate_id, pdistrict_id, pincode, cbuilding, cstreet, clandmark, clocality, cstate_id, cdistrict_id, cpincode, visible_mark, have_arrested, active_politics, is_criminal, status_id, permission_id;
+
     public CharacterCertificate(String character_certificate_id, String user_id, String station_id, String pbuilding, String pstreet, String plandmark, String plocality, String pstate_id, String pdistrict_id, String pincode, String cbuilding, String cstreet, String clandmark, String clocality, String cstate_id, String cdistrict_id, String cpincode, String visible_mark, String have_arrested, String active_politics, String is_criminal, String status_id, String permission_id) {
         this.character_certificate_id = character_certificate_id;
         this.user_id = user_id;
@@ -29,6 +32,75 @@ public class CharacterCertificate {
         this.permission_id = permission_id;
     }
 
+    protected CharacterCertificate(Parcel in) {
+        character_certificate_id = in.readString();
+        user_id = in.readString();
+        station_id = in.readString();
+        pbuilding = in.readString();
+        pstreet = in.readString();
+        plandmark = in.readString();
+        plocality = in.readString();
+        pstate_id = in.readString();
+        pdistrict_id = in.readString();
+        pincode = in.readString();
+        cbuilding = in.readString();
+        cstreet = in.readString();
+        clandmark = in.readString();
+        clocality = in.readString();
+        cstate_id = in.readString();
+        cdistrict_id = in.readString();
+        cpincode = in.readString();
+        visible_mark = in.readString();
+        have_arrested = in.readString();
+        active_politics = in.readString();
+        is_criminal = in.readString();
+        status_id = in.readString();
+        permission_id = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(character_certificate_id);
+        dest.writeString(user_id);
+        dest.writeString(station_id);
+        dest.writeString(pbuilding);
+        dest.writeString(pstreet);
+        dest.writeString(plandmark);
+        dest.writeString(plocality);
+        dest.writeString(pstate_id);
+        dest.writeString(pdistrict_id);
+        dest.writeString(pincode);
+        dest.writeString(cbuilding);
+        dest.writeString(cstreet);
+        dest.writeString(clandmark);
+        dest.writeString(clocality);
+        dest.writeString(cstate_id);
+        dest.writeString(cdistrict_id);
+        dest.writeString(cpincode);
+        dest.writeString(visible_mark);
+        dest.writeString(have_arrested);
+        dest.writeString(active_politics);
+        dest.writeString(is_criminal);
+        dest.writeString(status_id);
+        dest.writeString(permission_id);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<CharacterCertificate> CREATOR = new Creator<CharacterCertificate>() {
+        @Override
+        public CharacterCertificate createFromParcel(Parcel in) {
+            return new CharacterCertificate(in);
+        }
+
+        @Override
+        public CharacterCertificate[] newArray(int size) {
+            return new CharacterCertificate[size];
+        }
+    };
 
     public String getCharacter_certificate_id() {
         return character_certificate_id;
@@ -213,4 +285,5 @@ public class CharacterCertificate {
     public void setPermission_id(String permission_id) {
         this.permission_id = permission_id;
     }
+// Getters and Setters
 }

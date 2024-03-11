@@ -12,13 +12,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
-import com.ltrsoft.userpoliceapp.fragment.login.Login;
-import com.ltrsoft.userpoliceapp.model.RallyPermission;
-import com.ltrsoft.userpoliceapp.navigations.MainNavigation;
 
 public class EservicesCard extends Fragment {
     private View view;
-    private RelativeLayout charcter,tenant,weapon,clearance,domestichelp,emp_veri,passport_veri,
+    private RelativeLayout charcter,tenant,weapon,domestichelp,emp_veri,
     noc,ampl_sound;
     private LinearLayout rally,festivals;
     @Nullable
@@ -50,12 +47,7 @@ public class EservicesCard extends Fragment {
                 loadFragment(new AddWeaponLicence1());
             }
         });
-        clearance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                loadFragment(new );
-            }
-        });
+
         domestichelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,12 +60,7 @@ public class EservicesCard extends Fragment {
                 loadFragment(new EmployeeVerification());
             }
         });
-        passport_veri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//            loadFragment(new Pa);
-            }
-        });
+
         noc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +76,7 @@ public class EservicesCard extends Fragment {
         rally.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//            loadFragment(new );
+            loadFragment(new RallyPermission());
             }
         });
         festivals.setOnClickListener(new View.OnClickListener() {
@@ -105,12 +92,10 @@ public class EservicesCard extends Fragment {
         charcter = view.findViewById(R.id.character_certificate);
         tenant = view.findViewById(R.id.tenant_verf);
         weapon = view.findViewById(R.id.weapon_veri);
-        clearance = view.findViewById(R.id.clearance_cert);
         domestichelp = view.findViewById(R.id.domestic_help);
         emp_veri = view.findViewById(R.id.emp_veri);
-        passport_veri = view.findViewById(R.id.passport_veri);
         noc = view.findViewById(R.id.noc_veri);
-        ampl_sound = view.findViewById(R.id.license_amp_sound);
+        ampl_sound = view.findViewById(R.id.license_amp);
         rally = view.findViewById(R.id.rally_permisssion);
         festivals = view.findViewById(R.id.permisssion_festival);
     }

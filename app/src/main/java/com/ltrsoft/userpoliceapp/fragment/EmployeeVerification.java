@@ -15,10 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
 import java.util.ArrayList;
@@ -132,8 +135,24 @@ public class EmployeeVerification extends Fragment {
                           map.get(PURPOSE_OF_EMPLOYMENT),
                           map.get(STATUS_ID),
                           map.get(PERMISSION_Id)
-
                   );
+                  DAO dao = new DAO(getContext());
+                  dao.insertOrUpdate(employeeVerification,  new NewCallBack() {
+                      @Override
+                      public void onError(String error) {
+                          Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
+                      }
+
+                      @Override
+                      public void onSuccess(Object object) {
+                          Toast.makeText(getContext(), "response "+object, Toast.LENGTH_SHORT).show();
+                      }
+
+                      @Override
+                      public void onEmpty() {
+                          Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+                      }
+                  }, URLS.INSERT_EMP_VERI);
               }
               else {
                   Toast.makeText(getContext(), "All Fields Are Compulsory", Toast.LENGTH_SHORT).show();

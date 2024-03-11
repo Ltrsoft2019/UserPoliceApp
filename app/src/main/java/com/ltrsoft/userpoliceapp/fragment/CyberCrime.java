@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -32,7 +31,6 @@ import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.ui.GetLists;
-import com.ltrsoft.userpoliceapp.utils.Alertdialoge;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
@@ -76,60 +74,22 @@ public class CyberCrime extends Fragment {
         heading.setText("Cyber Crime");
         elements = new ArrayList<>();
 
-          ArrayList<String>stationlist=new ArrayList<>();
-        stationlist.add("latur");
-        stationlist.add("fed");
-        stationlist.add("lasdfur");
-        stationlist.add("lafsdftur");
-        stationlist.add("ladstur");
-        stationlist.add("latfdsur");
-
-        ArrayAdapter <String>adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1,stationlist);
-        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        formGenerator = new FormGenerator(layout,elements,this);
-
-        Spinner spinner= formGenerator.generateSpinner(CYBER_CRIME_CATEGORY,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        Spinner spinner2= formGenerator.generateSpinner(CYBER_CRIME_SUBCATEGORY,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
         elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,"",R.drawable.cam2));
         elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,"",R.drawable.mic2));
         elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.mic2));
         elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-
+        formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
 
-        Spinner spinner3= formGenerator.generateSpinner(STATION,stationlist, adapter, new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+       Adapters adapters  = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+           @Override
+           public void onError(String error) {
+               Toast.makeText(getContext(), "eror while loading form "+error, Toast.LENGTH_SHORT).show();
+           }
+       });
+       adapters.setStation();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,7 +130,6 @@ public class CyberCrime extends Fragment {
                                 Toast.makeText(getContext(), "object type"+object, Toast.LENGTH_SHORT).show();
 
                             }
-
                             @Override
                             public void onEmpty() {
                                 Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();

@@ -1,8 +1,29 @@
 package com.ltrsoft.userpoliceapp.model;
 
-public class RallyPermission {
+public class RallyPermissions {
 
     private String rally_permission_id, organization_group_name, user_id, address, event_details, rally_name, rally_date, rally_time, proposed_route_location, expected_participants, purpose_objective, safety_security_measures, station_id, crowd_management_plan, first_aid_facilities_provision, emergency_services_coordination, additional_safety_measures, status_id;
+
+    public RallyPermissions(String rally_permission_id, String organization_group_name, String user_id, String address, String event_details, String rally_name, String rally_date, String rally_time, String proposed_route_location, String expected_participants, String purpose_objective, String safety_security_measures, String station_id, String crowd_management_plan, String first_aid_facilities_provision, String emergency_services_coordination, String additional_safety_measures, String status_id) {
+        this.rally_permission_id = rally_permission_id;
+        this.organization_group_name = organization_group_name;
+        this.user_id = user_id;
+        this.address = address;
+        this.event_details = event_details;
+        this.rally_name = rally_name;
+        this.rally_date = rally_date;
+        this.rally_time = rally_time;
+        this.proposed_route_location = proposed_route_location;
+        this.expected_participants = expected_participants;
+        this.purpose_objective = purpose_objective;
+        this.safety_security_measures = safety_security_measures;
+        this.station_id = station_id;
+        this.crowd_management_plan = crowd_management_plan;
+        this.first_aid_facilities_provision = first_aid_facilities_provision;
+        this.emergency_services_coordination = emergency_services_coordination;
+        this.additional_safety_measures = additional_safety_measures;
+        this.status_id = status_id;
+    }
 
     public String getRally_permission_id() {
         return rally_permission_id;

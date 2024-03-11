@@ -100,6 +100,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //                }
 //            }
 //        });
+
     }
 
     private boolean isLocationInList(LatLng latLng) {

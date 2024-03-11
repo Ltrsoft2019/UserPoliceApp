@@ -17,11 +17,13 @@ import androidx.fragment.app.Fragment;
 
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.dao.DAO;
+import com.ltrsoft.userpoliceapp.interfaces.NewCallBack;
 import com.ltrsoft.userpoliceapp.model.DomesticWorkers;
 import com.ltrsoft.userpoliceapp.ui.Adapters;
 import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
+import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.Validations;
 
 import java.util.ArrayList;
@@ -145,12 +147,28 @@ public class DomesticHelp extends Fragment {
                         map.get(PURPOSE_OF_EMPLOYMENT),
                         map.get(JOB_TITLE_OR_ROLE),
                         map.get(START_DATE_OF_EMPLOYMENT),
-
                         map.get(SALARY_OR_COMPENSATION_DETAILS),
                         map.get(ADDITIONAL_INFORMATION_ABOUT_EMPLOYMENT),
                          map.get(map.get(FormElement.STATION)),
                         "",
                         map.get(PERMISSION_ID));
+
+                dao.insertOrUpdate(domesticWorkers, new NewCallBack() {
+                    @Override
+                    public void onError(String error) {
+                        Toast.makeText(getContext(), "error "+error, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(Object object) {
+                        Toast.makeText(getContext(), "response "+object, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onEmpty() {
+                        Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+                    }
+                }, URLS.INSERT_DOMESTIC);
 
             }
             else {

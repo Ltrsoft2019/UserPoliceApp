@@ -31,25 +31,25 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
     }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Exit");
-        builder.setMessage("Are You Want to exit");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                onDestroy();
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-//                Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Exit");
+//        builder.setMessage("Are You Want to exit");
+//        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                onDestroy();
+//            }
+//        });
+//        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+////                Toast.makeText(getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+//                dialog.dismiss();
+//            }
+//        });
+//        builder.show();
+//    }
 }

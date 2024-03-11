@@ -81,7 +81,6 @@ public class FormGenerator {
                 case FormElement.TYPE_RADIO_GROUP:
                     generateRadioGroup(element.getLabel(), element.getOptions(element.getSubType()));
                     break;
-
             }
         }
     }

@@ -35,8 +35,6 @@ public class AddComplaintOnBehalf extends Fragment {
     private TextView heading;
     private List<FormElement> elements;
     private View view;
-
-
     public String USERFNAME = "Enter User first name :";
     public String USERMNAME = "Enter User middle name :";
     public String USERLNAME = "Enter User last name :";
@@ -52,13 +50,7 @@ public class AddComplaintOnBehalf extends Fragment {
     public String USEROCCUPATION = "Enter Occupation :";
     public String USERNATIONALITY = "Enter Nationality :";
     public String USERDRIVING = "Enter Driving License no:";
-     Fragment fragment;
-    String fragmentName = null;
-
-
-
     public AddComplaintOnBehalf() {
-
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,16 +58,10 @@ public class AddComplaintOnBehalf extends Fragment {
         view = inflater.inflate(R.layout.common_form, container, false);
         layout = view.findViewById(R.id.layout123);
         heading=view.findViewById(R.id.heading);
-        heading.setText("Register Complaint");
+        heading.setText("Next");
         submit= view.findViewById(R.id.button);
         heading.setVisibility(View.GONE);
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-              fragmentName = bundle.getString("fragment");
-            // Now, based on the fragmentName, you can proceed accordingly
-        }
         intiForm(layout);
-
         AddComplaintOnBehalf addComplaintOnBehalf=new AddComplaintOnBehalf();
 //        UserBehalf userBehalf =new UserBehalf(getContext(),layout);
 //        userBehalf.getneateUserOnBehalf(this,submit,new AddComplainbehalf2());
@@ -100,8 +86,6 @@ public class AddComplaintOnBehalf extends Fragment {
         elements.add(new FormElement(USERPAN, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(USEROCCUPATION, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         elements.add(new FormElement(USERNATIONALITY, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-
-
         elements.add(new FormElement(USERDRIVING, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
@@ -134,18 +118,16 @@ public class AddComplaintOnBehalf extends Fragment {
                         map.get(USERMOBILE1), map.get(USERMOBILE2), map.get(USERADHAR), map.get(USERPAN),
                         map.get(USEROCCUPATION), map.get(USERNATIONALITY), map.get(USERDRIVING), "",
                         map.get(USERGENDER), map.get(USERGENDER), "1");
-                      dao.insertOrUpdate(users, new NewCallBack() {
+                dao.insertOrUpdate(users, new NewCallBack() {
                     @Override
                     public void onError(String error) {
                         Toast.makeText(getContext(), "errro "+error, Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void onSuccess(Object object) {
                         Toast.makeText(getContext(), "response "+object, Toast.LENGTH_SHORT).show();
-                          loadFragment(fragmentName);
+                        loadFragment("1");
                     }
-
                     @Override
                     public void onEmpty() {
                         Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
@@ -154,18 +136,15 @@ public class AddComplaintOnBehalf extends Fragment {
             }
     }
 
-    private void loadFragment(String fragnmae) {
-        if (fragnmae.equals(AddFragment.cmp_frag_tag)) {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container2, new AddComplaintt());
-        } else if (fragnmae.equals(AddFragment.cyber_frag_tag)) {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container2, new CyberCrime());
-
-        }
+    private void loadFragment(String user_id) {
+        AddselfComplaint complaint = new AddselfComplaint();
+        Bundle bundle = new Bundle();
+        bundle.putString("user_id",user_id);
+        complaint.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_container2,complaint).addToBackStack(null).commit();
     }
-
     private void createCompalint() {
         submit.setText("Submit Complaint");
-//
+        formGenerator.generateForm();
     }
-
 }

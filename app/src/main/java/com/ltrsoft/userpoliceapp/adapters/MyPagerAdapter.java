@@ -21,10 +21,10 @@ public class MyPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         System.out.println("position "+position);
         if (position==0){
-            AddComplaintOnBehalf addComplaintOnBehalf = new AddComplaintOnBehalf();
-                return addComplaintOnBehalf;
+            return new AddselfComplaint();
         } else if (position==1) {
-                            return new AddselfComplaint();
+            AddComplaintOnBehalf addComplaintOnBehalf = new AddComplaintOnBehalf();
+            return addComplaintOnBehalf;
         }
         else {
             return new AddselfComplaint();

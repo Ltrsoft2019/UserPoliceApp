@@ -1,6 +1,25 @@
 package com.ltrsoft.userpoliceapp.model;
 
 public class PetroleumNoc {
+    public PetroleumNoc(String noc_id, String character_license, String father_name, String place_of_birth, String residing_since, String fax, String types_of_control_blasting, String license_or_NOC, String which_petroleum, String police_station_id, String office_no, String residence_no, String occupation, String quantity, String blasting_detail, String status_id, String permission_id) {
+        this.noc_id = noc_id;
+        this.character_license = character_license;
+        this.father_name = father_name;
+        this.place_of_birth = place_of_birth;
+        this.residing_since = residing_since;
+        this.fax = fax;
+        this.types_of_control_blasting = types_of_control_blasting;
+        this.license_or_NOC = license_or_NOC;
+        this.which_petroleum = which_petroleum;
+        this.police_station_id = police_station_id;
+        this.office_no = office_no;
+        this.residence_no = residence_no;
+        this.occupation = occupation;
+        this.quantity = quantity;
+        this.blasting_detail = blasting_detail;
+        this.status_id = status_id;
+        this.permission_id = permission_id;
+    }
 
     private  String noc_id, character_license, father_name, place_of_birth, residing_since, fax, types_of_control_blasting, license_or_NOC, which_petroleum, police_station_id, office_no, residence_no, occupation, quantity, blasting_detail, status_id, permission_id;
 
