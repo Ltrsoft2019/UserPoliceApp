@@ -15,6 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ltrsoft.userpoliceapp.R;
 import com.ltrsoft.userpoliceapp.fragment.AddComplaintt;
 import com.ltrsoft.userpoliceapp.fragment.AddFragment;
+import com.ltrsoft.userpoliceapp.fragment.ECalling;
 import com.ltrsoft.userpoliceapp.fragment.EservicesCard;
 import com.ltrsoft.userpoliceapp.fragment.MyListings;
 import com.ltrsoft.userpoliceapp.fragment.UserDashBoard;
@@ -50,7 +51,7 @@ public class MainbottomNavigation extends Fragment {
                     Toast.makeText(getContext(), "eservices clicked", Toast.LENGTH_SHORT).show();
                 }
                 else if (id==R.id.emergency_calling) {
-                    loadBadeFragmemt(new UserDashBoard());
+                    loadBadeFragmemt(new ECalling());
                     Toast.makeText(getContext(), "emergency clicked", Toast.LENGTH_SHORT).show();
                 }
                 return true;

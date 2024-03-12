@@ -3,6 +3,7 @@ package com.ltrsoft.userpoliceapp.fragment;
 import android.Manifest;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,33 +81,48 @@ public class AddselfComplaint extends Fragment {
                     String alllatlang = map.get(CMP_LOACTION);
                     String lat="";
                     String longs="";
+
                     System.out.println("latlang"+alllatlang);
                     if (!alllatlang.equals(CMP_LOACTION)) {
                         String[] latlang = alllatlang.split(",");
                          lat = latlang[0];
                          longs = latlang[1];
                     }
+
                     Complaint complaint = new Complaint("1",map.get(COMPLAINT_SUBJECT),map.get(COMPLAINT_DESC),map.get(AGAINST),
                             map.get(CMPT_DATE),"",lat,longs,new UserDataAccess().getUserId(getActivity()),"",map.get(CMPT_SUB_TYPE),
                             map.get(CMPT_TYPE));
+//                    Complaint complaint = new Complaint("12","sub ","wef","wer","wer","wwaer","1231234","asd","1","1","1","1");
+                    Log.d("Complaint", "ID: " + complaint.getComplaint_id());
+                    Log.d("Complaint", "Subject: " + complaint.getComplaint_subject());
+                    Log.d("Complaint", "Description: " + complaint.getComplaint_description());
+                    Log.d("Complaint", "Against: " + complaint.getAgainst());
+                    Log.d("Complaint", "Date: " + complaint.getInscidant_date());
+                    Log.d("Complaint", "Latitude: " + complaint.getLatitude());
+                    Log.d("Complaint", "Longitude: " + complaint.getLongitude());
+                    Log.d("Complaint", "User ID: " + complaint.getUser_id());
+                    Log.d("Complaint", "Sub Type: " + complaint.getSubtype_id());
+                    Log.d("Complaint", "Type: " + complaint.getStatus_id());
 
-                    DAO dao = new DAO(getContext());
-                    dao.insertOrUpdate(complaint, new NewCallBack() {
-                        @Override
-                        public void onError(String error) {
-                            Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onSuccess(Object object) {
-                            Toast.makeText(getContext(), "success "+object, Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onEmpty() {
-                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
-                        }
-                    },URLS.INSERTCOMPLAINT);
+//                    DAO dao = new DAO(getContext());
+//                    dao.insertOrUpdate(complaint, new NewCallBack() {
+//                        @Override
+//                        public void onError(String error) {
+//                            Toast.makeText(getContext(), "Error "+error, Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                        @Override
+//                        public void onSuccess(Object object) {
+//                            Toast.makeText(getContext(), "response  "+object, Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                        @Override
+//                        public void onEmpty() {
+//                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
+//                        }
+//                    },URLS.INSERTCOMPLAINT);
+                }else {
+                    Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -170,7 +186,6 @@ public class AddselfComplaint extends Fragment {
                 Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
             }
         },URLS.GET_CMP_SUB_TYPE);
-
     }
 
     private void setCmpType() {

@@ -16,7 +16,7 @@ import com.ltrsoft.userpoliceapp.R;
 public class EservicesCard extends Fragment {
     private View view;
     private RelativeLayout charcter,tenant,weapon,domestichelp,emp_veri,
-    noc,ampl_sound;
+    noc,ampl_sound,premises;
     private LinearLayout rally,festivals;
     @Nullable
     @Override
@@ -28,6 +28,12 @@ public class EservicesCard extends Fragment {
     }
 
     private void setClickListeners() {
+        premises.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new Premises());
+            }
+        });
 
         charcter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +94,7 @@ public class EservicesCard extends Fragment {
     }
 
     private void initilizeView() {
-
+        premises = view.findViewById(R.id.premises);
         charcter = view.findViewById(R.id.character_certificate);
         tenant = view.findViewById(R.id.tenant_verf);
         weapon = view.findViewById(R.id.weapon_veri);
