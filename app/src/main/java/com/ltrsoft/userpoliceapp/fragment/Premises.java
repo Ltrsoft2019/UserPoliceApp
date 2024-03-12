@@ -27,6 +27,7 @@ import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -62,6 +63,8 @@ public class Premises extends Fragment {
     }
 
     private void initializeViews(View view) {
+        elements=new ArrayList<>();
+
         elements.add(new FormElement(FNMAE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(OCCUPATION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
         elements.add(new FormElement(PERCENTAGE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
@@ -71,7 +74,9 @@ public class Premises extends Fragment {
         elements.add(new FormElement(WHETHER,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_RADIO_YES_NO,R.drawable.reminders));
         elements.add(new FormElement(WHETHER_SUSPENDE,FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_RADIO_YES_NO,R.drawable.reminders));
         elements.add(new FormElement(NAME_OF_AMUSEMENT,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.reminders));
+
         formGenerator=new FormGenerator(layout,elements,this);
+
         Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
             @Override
             public void onError(String error) {

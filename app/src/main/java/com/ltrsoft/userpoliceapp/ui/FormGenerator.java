@@ -356,7 +356,7 @@ public class FormGenerator {
             } else if (childView instanceof Spinner) {
                 Spinner spinner = (Spinner) childView;
                 formDataMap.put((String)spinner.getTag(), String.valueOf(spinner.getSelectedItemPosition()+1));
-                System.out.println("spinner"+spinner.getTag());
+                System.out.println("spinner item"+spinner.getSelectedItemPosition());
                 /* Get selected item from spinner and add it to formDataMap */
             } else if (childView instanceof Button) {
                 Button button = (Button) childView;

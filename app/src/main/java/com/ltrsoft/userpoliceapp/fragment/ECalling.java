@@ -18,6 +18,9 @@ import androidx.fragment.app.Fragment;
 import com.ltrsoft.userpoliceapp.R;
 
 public class ECalling extends Fragment {
+    public ECalling() {
+    }
+
     private RelativeLayout amb,women,fire,bomb,cyber,police,safety;
     @Nullable
     @Override
