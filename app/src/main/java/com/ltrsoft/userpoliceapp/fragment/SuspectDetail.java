@@ -24,9 +24,11 @@ import com.ltrsoft.userpoliceapp.utils.URLS;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserProfile extends Fragment {
-    public UserProfile() {
+public class SuspectDetail extends Fragment {
+    public SuspectDetail() {
     }
+
+
     private View view;
     HistoryGenerator historyGenerator;
     private List<HistoryElements> element;
@@ -37,18 +39,18 @@ public class UserProfile extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.common_history_form, container, false);
-       layout=view.findViewById(R.id.layout123);
-       button=view.findViewById(R.id.button);
-       heading=view.findViewById(R.id.heading);
+        layout=view.findViewById(R.id.layout123);
+        button=view.findViewById(R.id.button);
+        heading=view.findViewById(R.id.heading);
         button.setText("Download");
         heading.setText("User Profile");
-         imageheading=view.findViewById(R.id.imageheading);
-         imageView=view.findViewById(R.id.imageview);
-         imageView.setImageResource(R.drawable.person);
-         //imageView.setVisibility(View.GONE);
-         imageheading.setText("Person name");
-         //imageheading.setVisibility(View.GONE);
-         element=new ArrayList<HistoryElements>();
+        imageheading=view.findViewById(R.id.imageheading);
+        imageView=view.findViewById(R.id.imageview);
+        imageView.setImageResource(R.drawable.person);
+        //imageView.setVisibility(View.GONE);
+        imageheading.setText("Person name");
+        //imageheading.setVisibility(View.GONE);
+        element=new ArrayList<HistoryElements>();
         DAO dao=new DAO(getContext());
         dao.select(Users.class, "user_id", "1", new NewCallBack() {
             @Override
@@ -67,14 +69,18 @@ public class UserProfile extends Fragment {
                 element.add(new HistoryElements("Middle Name", user.getUser_mname(), R.drawable.person, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Last Name", user.getUser_lname(), R.drawable.person, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Address", user.getUser_address(), R.drawable.address, HistoryElements.TYPE_TEXTVIEW));
-
-               // element.add(new HistoryElements("User Photo:", user.getUser_photo(), R.drawable.person, HistoryElements.TYPE_TEXTVIEW));
+                historyGenerator=new HistoryGenerator(element, layout,  SuspectDetail.this);
+                historyGenerator.generatecard("personal Detail");
+                element.clear();
+                // element.add(new HistoryElements("User Photo:", user.getUser_photo(), R.drawable.person, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Country Name", user.getCountry_id(), R.drawable.country, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("State Name", user.getState_id(), R.drawable.address, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("District name", user.getDistrict_id(), R.drawable.address, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("City Name", user.getCity_id(), R.drawable.address, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("User Email", user.getUser_email(), R.drawable.email, HistoryElements.TYPE_TEXTVIEW));
-
+                historyGenerator=new HistoryGenerator(element, layout,  SuspectDetail.this);
+                historyGenerator.generatecard("personal Detail");
+                element.clear();
                 // element.add(new HistoryElements("Password:", user.getPassword(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Gender:", user.getGender(), R.drawable.gender, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Date of Birth:", user.getUser_dob(), R.drawable.dob, HistoryElements.TYPE_TEXTVIEW));
@@ -82,16 +88,20 @@ public class UserProfile extends Fragment {
                 element.add(new HistoryElements("Mobile 2:", user.getUser_mobile2(), R.drawable.call, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("User Adhar:", user.getUser_adhar(), R.drawable.adhar, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("User Pan:", user.getUser_pan(), R.drawable.pan, HistoryElements.TYPE_TEXTVIEW));
+                historyGenerator=new HistoryGenerator(element, layout,  SuspectDetail.this);
+                historyGenerator.generatecard("personal Detail");
+                element.clear();
                 element.add(new HistoryElements("Occupation:", user.getOccupation(), R.drawable.occupation, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Nationality:", user.getNationality(), R.drawable.country, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Driving Licence:", user.getDriving_licence(), R.drawable.pan, HistoryElements.TYPE_TEXTVIEW));
-               // element.add(new HistoryElements("Notification Token:", user.getn(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
+                // element.add(new HistoryElements("Notification Token:", user.getn(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
                 //element.add(new HistoryElements("Latitude:", user.gel(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
-               // element.add(new HistoryElements("Longitude:", user.getLongitude(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
+                // element.add(new HistoryElements("Longitude:", user.getLongitude(), R.drawable.cam2, HistoryElements.TYPE_TEXTVIEW));
                 element.add(new HistoryElements("Station ID:", user.getStation_id(), R.drawable.station, HistoryElements.TYPE_TEXTVIEW));
-                historyGenerator=new HistoryGenerator(element, layout, UserProfile.this);
-                historyGenerator.generatehistoryform();
 
+                historyGenerator=new HistoryGenerator(element, layout,  SuspectDetail.this);
+                historyGenerator.generatecard("personal Detail");
+                element.clear();
 
             }
 
@@ -106,6 +116,5 @@ public class UserProfile extends Fragment {
 
         return view;
     }
-
 
 }

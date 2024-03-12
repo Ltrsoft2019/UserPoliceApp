@@ -26,6 +26,12 @@ public class MyListings extends Fragment {
     }
 
     private void setClickListeners() {
+        myfir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadFragment(new SuspectDetail());
+            }
+        });
     mycomplaints.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
