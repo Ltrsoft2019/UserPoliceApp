@@ -104,7 +104,7 @@ public class AddselfComplaint extends Fragment {
                     Log.d("Complaint", "Sub Type: " + complaint.getSubtype_id());
                     Log.d("Complaint", "Type: " + complaint.getStatus_id());
 
-//                    DAO dao = new DAO(getContext());
+//                    DAO dao = new DAO(getContext()   );
 //                    dao.insertOrUpdate(complaint, new NewCallBack() {
 //                        @Override
 //                        public void onError(String error) {

@@ -292,7 +292,7 @@ public class FormGenerator {
     }
     private void generateRadioGroup(String label, List<String> options) {
         // Create a new RadioGroup
-//        genratetextview(label+" :");
+     genratetextview(label+" :");
 
         RadioGroup radioGroup = new RadioGroup(context);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -443,6 +443,7 @@ public class FormGenerator {
 // Load the Cambria font from the assets folder
         Typeface arialTypeface = Typeface.create("georgia", Typeface.NORMAL);
         checkBox.setTypeface(arialTypeface);
+
 //        Typeface cambriaTypeface = Typeface.createFromAsset( context.getAssets(), "Arial");
 
 // Apply the Cambria font to your TextView or any other UI element
@@ -453,15 +454,14 @@ public class FormGenerator {
 //         checkBox.setText(" " +label);
         checkBox.setTag(label);
 
+
         checkBox.setPadding(0,6,0,0);
         checkBox.setTextSize(16);
        // checkBox.setBackground(ContextCompat.getDrawable(context, R.drawable.btn_border));
 
         formLayout.addView(checkBox);
     }
-    private  void generateDatePicker() {
 
-    }
     private void genratetextview(String label){
         TextView textView = new TextView(context);
         LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
@@ -469,7 +469,7 @@ public class FormGenerator {
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics())
         );
         textView.setTextSize(16);
-         textViewParams.setMargins(10,20,0,0);
+         textViewParams.setMargins(10,10,0,0);
         textView.setLayoutParams(textViewParams);
         textView.setText(label);
 
@@ -486,7 +486,6 @@ public class FormGenerator {
         int widthPx = dpToPx(30);
         int heightPx = dpToPx(30);
 
-// Scale the drawable
         drawable.setBounds(0, 0, widthPx, heightPx);
         if (view instanceof EditText)
         {
@@ -498,9 +497,5 @@ public class FormGenerator {
         } else if (view instanceof TextView) {
             ((TextView)view).setCompoundDrawables(drawable,null,null,null);
         }
-
-// Set the compound drawable to the EditText
-
     }
-
 }

@@ -19,7 +19,19 @@
                 android:layout_height="30dp"
                 android:background="@drawable/notification"
                 android:layout_gravity="end"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="10dp"/>
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/news_report"
+                android:layout_gravity="end"
+                android:layout_marginRight="5dp"/>
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/question"
+                android:layout_gravity="end"
+                android:layout_marginRight="5dp"/>
         </androidx.appcompat.widget.Toolbar>
     <FrameLayout
         android:id="@+id/content_frame"

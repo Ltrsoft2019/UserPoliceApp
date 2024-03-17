@@ -10,7 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ltrsoft.userpoliceapp.R;
+import com.ltrsoft.userpoliceapp.maps.MapFragment;
 
 public class UserDashBoard  extends Fragment {
 private View view;
@@ -24,10 +26,13 @@ private View view;
     private TextView grantedTextView;
     private TextView rejectedTextView;
     private TextView pendingTextView;
+    private FloatingActionButton  map,chatbot;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.main_dashboard, container, false);
+        map=view.findViewById(R.id.map);
+        chatbot=view.findViewById(R.id.chatbot);
         intilizeView();
 
         totalComplaintTextView.setText("24");
@@ -40,6 +45,29 @@ private View view;
         grantedTextView.setText("1");
         rejectedTextView.setText("2");
         pendingTextView.setText("2");
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().
+                        getSupportFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.main_container2,new MapFragment())
+                        .commit();
+            }
+        });
+
+        chatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .addToBackStack(null)
+                        .replace(R.id.main_container2,new MapFragment())
+                        .commit();
+            }
+        });
 
         return view;
     }
