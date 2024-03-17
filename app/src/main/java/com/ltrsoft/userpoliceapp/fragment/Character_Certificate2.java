@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Character_Certificate2 extends Fragment {
+public class  Character_Certificate2 extends Fragment {
     public Character_Certificate2() {
     }
 
@@ -64,7 +64,7 @@ public class Character_Certificate2 extends Fragment {
                     String street = map.get(STREET);
                     String landmark = map.get(LANDMARK);
                     String locality = map.get(LOCALITY);
-                    characterCertificate.setCbuilding(building);
+                    characterCertificate.setCbuilding("building");
                     characterCertificate.setClandmark(landmark);
                     characterCertificate.setCstreet(street);
                     characterCertificate.setClocality(locality);
@@ -89,9 +89,9 @@ public class Character_Certificate2 extends Fragment {
 
     private void initialform(LinearLayout layout, Button button) {
         elements=new ArrayList<>();
-        elements.add(new FormElement(BUILDING,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
-        elements.add(new FormElement(STREET,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
-        elements.add(new FormElement(LANDMARK,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
+        elements.add(new FormElement(BUILDING,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.address));
+        elements.add(new FormElement(STREET,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.occupation));
+        elements.add(new FormElement(LANDMARK,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.location));
         elements.add(new FormElement(LOCALITY,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
         formGenerator=new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
