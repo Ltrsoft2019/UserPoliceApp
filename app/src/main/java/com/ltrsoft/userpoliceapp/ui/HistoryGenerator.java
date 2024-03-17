@@ -39,6 +39,8 @@ public class HistoryGenerator {
     }
     public void generatecard(String label) {
          CardView cardView = new CardView(context);
+        genratetextview(label +" :");
+
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
@@ -50,13 +52,13 @@ public class HistoryGenerator {
        // cardView.setContentPadding(20, 20, 20, 20);
         cardView.setCardElevation(2);
         //cardView.setBackgroundResource(R.drawable.history_border);
-        genratetextview(label +" :");
 
         LinearLayout linearLayout1 = new LinearLayout(context);
         linearLayout1.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
+
 
         linearLayout1.setOrientation(LinearLayout.VERTICAL);
 
@@ -136,11 +138,12 @@ public class HistoryGenerator {
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 42, context.getResources().getDisplayMetrics())
 
         );
-        textviewparams.setMargins(0,0,40,0);
+        textviewparams.setMargins(50,0,50,0);
         textView.setTag(label);
-        textView.setText(value);
+        textView.setText("  "+value);
         textView.setTextSize(18);
-
+        setimageashint(image,textView);
+         textView.setBackgroundResource(R.drawable.history_border);
         textView.setLayoutParams(textviewparams);
         textView.setPadding(15,15,0,0);
        // textView.setBackgroundResource(R.drawable.btn_border);
@@ -189,14 +192,27 @@ public class HistoryGenerator {
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics())
         );
         textView.setTextSize(16);
-        textViewParams.setMargins(10,10,0,0);
+        textViewParams.setMargins(40,10,0,0);
         textView.setLayoutParams(textViewParams);
         textView.setText(label);
 
         textView.setPadding(0, 20, 0, 0);
         formLayout.addView(textView);
     }
+    private void genratetextviewoncard(String label ,CardView cardView){
+        TextView textView = new TextView(context);
+        LinearLayout.LayoutParams textViewParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 35, context.getResources().getDisplayMetrics())
+        );
+        textView.setTextSize(16);
+        textViewParams.setMargins(40,10,0,0);
+        textView.setLayoutParams(textViewParams);
+        textView.setText(label);
 
+        textView.setPadding(0, 20, 0, 0);
+        cardView.addView(textView);
+    }
     private int dpToPx(int dp) {
         float density = context.getResources().getDisplayMetrics().density;
         return Math.round((float) dp * density);

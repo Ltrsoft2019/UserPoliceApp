@@ -31,6 +31,7 @@ import com.ltrsoft.userpoliceapp.ui.FormElement;
 import com.ltrsoft.userpoliceapp.ui.FormGenerator;
 import com.ltrsoft.userpoliceapp.ui.FormValidator;
 import com.ltrsoft.userpoliceapp.ui.GetLists;
+import com.ltrsoft.userpoliceapp.ui.UserBehalf;
 import com.ltrsoft.userpoliceapp.utils.URLS;
 import com.ltrsoft.userpoliceapp.utils.UserDataAccess;
 
@@ -42,10 +43,10 @@ import java.util.Objects;
 
 
 public class CyberCrime extends Fragment {
-    private LinearLayout layout;
+    private LinearLayout layout,userlayout;
     private View view;
     private FormGenerator formGenerator;
-    private Button submit;
+    private Button submit,button;
     private TextView heading;
     private List<FormElement>elements;
     private static final String GENDER = "Gender";
@@ -69,33 +70,43 @@ public class CyberCrime extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.common_form, container, false);
         layout = view.findViewById(R.id.layout123);
+        userlayout=view.findViewById(R.id.layout12);
         heading=view.findViewById(R.id.heading);
+        button=view.findViewById(R.id.buttonsecond);
         submit=view.findViewById(R.id.button);
-        heading.setText("Cyber Crime");
-        elements = new ArrayList<>();
-
-        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,"",R.drawable.cam2));
-        elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,"",R.drawable.mic2));
-        elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.mic2));
-        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        formGenerator = new FormGenerator(layout,elements,this);
-        formGenerator.generateForm();
-
-       Adapters adapters  = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
-           @Override
-           public void onError(String error) {
-               Toast.makeText(getContext(), "eror while loading form "+error, Toast.LENGTH_SHORT).show();
-           }
-       });
-       adapters.setStation();
-        submit.setOnClickListener(new View.OnClickListener() {
+        //heading.setText("Cyber Crime");
+         layout.setVisibility(View.VISIBLE);
+         button.setVisibility(View.VISIBLE);
+        submit.setVisibility(View.GONE);
+        UserBehalf userBehalf=new UserBehalf(getContext(),userlayout);
+        userBehalf.getneateUserOnBehalf(this,button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    if (FormValidator.isFormValid(layout)){
+                userBehalf.senddata(new UserBehalf.SendDataCallback() {
+                    @Override
+                    public void onResult(boolean success) {
+                      getcyberform();
+                      button.setVisibility(View.GONE);
+                      submit.setVisibility(View.VISIBLE);
+                    }
+                });
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        validateform();
+                    }
+                });
+//
+                   }
+      });
+        return view;
+    }
+
+    public void validateform() {
+        if (FormValidator.isFormValid(layout)){
                         Map<String,String> map = FormGenerator.getFormData(layout);
-                        Log.d(CYBER_CRIME_CATEGORY, Objects.requireNonNull(map.get(CYBER_CRIME_CATEGORY)));
+                         Log.d(CYBER_CRIME_CATEGORY, Objects.requireNonNull(map.get(CYBER_CRIME_CATEGORY)));
                         Log.d(LOST_MONEY, Objects.requireNonNull(map.get(LOST_MONEY)));
                         Log.d(DATE_TIME,map.get(DATE_PICKER));
                         Log.d(IS_DELAY,map.get(IS_DELAY));
@@ -136,14 +147,36 @@ public class CyberCrime extends Fragment {
                             }
                         }, URLS.CYBER_COMPLAINT_INSERT);
                     }
-            }
-        });
-        return view;
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         formGenerator.onActivityResult(requestCode,resultCode,data);
     }
+    public void getcyberform(){
+        heading.setVisibility(View.VISIBLE);
+
+        elements = new ArrayList<>();
+         Toast.makeText(getContext(), "cyber form", Toast.LENGTH_LONG).show();
+        elements.add(new FormElement(LOST_MONEY,FormElement.TYPE_CHECKBOX,"",R.drawable.cam2));
+        elements.add(new FormElement(DATE_PICKER,FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(IS_DELAY,FormElement.TYPE_CHECKBOX,"",R.drawable.mic2));
+        elements.add(new FormElement(WHERE_OCCURE,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.mic2));
+        elements.add(new FormElement(DESCRIPTION,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(EVIDENCE_PHOTO,FormElement.TYPE_IMAGE_VIEW,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        formGenerator = new FormGenerator(layout,elements,this);
+        formGenerator.generateForm();
+
+       Adapters adapters  = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
+           @Override
+           public void onError(String error) {
+               Toast.makeText(getContext(), "eror while loading form "+error, Toast.LENGTH_SHORT).show();
+           }
+       });
+              adapters.setStation();
+
+    }
+
 }
 
