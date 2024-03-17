@@ -43,7 +43,19 @@
                 <!-- Your dynamically generated content goes here -->
 
             </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/heading"
+            android:id="@+id/layout12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
+            <!-- Your dynamically generated content goes here -->
+
+        </LinearLayout>
 
 <!--        </androidx.cardview.widget.CardView>-->
         <Button
@@ -57,5 +69,18 @@
              android:gravity="center"
             android:layout_gravity="center"
              android:text="Submit" />
+        <Button
+            android:id="@+id/buttonsecond"
+            android:layout_width="120dp"
+            android:layout_height="42dp"
+            android:background="@drawable/btn_border3"
+            android:layout_below="@+id/layout123"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+           android:visibility="gone"
+            android:layout_gravity="center"
+            android:text="Submit" />
     </LinearLayout>
-</ScrollView>
+
+ </ScrollView>

@@ -53,10 +53,10 @@ public class AddFragment extends Fragment {
         addCyberCrime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Alertdialoge alertdialoge=new Alertdialoge();
-                alertdialoge.showAlert("Add complant","Add Cyber Complaint",(AppCompatActivity) getActivity(),new CyberCrime(),cyber_frag_tag);
+//                Alertdialoge alertdialoge=new Alertdialoge();
+//                alertdialoge.showAlert("Add complant","Add Cyber Complaint",(AppCompatActivity) getActivity(),new CyberCrime(),cyber_frag_tag);
 
-                //loadFragment(new CyberCrime());
+                loadFragment(new CyberCrime());
             }
         });
         addGrievance.setOnClickListener(new View.OnClickListener() {

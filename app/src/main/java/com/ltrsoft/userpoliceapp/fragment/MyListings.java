@@ -25,6 +25,7 @@ public class MyListings extends Fragment {
         return view;
     }
 
+
     private void setClickListeners() {
         myfir.setOnClickListener(new View.OnClickListener() {
             @Override
