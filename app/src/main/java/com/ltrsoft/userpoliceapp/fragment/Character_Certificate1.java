@@ -83,9 +83,9 @@ public class Character_Certificate1 extends Fragment {
         elements=new ArrayList<>();
 
 
-        elements.add(new FormElement(BUILDING,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
-        elements.add(new FormElement(STREET,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
-        elements.add(new FormElement(LANDMARK,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
+        elements.add(new FormElement(BUILDING,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.address));
+        elements.add(new FormElement(STREET,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.occupation));
+        elements.add(new FormElement(LANDMARK,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.location));
         elements.add(new FormElement(LOCALITY,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
         formGenerator=new FormGenerator(layout,elements,this);
         Adapters adapters = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {

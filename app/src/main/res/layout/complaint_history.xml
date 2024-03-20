@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+     tools:context=".HistoryFragments.Complaint_history">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingTop="16dp"
+        android:text="Complaint Id : "
+        android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/complaint_id"
+        android:background="@drawable/btn_border"
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Complaint Type : "
+        android:paddingTop="16dp"
+
+        android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/complaint_type"
+        android:background="@drawable/btn_border"
+
+        android:textAlignment="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingTop="16dp"
+
+        android:text="Complaint Subject : "
+        android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_border"
+
+        android:id="@+id/complaint_subject"
+        android:textAlignment="center"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+        android:paddingTop="16dp"
+
+        android:text="Complaint Description : "
+    android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_border"
+
+        android:id="@+id/complaint_description"
+        android:textAlignment="center"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+        android:paddingTop="16dp"
+
+        android:text=" Complaint Against : "
+    android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_border"
+
+        android:id="@+id/against"
+        android:textAlignment="center"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+        android:paddingTop="16dp"
+
+        android:text="Inscidant Date : "
+    android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_border"
+
+        android:id="@+id/inscidant_date"
+        android:textAlignment="center"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+        android:paddingTop="16dp"
+
+        android:text="Complaint Status : "
+    android:textSize="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_border"
+
+        android:id="@+id/status_id"
+        android:textAlignment="center"/>
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Complaint Fir Id : "
+        android:paddingTop="16dp"
+
+        android:textSize="16dp"/>
+    <TextView5
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/complaint_fir_id"
+        android:background="@drawable/btn_border"
+
+        android:textAlignment="center"/>
+
+    </LinearLayout>
+
+</ScrollView>
