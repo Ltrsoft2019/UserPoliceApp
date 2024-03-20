@@ -86,7 +86,8 @@ public class AddQuickComplaint extends Fragment {
                     Log.d("station",map.get(FormElement.STATION));
                     DAO dao=new DAO(getContext());
                     QuickComplaint quickComplaint=new QuickComplaint(map.get(FormElement.STATION),"1","1", map.get(DESCRIPTION),map.get(ADDRESS),
-                            "pending","2","1");
+                            "1","2","1","12");
+
                    dao.insertOrUpdate(quickComplaint, new NewCallBack() {
                        @Override
                        public void onError(String error) {
@@ -95,7 +96,7 @@ public class AddQuickComplaint extends Fragment {
 
                        @Override
                        public void onSuccess(Object object) {
-                           Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+                           Toast.makeText(getContext(), "Response = "+object, Toast.LENGTH_SHORT).show();
                        }
 
                        @Override
@@ -110,7 +111,6 @@ public class AddQuickComplaint extends Fragment {
                 }
             }
         });
-
         adapters.setStation();
      return view;
     }
@@ -122,5 +122,11 @@ public class AddQuickComplaint extends Fragment {
         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        formGenerator.onActivityResult(requestCode,resultCode,data);
     }
 }

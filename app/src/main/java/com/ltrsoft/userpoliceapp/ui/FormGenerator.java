@@ -59,8 +59,8 @@ public class FormGenerator {
         this.formLayout = layout;
         this.formElements = list;
         this.context = layout.getContext();
-        this.picker = new ImagePicker(fragment);
         this.fragment = fragment;
+        this.picker = new ImagePicker(fragment);
     }
     public void generateForm() {
 
@@ -202,12 +202,12 @@ public class FormGenerator {
         imageLayoutParams.setMargins(0, 0, 0, 0); // Adjust margins as needed
 
         imageView.setLayoutParams(imageLayoutParams);
-        picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
-            @Override
-            public void onImagePicked(Bitmap bitmap) {
-                imageView.setImageBitmap(bitmap);
-            }
-        });
+         picker.setOnImagePickedListener(new ImagePicker.OnImagePickedListener() {
+             @Override
+             public void onImagePicked(Bitmap s) {
+                 imageView.setImageBitmap(s);
+             }
+         });
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -215,7 +215,6 @@ public class FormGenerator {
             }
         });
         formLayout.addView(imageView);
-
 
     }
 
@@ -275,7 +274,8 @@ public class FormGenerator {
                                 @Override
                                 public void onDateSet(DatePicker datePicker, int selectedYear, int selectedMonth, int selectedDay) {
                                     // Handle the date selection or update the TextView
-                                    String dateOfBirth = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
+//                                    String dateOfBirth = selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear;
+                                    String dateOfBirth =  selectedYear + "/" + (selectedMonth + 1) + "/" +selectedDay;
                                     button.setText(dateOfBirth);
                                 }
                             },

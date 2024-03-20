@@ -40,12 +40,11 @@ public class AddComplainbehalf2 extends Fragment {
         heading=view.findViewById(R.id.heading);
         heading.setText("Register Complaint");
         submit= view.findViewById(R.id.button);
-//        intiForm(layout);
+        intiForm(layout);
         return view;
     }
 
     private void intiForm(LinearLayout layout) {
-
         List<FormElement >newElements = new ArrayList<>();
         newElements.add(new FormElement(C_SUB,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,1));
         newElements.add(new FormElement(C_DESC,FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,1));

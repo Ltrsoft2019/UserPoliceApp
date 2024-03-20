@@ -72,21 +72,21 @@ public class AddComplaintOnBehalf extends Fragment {
 
     private void intiForm(LinearLayout layout) {
         elements=new ArrayList<>();
-        elements.add(new FormElement(USERFNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERMNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERLNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERDATEOFBIRTH, FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERADDRESS, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USEREMAIL, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
-        elements.add(new FormElement(USERPASSWORD, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
-        elements.add(new FormElement(USERGENDER, FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_EMAIL,R.drawable.cam2));
-        elements.add(new FormElement(USERMOBILE1, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.cam2));
-        elements.add(new FormElement(USERMOBILE2, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.cam2));
-        elements.add(new FormElement(USERADHAR, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERPAN, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USEROCCUPATION, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERNATIONALITY, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
-        elements.add(new FormElement(USERDRIVING, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.cam2));
+        elements.add(new FormElement(USERFNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.person));
+        elements.add(new FormElement(USERMNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.person));
+        elements.add(new FormElement(USERLNAME, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.person));
+        elements.add(new FormElement(USERDATEOFBIRTH, FormElement.TYPE_BUTTON,FormElement.SUBTYPE_TEXT,R.drawable.calendar));
+        elements.add(new FormElement(USERADDRESS, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.address));
+        elements.add(new FormElement(USEREMAIL, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.email));
+        elements.add(new FormElement(USERPASSWORD, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_EMAIL,R.drawable.adhar));
+        elements.add(new FormElement(USERGENDER, FormElement.TYPE_RADIO_GROUP,FormElement.SUBTYPE_EMAIL,R.drawable.align));
+        elements.add(new FormElement(USERMOBILE1, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.mobile));
+        elements.add(new FormElement(USERMOBILE2, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_NUMBER,R.drawable.mobile));
+        elements.add(new FormElement(USERADHAR, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.adhar));
+        elements.add(new FormElement(USERPAN, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.pan));
+        elements.add(new FormElement(USEROCCUPATION, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.occupation));
+        elements.add(new FormElement(USERNATIONALITY, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
+        elements.add(new FormElement(USERDRIVING, FormElement.TYPE_EDIT_TEXT,FormElement.SUBTYPE_TEXT,R.drawable.align));
         formGenerator = new FormGenerator(layout,elements,this);
         formGenerator.generateForm();
         Adapters adapters1 = new Adapters(getContext(), layout, formGenerator, new Adapters.CallBack() {
@@ -110,6 +110,7 @@ public class AddComplaintOnBehalf extends Fragment {
                 Map<String,String> map=FormGenerator.getFormData(layout);
                 Log.d(USERDRIVING,map.get(USERDRIVING));
                 Log.d(USERDATEOFBIRTH,map.get(USERDATEOFBIRTH));
+                loadFragment("1");
                 DAO dao = new DAO(getContext());
                 Users users = new Users("1", map.get(USERFNAME), map.get(USERMNAME), map.get(USERLNAME), map.get(USERADDRESS)
                         ,"", map.get(FormElement.COUNTRY), map.get(FormElement.STATE),

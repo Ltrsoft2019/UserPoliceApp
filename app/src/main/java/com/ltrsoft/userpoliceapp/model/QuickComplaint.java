@@ -2,26 +2,26 @@ package com.ltrsoft.userpoliceapp.model;
 
 public class QuickComplaint {
 
-    private String station_id,
-    user_id,
-            photo_path,
-    description,
-            address,
-    status_id,
-            latitute,
-    quick_complaint_id;
+    private String station_id,user_id,photo_path, description, address, status_id, latitude, longitude,quick_complaint_id;
 
-    public QuickComplaint(String station_id, String user_id, String photo_path,
-                          String description, String address, String status_id,
-                          String latitute, String quick_complaint_id) {
+    public QuickComplaint(String station_id, String user_id, String photo_path, String description, String address, String status_id, String latitute, String longitude, String quick_complaint_id) {
         this.station_id = station_id;
         this.user_id = user_id;
         this.photo_path = photo_path;
         this.description = description;
         this.address = address;
         this.status_id = status_id;
-        this.latitute = latitute;
+        this.latitude = latitute;
+        this.longitude = longitude;
         this.quick_complaint_id = quick_complaint_id;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public String getStation_id() {
@@ -73,11 +73,11 @@ public class QuickComplaint {
     }
 
     public String getLatitute() {
-        return latitute;
+        return latitude;
     }
 
     public void setLatitute(String latitute) {
-        this.latitute = latitute;
+        this.latitude = latitute;
     }
 
     public String getQuick_complaint_id() {
